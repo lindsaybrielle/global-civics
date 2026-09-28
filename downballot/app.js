@@ -312,12 +312,15 @@
       <p class="fine">From campaign sites and news coverage${info.asOf ? `, as of ${esc(info.asOf)}` : ""}.</p>`;
   }
 
+  // DC's mayor does much of what a governor does elsewhere.
+  const isMajor = (c) => ["usSenate", "usHouse", "governor"].includes(c.kind) || (state.where.state === "DC" && c.office === "Mayor");
+
   function renderBallot() {
     const box = $("#ballot");
     const contests = (state.ballot && state.ballot.contests) || [];
     const stName = stateName(state.where.state);
 
-    box.innerHTML = contests.map((c, i) => {
+    const cards = contests.map((c, i) => {
       const key = contestKey(c);
       const kind = c.kind;
       const guide = window.OFFICE_GUIDE[kind] || window.OFFICE_GUIDE.other;
@@ -365,7 +368,18 @@
           <input data-why="${esc(key)}" maxlength="160" value="${esc(pick.why)}" placeholder="e.g. Wants to make it easier to vote from abroad">
         </label>
       </article>`;
-    }).join("");
+    });
+
+    // Federal races and governor first; everything else sits behind one toggle.
+    const major = [], more = [];
+    contests.forEach((c, i) => (isMajor(c) ? major : more).push(cards[i]));
+    box.innerHTML = major.join("") + (more.length ? `<details class="more-races" ${state.showMore ? "open" : ""}>
+        <summary>More races and measures on your ballot <span class="count">${more.length}</span></summary>
+        <p class="fine">State offices, judges and ballot measures on every ${esc(stName)} ballot. Local races depend on your address: use the AI prompt in step 4.</p>
+        ${more.join("")}
+      </details>` : "");
+    const moreEl = box.querySelector(".more-races");
+    if (moreEl) moreEl.addEventListener("toggle", () => { state.showMore = moreEl.open; });
 
     box.querySelectorAll('input[type="checkbox"]').forEach((cb) => cb.addEventListener("change", onPick));
     box.querySelectorAll("input[data-why]").forEach((el) => el.addEventListener("input", () => {

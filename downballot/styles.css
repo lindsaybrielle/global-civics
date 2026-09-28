@@ -282,3 +282,16 @@ legend { font-weight: 500; font-size: 15px; margin-bottom: 8px; }
   .drawer-foot { margin: 16px -18px 0; padding: 14px 18px; }
   @keyframes slide-up { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
 }
+
+/* Lower-ballot races, collapsed by default */
+.more-races { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 28px; }
+.more-races > summary {
+  cursor: pointer; list-style: none; display: flex; align-items: center; gap: 10px;
+  font-weight: 700; font-size: 17px; padding: 16px 20px; border-radius: 16px;
+  background: var(--surface); border: 1.5px solid var(--line);
+}
+.more-races > summary::-webkit-details-marker { display: none; }
+.more-races > summary::after { content: "＋"; margin-left: auto; color: var(--accent); font-size: 20px; }
+.more-races[open] > summary::after { content: "－"; }
+.more-races[open] > summary { margin-bottom: 12px; }
+.more-races .count { font-size: 13px; font-weight: 700; color: var(--muted); background: var(--bg); border-radius: 999px; padding: 2px 9px; }
