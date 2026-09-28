@@ -19,12 +19,22 @@
     ctx.closePath();
   }
 
-  // Splits text into lines that fit maxWidth, truncating after maxLines.
-  function wrap(ctx, text, maxWidth, maxLines) {
-    const words = String(text || "").split(/\s+/).filter(Boolean);
+  // Splits text into lines that fit maxWidth. With breakWords, a single word
+  // wider than the line is split across lines instead of overflowing.
+  function wrap(ctx, text, maxWidth, breakWords) {
+    const words = String(text || "").split(/[ \t\n]+/).filter(Boolean); // a no-break space keeps words together
     const lines = [];
     let line = "";
-    for (const word of words) {
+    for (let word of words) {
+      if (breakWords) {
+        while (ctx.measureText(word).width > maxWidth && word.length > 1) {
+          let n = word.length - 1;
+          while (n > 1 && ctx.measureText(word.slice(0, n) + "-").width > maxWidth) n--;
+          if (line) { lines.push(line); line = ""; }
+          lines.push(word.slice(0, n) + "-");
+          word = word.slice(n);
+        }
+      }
       const test = line ? line + " " + word : word;
       if (ctx.measureText(test).width > maxWidth && line) {
         lines.push(line);
@@ -34,15 +44,26 @@
       }
     }
     if (line) lines.push(line);
-    if (lines.length > maxLines) {
-      const kept = lines.slice(0, maxLines);
-      let last = kept[maxLines - 1];
-      while (ctx.measureText(last + "…").width > maxWidth && last.length) last = last.slice(0, -1);
-      kept[maxLines - 1] = last.trimEnd() + "…";
-      return kept;
-    }
     return lines;
   }
+
+  // Picks the largest size in `sizes` where the text fits in maxLines without
+  // any line running past maxWidth. Never cuts text off: at the smallest size,
+  // long words are broken and extra lines are allowed.
+  function fit(ctx, text, font, sizes, maxWidth, maxLines) {
+    for (const size of sizes) {
+      ctx.font = font(size);
+      const lines = wrap(ctx, text, maxWidth);
+      if (lines.length <= maxLines && lines.every((l) => ctx.measureText(l).width <= maxWidth)) return { size, lines };
+    }
+    const size = sizes[sizes.length - 1];
+    ctx.font = font(size);
+    return { size, lines: wrap(ctx, text, maxWidth, true) };
+  }
+
+  // Instagram draws its profile bar over the top ~250px of a story and the
+  // reply bar over the bottom ~250px, so all text stays between these lines.
+  const SAFE_TOP = 260, SAFE_BOTTOM = 1650;
 
   function drawBackground(ctx, t) {
     const g = ctx.createLinearGradient(0, 0, W * 0.4, H);
@@ -56,63 +77,77 @@
     ctx.fillStyle = "rgba(255,255,255,0.35)";
     for (let i = 0; i < 26; i++) {
       const x = rand() * W, y = rand() * H, r = 3 + rand() * 7;
-      if (y > 1630 && y < 1790) continue; // keep the footer text clear
+      if (y > 1530 && y < SAFE_BOTTOM) continue; // keep the footer text clear
       ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
     }
     ctx.font = "56px sans-serif";
     ctx.textAlign = "center";
-    [["✨", 120, 250], ["⭐", 950, 190], ["💌", 960, 1870], ["🌍", 120, 1870]].forEach(([e, x, y]) => ctx.fillText(e, x, y));
+    [["✨", 110, 470], ["⭐", 970, 440], ["💌", 960, 1850], ["🌍", 120, 1850]].forEach(([e, x, y]) => ctx.fillText(e, x, y));
   }
+
+  const FONT = {
+    pill: (n) => `700 ${n}px 'DM Sans', sans-serif`,
+    office: (n) => `700 ${n}px 'DM Sans', sans-serif`,
+    name: (n) => `${n}px 'DM Serif Display', Georgia, serif`,
+    why: (n) => `italic 400 ${n}px 'DM Sans', sans-serif`,
+  };
 
   function drawHeader(ctx, t, opts, subtitle) {
     ctx.textAlign = "center";
+    ctx.textBaseline = "alphabetic";
     const pill = "✈️ " + (opts.country ? `VOTING FROM ${opts.country.toUpperCase()}` : "VOTING FROM ABROAD");
-    ctx.font = "700 34px 'DM Sans', sans-serif";
-    const pw = Math.min(ctx.measureText(pill).width + 90, W - 160);
+    const maxPill = W - 200;
+    const { size, lines } = fit(ctx, pill, FONT.pill, [34, 30, 26, 22], maxPill - 60, 1);
+    ctx.font = FONT.pill(size);
+    const lh = size * 1.25;
+    const pw = Math.min(Math.max(...lines.map((l) => ctx.measureText(l).width)) + 80, maxPill);
+    const ph = lines.length * lh + 34;
     ctx.fillStyle = t.accent;
-    roundRect(ctx, (W - pw) / 2, 170, pw, 76, 38);
+    roundRect(ctx, (W - pw) / 2, SAFE_TOP, pw, ph, Math.min(38, ph / 2));
     ctx.fill();
     ctx.fillStyle = "#ffffff";
-    ctx.fillText(wrap(ctx, pill, pw - 40, 1)[0], W / 2, 220);
+    lines.forEach((l, i) => ctx.fillText(l, W / 2, SAFE_TOP + 17 + size + i * lh));
 
+    const y = SAFE_TOP + ph;
     ctx.fillStyle = t.head;
-    ctx.font = "96px 'DM Serif Display', Georgia, serif";
-    ctx.fillText("My 2026", W / 2, 370);
-    ctx.fillText("midterm picks 🗳️", W / 2, 470);
+    ctx.font = "92px 'DM Serif Display', Georgia, serif";
+    ctx.fillText("My 2026", W / 2, y + 105);
+    ctx.fillText("midterm picks 🗳️", W / 2, y + 195);
     if (subtitle) {
       ctx.font = "500 36px 'DM Sans', sans-serif";
       ctx.globalAlpha = 0.85;
-      ctx.fillText(subtitle, W / 2, 535);
+      ctx.fillText(subtitle, W / 2, y + 248);
       ctx.globalAlpha = 1;
     }
+    return y + (subtitle ? 280 : 235); // where the cards can start
   }
 
   function drawFooter(ctx, t, opts) {
     ctx.textAlign = "center";
+    ctx.textBaseline = "alphabetic";
     ctx.fillStyle = t.head;
     ctx.font = "700 40px 'DM Sans', sans-serif";
-    ctx.fillText("Your vote travels too. Make your plan 💫", W / 2, 1700);
+    ctx.fillText("Your vote travels too. Make your plan 💫", W / 2, SAFE_BOTTOM - 62);
     ctx.font = "500 32px 'DM Sans', sans-serif";
     ctx.globalAlpha = 0.85;
-    ctx.fillText(opts.siteUrl || "#VoteFromAbroad", W / 2, 1756);
+    ctx.fillText(opts.siteUrl || "#VoteFromAbroad", W / 2, SAFE_BOTTOM - 12);
     ctx.globalAlpha = 1;
   }
+  const FOOTER_TOP = SAFE_BOTTOM - 130;
 
   // One card: office label, candidate name(s), optional "why".
+  // Text shrinks to fit rather than being cut off.
+  function layoutPick(ctx, pick, inner, big) {
+    const office = fit(ctx, pick.office.toUpperCase(), FONT.office, big ? [34, 30, 26] : [28, 25, 22], inner, 2);
+    const name = fit(ctx, "✔\u00a0" + pick.choice, FONT.name, big ? [84, 74, 64, 56] : [56, 50, 44, 40], inner, big ? 3 : 2);
+    const why = pick.why ? fit(ctx, "“" + pick.why + "”", FONT.why, big ? [42, 38, 34, 30] : [32, 29, 26, 24], inner, big ? 6 : 4) : null;
+    return { office, name, why, oh: office.size * 1.3, nh: name.size * 1.15, wh: why ? why.size * 1.4 : 0 };
+  }
+
   function drawPick(ctx, t, pick, x, y, w, big) {
     const pad = 44;
-    const inner = w - pad * 2;
-    ctx.textAlign = "left";
-
-    ctx.font = `700 ${big ? 34 : 28}px 'DM Sans', sans-serif`;
-    const officeLines = wrap(ctx, pick.office.toUpperCase(), inner, 2);
-    ctx.font = `${big ? 84 : 56}px 'DM Serif Display', Georgia, serif`;
-    const nameLines = wrap(ctx, "✔ " + pick.choice, inner, big ? 3 : 2);
-    ctx.font = `italic 400 ${big ? 42 : 32}px 'DM Sans', sans-serif`;
-    const whyLines = pick.why ? wrap(ctx, "“" + pick.why + "”", inner, big ? 8 : 3) : [];
-
-    const oh = big ? 44 : 36, nh = big ? 96 : 66, wh = big ? 58 : 44;
-    const h = pad * 2 + officeLines.length * oh + nameLines.length * nh + (whyLines.length ? 16 + whyLines.length * wh : 0);
+    const L = layoutPick(ctx, pick, w - pad * 2, big);
+    const h = pad * 2 + L.office.lines.length * L.oh + 8 + L.name.lines.length * L.nh + (L.why ? 14 + L.why.lines.length * L.wh : 0);
 
     ctx.save();
     ctx.shadowColor = "rgba(0,0,0,0.12)";
@@ -123,22 +158,23 @@
     ctx.fill();
     ctx.restore();
 
-    let cy = y + pad + (big ? 34 : 28);
+    ctx.textAlign = "left";
+    ctx.textBaseline = "top";
+    let cy = y + pad;
     ctx.fillStyle = t.accent;
-    ctx.font = `700 ${big ? 34 : 28}px 'DM Sans', sans-serif`;
-    officeLines.forEach((l) => { ctx.fillText(l, x + pad, cy); cy += oh; });
-
+    ctx.font = FONT.office(L.office.size);
+    L.office.lines.forEach((l) => { ctx.fillText(l, x + pad, cy); cy += L.oh; });
+    cy += 8;
     ctx.fillStyle = t.ink;
-    ctx.font = `${big ? 84 : 56}px 'DM Serif Display', Georgia, serif`;
-    cy += nh - oh - (big ? 8 : 4);
-    nameLines.forEach((l) => { ctx.fillText(l, x + pad, cy); cy += nh; });
-
-    if (whyLines.length) {
+    ctx.font = FONT.name(L.name.size);
+    L.name.lines.forEach((l) => { ctx.fillText(l, x + pad, cy); cy += L.nh; });
+    if (L.why) {
+      cy += 14;
       ctx.fillStyle = t.sub;
-      ctx.font = `italic 400 ${big ? 42 : 32}px 'DM Sans', sans-serif`;
-      cy += 16 - nh + wh;
-      whyLines.forEach((l) => { ctx.fillText(l, x + pad, cy); cy += wh; });
+      ctx.font = FONT.why(L.why.size);
+      L.why.lines.forEach((l) => { ctx.fillText(l, x + pad, cy); cy += L.wh; });
     }
+    ctx.textBaseline = "alphabetic";
     return h;
   }
 
@@ -163,7 +199,9 @@
     const t = THEMES[opts.theme] || THEMES.sunset;
     const canvases = [];
 
-    const top = 590, bottom = 1600, gap = 30, x = 90, w = W - 180;
+    const gap = 30, x = 90, w = W - 180, bottom = FOOTER_TOP - 12;
+    // The header height depends on the pill, so measure it once up front.
+    const top = drawHeader(newCanvas().getContext("2d"), t, opts, "Part 1 of 2");
     const measure = (p, big) => drawPick(newCanvas().getContext("2d"), t, p, 0, 0, w, big);
 
     // Group picks into pages: one per page, or as many as fit (max 4).
@@ -181,10 +219,10 @@
       const c = newCanvas(), ctx = c.getContext("2d");
       drawBackground(ctx, t);
       const label = pages.length < 2 ? "" : big ? `${i + 1} of ${pages.length}` : `Part ${i + 1} of ${pages.length}`;
-      drawHeader(ctx, t, opts, label);
+      const cardsTop = drawHeader(ctx, t, opts, label);
       // Center the block of cards in the space between header and footer.
       const total = items.reduce((sum, it) => sum + it.h, 0) + gap * (items.length - 1);
-      let y = top + Math.max(0, (bottom - top - total) / 2);
+      let y = cardsTop + Math.max(0, (bottom - cardsTop - total) / 2);
       items.forEach((it) => { drawPick(ctx, t, it.p, x, y, w, big); y += it.h + gap; });
       drawFooter(ctx, t, opts);
       canvases.push(c);
