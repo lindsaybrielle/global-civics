@@ -201,3 +201,36 @@ legend { font-weight: 500; font-size: 14px; margin-bottom: 8px; }
 .rating { font-size: 12px; color: var(--muted); }
 .summary-list { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 8px; }
 .summary-list li { font-size: 14px; }
+
+/* Key dates */
+.subhead { font-family: var(--serif); font-weight: 400; font-size: 22px; margin: 24px 0 4px; }
+.dates { display: grid; gap: 10px; margin: 12px 0 8px; }
+.date-row { display: grid; grid-template-columns: minmax(150px, 1fr) 2fr; gap: 12px; border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; background: var(--bg); }
+.date-label strong { display: block; }
+.date-label .fine { display: block; margin-top: 2px; }
+.date-val div + div { margin-top: 4px; }
+@media (max-width: 560px) { .date-row { grid-template-columns: 1fr; gap: 4px; } }
+
+/* Short position bullets */
+.kp { margin: 8px 0 4px 30px; padding: 0; list-style: none; font-size: 14px; }
+.kp li { margin: 2px 0; padding-left: 12px; position: relative; }
+.kp li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
+.kp strong { font-weight: 500; }
+
+/* Every House race */
+.all-house { margin: 20px 0 8px; border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+.all-house > summary { cursor: pointer; }
+.house-row { border-top: 1px solid var(--line); padding: 10px 0; }
+.house-row.mine { background: var(--soft); margin: 0 -14px; padding: 10px 14px; }
+.house-head { margin-bottom: 4px; }
+.house-cands { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
+.house-cands > li { font-size: 15px; }
+.house-cands .party-dot { margin-right: 6px; }
+.house-cands .kp { margin-left: 16px; }
+
+/* AI prompt */
+.ai-box { margin-top: 24px; border: 1.5px solid var(--navy); border-radius: 14px; padding: 16px; }
+.ai-box h3 { margin-top: 0; }
+#ai-prompt { width: 100%; font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; margin-top: 10px; resize: vertical; }
+.house-cands .cand-name { font-size: 15px; }
+.ai-box h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; margin-bottom: 4px; }

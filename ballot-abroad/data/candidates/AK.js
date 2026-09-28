@@ -20,6 +20,7 @@ window.BALLOT_DATA.AK = {
           party: "Democratic Party",
           incumbent: false,
           background: "U.S. Representative for Alaska from 2022 to 2025 and the first Alaska Native in Congress. Yup'ik, raised fishing on the Kuskokwim River.",
+          keyPoints: ["Fishing: ban factory trawling", "Costs: blames tariffs and the Iran war for higher prices", "Abortion: supports abortion rights; also backs gun rights"],
           summary: "Built her campaign around fisheries under her \"Fish, Family, Freedom\" slogan and calls for a ban on factory trawling. Faults the administration's tariffs and the Iran war for higher fuel and living costs, and criticizes Sullivan's vote for the 2025 budget law's Medicaid cuts. Supports abortion rights and stresses her support for gun rights. On resource development she says \"we have to... balance conservation and development.\"",
           inPractice: "Would vote against tariff increases and to restore Medicaid funding. Supports drilling in the Arctic refuge and the King Cove road, and backed the 2025 decision to narrow federal environmental reviews; gave more guarded support to the Ambler Road and Donlin gold mine. Wants to protect the federal workforce, saying no state is more dependent on federal employees than Alaska.",
           sources: [
@@ -37,6 +38,7 @@ window.BALLOT_DATA.AK = {
           party: "Republican Party",
           incumbent: true,
           background: "U.S. Senator since 2015, seeking a third term; a Marine Corps Reserve officer and former Alaska attorney general. Listed on the ballot as \"Dan S. Sullivan.\"",
+          keyPoints: ["Energy: more Alaska oil, gas and mining; faster permits", "Trade: supports the administration's tariffs", "Budget: voted for the 2025 federal budget law"],
           summary: "Runs on Alaska's \"oil and gas comeback,\" crediting regulatory changes made with the Trump administration. Wants faster permitting and to stop \"Lower 48 environmental groups\" from using laws like the Endangered Species Act to block projects. Supports the administration's tariffs and voted for the 2025 federal budget law, and backed the Department of Government Efficiency's cuts. Sen. Lisa Murkowski, who backed Peltola in past House races, has endorsed him.",
           inPractice: "Would keep voting with the Senate Republican majority. Secured mandatory oil and gas lease sales in the Arctic refuge, NPR-A and Cook Inlet with a larger state royalty share, supports the SPEED Act on permitting, and backs the Ambler Road and Donlin gold mine.",
           sources: [
@@ -84,6 +86,7 @@ window.BALLOT_DATA.AK = {
           party: "Democratic Party",
           incumbent: false,
           background: "State representative from 2013 to 2023. Finished first in the August primary with 22.5%. His running mate is Anchorage Assembly member Zac Johnson, an independent.",
+          keyPoints: ["Permanent Fund: cap spending from it in the constitution", "Schools: no vouchers; predictable school funding", "Energy: more Cook Inlet gas, pause on new data centers"],
           summary: "Calls restructuring the Permanent Fund to cap spending from it \"the single most important reform I want to pass as governor.\" Opposes school vouchers (\"public money should go only to public schools\") and wants to \"forward fund\" schools so budgets are predictable. Backs promoting Cook Inlet gas while diversifying energy sources.",
           inPractice: "Would push a constitutional amendment capping Permanent Fund draws, restore defined-benefit pensions for public employees, and keep the voter-approved minimum wage and paid leave law. Wants a moratorium on new data centers until the Legislature regulates them.",
           sources: [
@@ -98,6 +101,7 @@ window.BALLOT_DATA.AK = {
           party: "Republican Party",
           incumbent: false,
           background: "Mayor of Anchorage from 2021 to 2024 His running mate is Josh Church.",
+          keyPoints: ["Permanent Fund: cap spending in the constitution", "Schools: school choice via constitutional amendment", "Economy: open to data centers; opposes new pensions"],
           summary: "Says \"you can't cut your way to a full PFD\" and supports capping Permanent Fund spending in the constitution. Wants school choice through a constitutional amendment so \"money goes in the kid's backpack,\" and says schools need both funding and better results.",
           inPractice: "Would pursue a constitutional amendment for school choice and a Permanent Fund spending cap. Opposes restoring defined-benefit pensions and favors allowing data-center development.",
           sources: [
@@ -112,6 +116,7 @@ window.BALLOT_DATA.AK = {
           party: "Republican Party",
           incumbent: false,
           background: "Founder of a waste-management company and conservative activist. Her running mate is former state Senate Minority Leader Mike Shower.",
+          keyPoints: ["Dividend: pay the full statutory PFD", "Budget: shrink state government", "Party: urges other Republicans to drop out"],
           summary: "Makes the Permanent Fund dividend her priority, promising to pay it under the original statutory formula, which has not been followed in a decade, and to shrink state government significantly. Has called on the other Republicans to withdraw so the party can consolidate behind one candidate.",
           inPractice: "Would pay dividends under the statutory formula and cut state spending. Her Republican opponents Taylor and Bronson say following that formula is unaffordable.",
           sources: [
@@ -127,6 +132,7 @@ window.BALLOT_DATA.AK = {
           party: "Republican Party",
           incumbent: false,
           background: "Alaska attorney general from 2021 to 2025. His running mate is Candice English, who owns an oil and gas support business.",
+          keyPoints: ["Schools: vouchers so money follows the child", "Permanent Fund: cap spending in the constitution", "Economy: more resource extraction; against minimum-wage law"],
           summary: "Supports school vouchers so \"money [can] follow the child,\" and capping Permanent Fund spending in the constitution. Emphasizes resource extraction and energy security, including incentives for Cook Inlet gas.",
           inPractice: "Would back vouchers and a Permanent Fund spending cap. Opposes restoring defined-benefit pensions and the voter-approved minimum wage and paid leave law. He was briefly removed from the ballot over a campaign-finance reporting problem before being reinstated.",
           sources: [

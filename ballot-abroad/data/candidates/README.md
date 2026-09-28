@@ -21,6 +21,7 @@ window.BALLOT_DATA.XX = {
       candidates: [{
         name, party, incumbent, website,  // website = campaign site only
         background,   // who they are, one or two sentences
+        keyPoints,    // competitive races: 3 short "Topic: position" bullets, shown on the card
         summary,      // where they stand
         inPractice,   // what that would actually change
         abroad,       // only when they've said something relevant to Americans abroad
@@ -42,6 +43,7 @@ Writing rules: neutral wording, no adjectives borrowed from either campaign or i
 The stored data is deliberately light. The full deep dive happens on request (see below).
 
 - **Every federal race and every governor race**: list everyone on the ballot, including name, party, incumbent flag and a one-line `background` where known. Candidates who haven't been researched get `summary: "Platform not yet researched for this guide."`, `incomplete: true`, and the official candidate list (or its closest substitute) as the source.
+- **What the app shows:** each candidate's name, party and incumbent flag. For competitive races it also shows the 3 `keyPoints` bullets, each under 90 characters (for example, `"Health care: Medicare for All"`). The longer `summary` and its sources sit behind a "More detail" link. Keep it light; people won't read walls of text.
 - **Competitive races** (`competitive: true`, meaning Cook or Sabato rates it Toss-up or Lean): each Democratic and Republican candidate gets a `summary` covering **at least 3 positions voters care most about**: cost of living and taxes, health care, immigration, abortion, tariffs and trade, and so on. Add the matching `stances` scores where there's evidence, plus 2–3 sources. `inPractice` is optional.
 - **Everything else** (down-ballot statewide offices, courts, measures, and platforms in safe seats) is optional in the stored data. Earlier files go further; that's fine, but don't expand them now.
 

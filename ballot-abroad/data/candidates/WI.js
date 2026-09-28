@@ -19,6 +19,7 @@ window.BALLOT_DATA.WI = {
           party: "Democratic Party",
           incumbent: false,
           background: "Milwaukee County Executive since 2020 and a former state representative. Won an upset in the August primary after briefly dropping out of the race.",
+          keyPoints: ["Health care: state public option", "Schools: more public-school funding", "Taxes: property-tax relief"],
           summary: "Runs on \"affordability, care, and opportunity\": lower housing and energy costs, a public health-insurance option and job creation. Wants to use part of the state's roughly $3 billion surplus to raise public-school funding, and promises property-tax relief. Says Wisconsin needs \"steady, experienced executive leadership.\"",
           inPractice: "Would propose higher school aid and a state public option in his first budget, which would need approval from the Legislature. As governor he would keep the veto over Republican legislation.",
           sources: [
@@ -35,6 +36,7 @@ window.BALLOT_DATA.WI = {
           party: "Republican Party",
           incumbent: false,
           background: "U.S. Representative for Wisconsin's 7th District since 2020 and a former state legislator; grew up on a dairy farm and ran a small business in the Northwoods.",
+          keyPoints: ["Taxes: end property-tax increases; return surplus", "Schools: school choice", "Abortion: keep current 20-week law"],
           summary: "Promises to end property-tax increases, lower utility costs, audit state government and cut waste. Supports school choice, opposes broad increases in school funding and wants the surplus returned as tax cuts. On abortion he said in January 2026 that he would not change Wisconsin's current law, which allows abortion up to 20 weeks; he declined to say whether he still backs a six-week ban he supported as a state legislator.",
           inPractice: "Would push for tax cuts and expanded school choice, and would sign rather than veto Republican bills from the Legislature. His campaign had raised about $12 million by early August, far more than Crowley.",
           sources: [
@@ -147,6 +149,7 @@ window.BALLOT_DATA.WI = {
           party: "Democratic Party",
           incumbent: false,
           background: "Emergency-room nurse with 23 years in health care, including a decade at the VA; first run for office. Endorsed by the United Auto Workers.",
+          keyPoints: ["Health care: renew ACA subsidies", "Drugs: more Medicare price negotiation", "Pitch: families, \"not billionaires\""],
           summary: "Centers his campaign on health-care costs: \"I support renewing the ACA subsidies,\" and wants Medicare to negotiate more drug prices. Says he is running \"to fight for Wisconsin families, not billionaires and big corporations\" after seeing \"a culture of corruption in Washington.\"",
           inPractice: "Would vote to restore the expanded ACA premium subsidies and for broader Medicare drug-price negotiation.",
           sources: [
@@ -162,6 +165,7 @@ window.BALLOT_DATA.WI = {
           party: "Republican Party",
           incumbent: true,
           background: "U.S. Representative since 2019 and a former aide to House Speaker Paul Ryan; chairs the House Administration Committee, which oversees federal election law.",
+          keyPoints: ["Budget: cut spending", "Energy: energy independence", "Elections: chairs the committee on federal election law"],
           summary: "Focuses on cutting government spending, reducing regulations and energy independence. Did not answer the local candidate questionnaires reviewed for this guide.",
           inPractice: "Would continue voting with the House Republican majority. As House Administration chair he has a central role in federal election legislation, including rules affecting mail and overseas voting.",
           sources: [
@@ -207,6 +211,7 @@ window.BALLOT_DATA.WI = {
           party: "Democratic Party",
           incumbent: false,
           background: "Eau Claire small-business owner and former Wisconsin Economic Development Corporation board member; the Democratic nominee here in 2024.",
+          keyPoints: ["Economy: $15 minimum wage, homebuyer credits", "Immigration: secure border plus path to citizenship", "Data centers: federal pause"],
           summary: "Calls for antitrust enforcement, a $15 minimum wage, homebuyer tax credits and ending the war in Iran. Wants \"a commonsense immigration policy that includes a secure border and a pathway to citizenship\" and backs the bipartisan Dignity Act. Supports a federal moratorium on new data centers. Criticizes Van Orden for not holding in-person town halls.",
           inPractice: "Would vote for a minimum-wage increase, the Dignity Act's legal-status path and a pause on data-center construction.",
           sources: [
@@ -222,6 +227,7 @@ window.BALLOT_DATA.WI = {
           party: "Republican Party",
           incumbent: true,
           background: "U.S. Representative since 2023 and a retired Navy SEAL.",
+          keyPoints: ["Taxes: backs the 2025 tax cuts", "Immigration: fully fund ICE; farm-worker visas", "Data centers: allow with local buy-in, no rate hikes"],
           summary: "Points to his support for the 2025 \"Working Families Tax Cuts\" and asks voters to \"read my Congressional record.\" Supports \"fully funding ICE and CBP\" while backing the Agricultural Workforce Reform Act so farms can hire workers without amnesty. Opposes blanket limits on data centers but wants local buy-in, farmland protection, \"zero increase in electric rates\" and closed-loop cooling.",
           inPractice: "Would continue voting with the House Republican majority on taxes and immigration enforcement while pushing for a farm-labor visa overhaul.",
           sources: [

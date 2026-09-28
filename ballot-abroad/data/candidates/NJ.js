@@ -255,6 +255,7 @@ window.BALLOT_DATA.NJ = {
           party: "Democratic Party",
           incumbent: false,
           background: "Former Navy helicopter pilot and experimental test pilot who served 15 years, including in the Air National Guard; first run for office.",
+          keyPoints: ["Taxes: restore the full SALT deduction", "Housing: build more affordable housing", "Costs: cut red tape"],
           summary: "Runs on affordability: restoring the full state and local tax (SALT) deduction for New Jersey taxpayers, cutting red tape and building more affordable housing for buyers and renters.",
           inPractice: "Would vote with House Democrats and push to restore the SALT deduction. Little detail on her other positions was found in the coverage reviewed for this guide.",
           sources: [
@@ -268,6 +269,7 @@ window.BALLOT_DATA.NJ = {
           party: "Republican Party",
           incumbent: true,
           background: "U.S. Representative since 2023, seeking a third term.",
+          keyPoints: ["Budget: \"get our nation's fiscal house in order\"", "Spending: cut duplicative programs", "Iran: voted against a war-powers limit"],
           summary: "Says \"it is imperative that we get our nation's fiscal house in order\" by eliminating duplicative programs and cutting wasteful spending. Voted in September against a war-powers resolution directing U.S. forces out of Iran.",
           inPractice: "Would continue voting with the House Republican majority on spending and national security.",
           sources: [

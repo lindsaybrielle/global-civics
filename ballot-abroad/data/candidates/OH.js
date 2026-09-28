@@ -19,6 +19,7 @@ window.BALLOT_DATA.OH = {
           incumbent: true,
           website: "https://www.jonhustedforsenate.com/",
           background: "Appointed to the Senate in 2025 to fill JD Vance's seat. Was Ohio's lieutenant governor from 2019 to 2025, and was adopted as a child.",
+          keyPoints: ["Taxes: no tax on tips, bigger child tax credit", "Border: tougher border security", "Abortion: endorsed by Ohio Right to Life"],
           summary: "Runs on lower taxes, border security and \"reining in Big Government\". He championed ending federal income tax on tips and raising the child tax credit to $2,200 in the Working Families Tax Cuts Act. He opposes abortion, has been endorsed by Ohio Right to Life in every race, and cosponsored the No Taxpayer Funding for Abortion Act. On data centers, he says tech companies, not households, should pay for the power they use.",
           inPractice: "Would keep voting for the tax cuts he backed and for more border and immigration enforcement funding, which he has already supported in the Senate. Would support federal limits on abortion funding. His opponent points to data-center tax breaks Husted backed as lieutenant governor; Husted says the companies should cover their own energy costs.",
           sources: [
@@ -36,6 +37,7 @@ window.BALLOT_DATA.OH = {
           party: "Democratic Party",
           incumbent: false,
           background: "Represented Ohio in the U.S. Senate from 2007 until he lost re-election in 2024. Is running to return to the Senate.",
+          keyPoints: ["Costs: take on insurers, lower drug prices", "Trade: calls the President's tariffs \"reckless\"", "Abortion: supports abortion rights"],
           summary: "Runs on affordability: taking on health insurance companies, lowering prescription drug costs, protecting worker pensions, and ending tax breaks he says favor billionaires and corporations. He has backed targeted tariffs on steel and washing machines in the past but calls President Trump's tariffs \"reckless\" and wants tariff revenue returned to Ohio families as rebates. He supports abortion rights and backed Ohio's 2023 amendment protecting them. He says data centers should pay for the power they use and criticizes tax breaks given to them.",
           inPractice: "Would side with keeping Affordable Care Act coverage in place, an issue he and Husted have clashed over, and for bills that cap costs like insulin for seniors. Would vote against broad new tariffs and for rebating tariff money to households. Would support federal legislation restoring abortion rights.",
           sources: [
@@ -87,6 +89,7 @@ window.BALLOT_DATA.OH = {
           incumbent: false,
           website: "https://actonforgovernor.com/",
           background: "A physician and former director of the Ohio Department of Health. Her running mate for lieutenant governor is David Pepper, a former chair of the Ohio Democratic Party.",
+          keyPoints: ["Health care: protect Medicaid, cut drug prices, relieve medical debt", "Economy: against \"pay-to-play\" politics", "Immigration: against illegal immigration, enforce the law"],
           summary: "Acton says Ohio should move away from what she calls a trickle-down, pay-to-play economic approach. Amy Acton says she would protect Medicaid and Medicare by reducing enrollment red tape and approval wait times and addressing waste, fraud, and abuse; lower prescription costs through an Ohio Rx purchasing platform and require prescription payments to count toward insurance deductibles; increase hospital and insurance price transparency, strengthen protections against surprise billing, support small-business coverage, and direct the state to relieve medical debt. Acton states that she does not support illegal immigration and supports enforcing state and federal law against people who are in the country unlawfully. Acton says she will protect reproductive freedom and oppose government interference in reproductive-health decisions.",
           sources: ["https://smarter.vote/races/oh-governor-2026/amy-acton/", "https://actonforgovernor.com/issue/affordable-healthcare-for-all-ohioans", "https://actonforgovernor.com/dr-amy-acton-meets-ohioans-in-steubenville-for-a-roundtable-on-healthcare-costs/", "https://actonforgovernor.com/dr-amy-acton-meets-ohioans-in-zanesville-for-a-roundtable-on-healthcare-costs/"],
           asOf: "Sept 2026",
@@ -96,6 +99,7 @@ window.BALLOT_DATA.OH = {
           party: "Republican Party",
           incumbent: false,
           background: "An entrepreneur who won the May 2026 Republican primary. His running mate for lieutenant governor is state Sen. Rob McColley.",
+          keyPoints: ["Taxes: phase out the state income tax", "Health care: crack down on Medicaid fraud", "Immigration: end birthright citizenship"],
           summary: "Ramaswamy’s Ohio economic plan emphasizes making the state more affordable and business-friendly by cutting government waste and regulatory barriers, lowering property taxes, phasing out the state income tax beginning with capital-gains taxes, among other measures. Ramaswamy proposes making Medicaid fraud enforcement a top statewide priority, simplifying Medicaid administration, and seeking federal approval for Ohio to retain a larger share of recovered fraud savings. Ramaswamy has proposed ending birthright citizenship for U.S.-born children of undocumented immigrants, a position he advocated during his 2024 presidential campaign and has not disavowed in his Ohio governor bid. Ramaswamy has publicly described himself as “unapologetically pro-life,” praised Iowa’s six-week abortion ban, and said Dobbs was correct, while arguing abortion policy should be decided by the states rather than through a federal ban.",
           sources: ["https://smarter.vote/races/oh-governor-2026/vivek-ramaswamy/", "https://vivekforohio.com/the-plan/", "https://ohiocapitaljournal.com/2026/08/12/candidates-highlight-data-center-plans-next-ohio-governor-will-select-regulators/", "https://vivekforohio.com/powering-ohios-future-why-coal-still-matters-and-innovation-cant-wait/"],
           asOf: "Sept 2026",
@@ -282,6 +286,7 @@ window.BALLOT_DATA.OH = {
           party: "Democratic Party",
           incumbent: true,
           background: "U.S. Representative since 2023, seeking a third term; former teacher and Cincinnati City Council member.",
+          keyPoints: ["Foreign policy: supported U.S.-Israeli strikes on Iran", "Homeland Security: voted against its funding", "Record: votes mostly with House Democrats"],
           summary: "Beat a progressive challenger in the primary after drawing criticism from some Democrats for supporting U.S.-Israeli strikes on Iran's missile and nuclear programs. Voted against funding the Department of Homeland Security.",
           inPractice: "Would generally vote with House Democrats while taking more hawkish positions on Iran and Israel than many in his party.",
           sources: [
@@ -297,6 +302,7 @@ window.BALLOT_DATA.OH = {
           incumbent: false,
           website: "https://ericconroy.com/",
           background: "Air Force veteran and former CIA officer, 37, from Cincinnati. Endorsed by President Trump.",
+          keyPoints: ["Budget: cut wasteful spending to fight inflation", "Border: stronger border security", "Defense: stronger military; \"steadfast ally of Israel\""],
           summary: "Runs on \"common sense conservative leadership,\" focusing on affordability, crime and education. Says he would fight inflation by cutting what he calls wasteful federal spending, and backs border security and the Trump administration\'s economic agenda. Pledges to strengthen the military and be \"a steadfast ally of Israel.\" Supports reserving women\'s sports for biological females and opposes defunding the police.",
           inPractice: "Would be expected to vote with House Republicans and the Trump administration.",
           sources: [
@@ -469,6 +475,7 @@ window.BALLOT_DATA.OH = {
           party: "Democratic Party",
           incumbent: false,
           background: "Apprenticeship instructor at Ironworkers Local 17 and Brook Park city council member since 2017. Endorsed by Sen. Bernie Sanders and the Working Families Party.",
+          keyPoints: ["Workers: labor rights and manufacturing", "Health care: expand Medicare and Medicaid", "Trade: against current tariffs"],
           summary: "Runs on affordability, workers' rights, affordable health care and American manufacturing. Criticizes the administration's tariffs and wants to expand Medicare and Medicaid.",
           inPractice: "Would vote with House Democrats on labor protections and health coverage and against tariff increases.",
           sources: [
@@ -484,6 +491,7 @@ window.BALLOT_DATA.OH = {
           party: "Republican Party",
           incumbent: true,
           background: "U.S. Representative since 2023 and a former Trump White House aide and Marine reservist.",
+          keyPoints: ["Record: votes with the House Republican majority", "Campaign: faces domestic-abuse allegations he disputes", "Platform: little published detail"],
           summary: "Seeking a third term while facing domestic-abuse allegations, which he disputes. He has threatened to sue TV stations over an attack ad from his opponent.",
           inPractice: "Would continue voting with the House Republican majority. Little detail on his 2026 platform was found in the coverage reviewed for this guide.",
           sources: [
@@ -538,6 +546,7 @@ window.BALLOT_DATA.OH = {
           party: "Democratic Party",
           incumbent: true,
           background: "U.S. Representative since 1983, seeking a 23rd term; the longest-serving woman in congressional history.",
+          keyPoints: ["Economy: top priority", "Health care: strengthen the ACA, expand Medicaid", "Abortion: \"between a woman and her doctor\""],
           summary: "Marcy Kaptur's top priority is strengthening the economy. Marcy Kaptur supports strengthening the Affordable Care Act to expand access and lower health-care costs, including expanding premium subsidies and encouraging Medicaid expansion where states have not adopted it. Marcy Kaptur supports secure borders and legal immigration. Says a woman's health decisions \"must be between a woman and her doctor.\"",
           inPractice: "Would continue as a senior Democrat on the Appropriations Committee.",
           sources: ["https://smarter.vote/races/oh-house-09-2026/marcy-kaptur/", "https://marcykaptur.com/priorities", "https://kaptur.house.gov/issues/energy", "http://kaptur.house.gov/media-center/press-releases/inflation-reduction-act-kaptur-votes-lower-healthcare-and-energy-costs"],
@@ -548,6 +557,7 @@ window.BALLOT_DATA.OH = {
           party: "Republican Party",
           incumbent: false,
           background: "Former state representative who won a five-way primary; the Republican nominee here in 2024.",
+          keyPoints: ["Taxes: lower taxes, less regulation", "Immigration: no amnesty; deport illegal entrants", "Abortion: strict limits"],
           summary: "Advocates pro-growth, business-friendly economic policy by lowering taxes and reducing regulatory burdens to help small businesses grow and create jobs. Supports lowering health care costs by increasing price transparency and reducing government mandates; advocates for policies that require providers to post prices so patients can compare costs. Advocates for strict immigration enforcement and secure borders; opposes amnesty for illegal immigrants and supports deportation of those who enter illegally. Advocates for strict abortion restrictions, including bans before fetal viability (such as six-week bans) with limited or no exceptions for rape or incest; co-sponsored near-total abortion bans and supported Ohio's Heartbeat Bill and related measures, among other measures.",
           inPractice: "Would be expected to vote with House Republicans. Little detail on his platform was found in the coverage reviewed for this guide.",
           sources: ["https://smarter.vote/races/oh-house-09-2026/derek-merrin/", "https://www.facebook.com/derekmerrinforohio/videos/health-care/713709912341128/", "https://www.linkedin.com/posts/derek-merrin-584a856_ohio-lawmakers-want-hospitals-to-follow-pricing-activity-7032179689368535040-BVzj?trk=public_profile_share_view", "https://ohiohouse.gov/news/republican/representative-derek-merrin-proposes-tax-change-to-support-small-businesses-83204"],

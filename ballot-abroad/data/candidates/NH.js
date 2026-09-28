@@ -19,6 +19,7 @@ window.BALLOT_DATA.NH = {
           party: "Democratic Party",
           incumbent: false,
           background: "U.S. Representative for New Hampshire's 1st District since 2019 and a former member of the state Executive Council.",
+          keyPoints: ["Trade: against current tariffs", "Abortion: restore Roe nationally", "Health care: protect Medicaid, Medicare, Social Security"],
           summary: "Runs on living costs and on opposing the Trump administration's tariffs, health-care cuts and military action abroad. Supports restoring the protections of Roe v. Wade nationally and opposes a federal abortion ban. Wants to protect Medicaid, Medicare and Social Security, and would have people earning over $1 million pay Social Security tax on more of their income. Has supported military aid to Ukraine and Taiwan.",
           inPractice: "In the House he has sometimes broken with his party, including voting for the Laken Riley Act on detaining immigrants charged with certain crimes. He voted against U.S. military action in Iran without congressional approval. He would oppose proof-of-citizenship requirements for voting, which he says put \"undue burdens\" on eligible voters, and has backed no-excuse mail voting.",
           sources: [
@@ -34,6 +35,7 @@ window.BALLOT_DATA.NH = {
           party: "Republican Party",
           incumbent: false,
           background: "Former U.S. Senator (2003–2009) and U.S. Representative, and brother of former Gov. Chris Sununu. Endorsed by President Trump, whom he called \"a loser\" in 2024.",
+          keyPoints: ["Taxes: lower taxes, cut regulations", "Trade: tariffs only \"at a reasonable rate\"", "Immigration: limit birthright citizenship"],
           summary: "Runs on lowering taxes and cutting regulations, and presents himself as a traditional conservative. Has criticized parts of the President's trade policy, saying \"if you're going to have tariffs, set them at a reasonable rate,\" and said he would not have attacked Iran. Supports a constitutional amendment to limit birthright citizenship and requiring photo ID to vote. Backs more energy infrastructure, including pipelines.",
           inPractice: "Would generally vote with Senate Republicans on taxes and spending while signaling independence on tariffs and foreign policy. He did not answer Citizens Count's survey questions on abortion, Ukraine aid or mail voting.",
           sources: [
@@ -97,6 +99,7 @@ window.BALLOT_DATA.NH = {
           party: "Democratic Party",
           incumbent: false,
           background: "Former Portsmouth city councilor and daughter of Sen. Jeanne Shaheen. Has advocated for diabetes and medical research for 15 years.",
+          keyPoints: ["Abortion: federal right to abortion", "Health care: Medicare for All", "Trade: against current tariffs"],
           summary: "Supports a federal right to abortion and has spoken about her own abortion. Backs automatic-enrollment Medicare for All. Opposes the Trump administration's tariffs, saying they hurt families and small businesses. Wants an overhaul of ICE, including body cameras, a ban on masks and an end to raids at schools, churches and hospitals.",
           inPractice: "Would vote with House Democrats to restrict immigration-enforcement tactics and against tariff increases. Supports overturning Citizens United, limiting private-equity purchases of homes and requiring congressional approval before military action in Iran or Venezuela.",
           sources: [
@@ -112,6 +115,7 @@ window.BALLOT_DATA.NH = {
           party: "Republican Party",
           incumbent: false,
           background: "Seacoast businessman who owns Key Auto Group and has long supported Republican candidates. This is his first run for Congress.",
+          keyPoints: ["Trade: supports tariffs", "Taxes: extend the 2017 tax cuts; balanced budget", "Abortion: no federal law either way"],
           summary: "Supports tariffs as a way to raise revenue and bring back manufacturing, while noting concern about inflation. Wants to extend the 2017 tax cuts, balance the budget and supports a Balanced Budget Amendment. Opposes federal abortion legislation in either direction, deferring to New Hampshire law. Says deportation is the remedy for illegal immigration and supports proof of citizenship to vote.",
           inPractice: "Would vote with House Republicans on taxes, tariffs and immigration enforcement. He opposes Medicare for All and would change the Affordable Care Act by loosening regulations and adding insurers. Supports new natural gas pipelines into New England and opposes a ban on military-style firearms.",
           sources: [

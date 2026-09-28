@@ -18,6 +18,7 @@ window.BALLOT_DATA.IA = {
           party: "Democratic Party",
           incumbent: false,
           background: "Iowa state representative and two-time Paralympic gold medalist. He was born with spina bifida, which he links to his father's Agent Orange exposure in Vietnam.",
+          keyPoints: ["Trade: blames tariffs for falling crop prices", "Health care: repeal Medicaid cuts", "Abortion: restore Roe-era protections"],
           summary: "Runs as a populist focused on farm country and costs. Blames tariffs directly for falling commodity prices and warns Iowa is heading toward \"a 1980s-style farm crisis.\" Wants to repeal the Medicaid cuts in the 2025 federal budget law and then expand Medicaid funding. Wants to restore Roe-era abortion protections nationally.",
           inPractice: "Would vote against tariff increases and for bills restoring Medicaid funding. Would support a federal law protecting abortion access. In the Iowa House he sponsored legislation to repeal the state's near-total abortion ban.",
           sources: [
@@ -34,6 +35,7 @@ window.BALLOT_DATA.IA = {
           party: "Republican Party",
           incumbent: false,
           background: "U.S. Representative for Iowa's 2nd District and a former state legislator. Launched her campaign promising to be President Trump's \"top ally\" in the Senate.",
+          keyPoints: ["Trade: backs the President's tariffs", "Economy: tax cuts, new Farm Bill", "Abortion: opposes a legal right, with exceptions"],
           summary: "Runs on continuing President Trump's \"America First\" agenda: cutting taxes, tighter immigration enforcement and conservative cultural priorities. Backs the President's tariffs, saying they \"level the playing field\" for Iowa producers, and supports a new Farm Bill and expanded export markets. Opposes a legal right to abortion, with exceptions for rape, incest and the life of the mother. Pushes a ban on stock trading by members of Congress.",
           inPractice: "Would generally vote with the Trump administration, including on tariffs and immigration enforcement. As a state legislator she voted for Iowa's six-week abortion ban, and in Congress she co-sponsored the Life at Conception Act. On the trail she has also talked about expanding over-the-counter access to birth control.",
           sources: [
@@ -61,6 +63,7 @@ window.BALLOT_DATA.IA = {
           incumbent: false,
           website: "https://robsand.com/",
           background: "Iowa State Auditor. His running mate is Crawford County Supervisor Dave Muhlbauer.",
+          keyPoints: ["Health care: end private management of Iowa Medicaid", "Abortion: veto new limits on abortion, IVF or birth control", "Taxes: keep Iowa's recent income-tax cuts"],
           summary: "Pitches himself as a check on one-party control and stresses bipartisanship. Would begin ending private management of Iowa's Medicaid program on his first day, saying it has raised costs and lowered quality of care. Opposed Iowa's six-week abortion ban and pledges to veto new limits on abortion, IVF or contraception. His campaign says he would not reverse Iowa's recent income tax cuts.",
           inPractice: "Would end contracts with the private insurers that run Iowa Medicaid and crack down on pharmacy benefit managers. His health plan adds water-quality monitoring, radon testing and a cabinet-level cancer task force. He supports banning eminent domain for private carbon dioxide pipelines.",
           sources: [
@@ -79,6 +82,7 @@ window.BALLOT_DATA.IA = {
           incumbent: false,
           website: "https://www.zachlahn.com/",
           background: "Eastern Iowa farm owner and businessman who has not held office; he previously worked for Americans for Prosperity and co-founded a private school in Wichita, Kansas. Won an upset in the June Republican primary. His running mate is state Rep. Derek Wulf.",
+          keyPoints: ["Abortion: \"pro-life at conception\"; ban abortion pills", "Taxes: lower property taxes; tax Wall Street landlords more", "Immigration: end benefits for people here illegally"],
           summary: "Runs on an \"Iowa First\" agenda for family farms and rural communities. Describes himself as \"unapologetically pro-life at conception\" and wants to go further than Iowa's current law, including banning abortion pills. Would lower property taxes for Iowans partly by raising them on Wall Street institutional investors, and ban hedge funds from buying single-family homes. Wants to end benefits for immigrants in the country illegally.",
           inPractice: "Would keep private insurers managing Iowa Medicaid and would not reverse Iowa's 2014 Medicaid expansion. Would stop state government and universities from hiring on H-1B visas for jobs Iowans can do, and redirect economic-development money to Iowa-owned companies. He supports banning eminent domain for private carbon dioxide pipelines.",
           sources: [
@@ -217,6 +221,7 @@ window.BALLOT_DATA.IA = {
           incumbent: false,
           website: "https://bohannanforcongress.com/",
           background: "University of Iowa law professor and former state representative (2021–2023); the Democratic nominee here in 2022 and 2024.",
+          keyPoints: ["Trade: reverse tariffs hurting farmers", "Health care: reverse Medicaid cuts; Medicare buy-in", "Ethics: lifetime lobbying ban for members of Congress"],
           summary: "Focuses on costs: reversing the tariffs and trade wars she says are hurting farmers and families, lowering drug prices and limiting investor purchases of homes. Wants to reverse the 2025 federal Medicaid cuts and let Americans of any age buy into Medicare. Her ethics plan includes a lifetime lobbying ban for members of Congress and an independent ethics agency. Says thousands of 2024 Trump voters also voted for her.",
           inPractice: "Would vote against tariff increases and to restore Medicaid funding, and would push a Medicare buy-in and new congressional ethics rules.",
           sources: [
@@ -232,6 +237,7 @@ window.BALLOT_DATA.IA = {
           party: "Republican Party",
           incumbent: true,
           background: "U.S. Representative since 2021; a physician and military veteran.",
+          keyPoints: ["Budget: supported the 2025 federal budget law", "Health care: lower drug costs via insurance changes", "Other: stop China buying farmland; ban congressional stock trading"],
           summary: "Highlights her support for the 2025 federal budget law, efforts to lower drug costs through association health plans and pharmacy-benefit-manager changes, and taking on insurers. Campaigns on keeping \"boys out of girls' sports,\" stopping China from buying Iowa farmland and banning stock trading by members of Congress.",
           inPractice: "Would keep voting with the House Republican majority. Her vote for the 2025 budget law, which cut Medicaid, is the main line of attack against her.",
           sources: [
@@ -268,6 +274,7 @@ window.BALLOT_DATA.IA = {
           party: "Democratic Party",
           incumbent: false,
           background: "State representative from Dubuque since 2019 and Iowa House minority whip.",
+          keyPoints: ["Health care: reverse Medicaid and ACA cuts", "Rural: shore up rural hospitals", "Costs: affordability first"],
           summary: "Centers her campaign on affordability and health care, pointing to cuts to Medicaid and ACA coverage, pressure on rural hospitals and Iowa's rising cancer rates. Has made her faith part of her closing pitch.",
           inPractice: "Would vote to reverse the 2025 Medicaid cuts and to shore up rural hospitals.",
           sources: [
@@ -283,6 +290,7 @@ window.BALLOT_DATA.IA = {
           party: "Republican Party",
           incumbent: false,
           background: "Former state representative (2019–2023), 29 years old; beat state Rep. Charlie McClintock in the primary.",
+          keyPoints: ["Budget: cut federal spending", "Trade: defends the President's tariffs", "Immigration: no Medicaid for noncitizens"],
           summary: "Pledges to reduce federal spending and \"take power back from insiders.\" Defends the President\'s tariffs, saying farmers back them because past trade deals disadvantaged American agriculture. Says noncitizens should not receive Medicaid and wants to root out waste and fraud in the program. Calls legal immigration a privilege and says companies should never be rewarded for hiring people in the country illegally.",
           inPractice: "Would be expected to vote with the House Republican majority on spending.",
           sources: [
@@ -311,6 +319,7 @@ window.BALLOT_DATA.IA = {
           party: "Democratic Party",
           incumbent: false,
           background: "State senator since 2021, a Lutheran pastor and a food-bank executive.",
+          keyPoints: ["Trade: end the current tariff policy", "Health care: reverse Medicaid cuts", "Wages: raise the minimum wage, bigger family tax credits"],
           summary: "Makes opposition to the administration's tariffs central, calling for \"ending the reckless tariff policy that is raising prices on ordinary families.\" Says farmers are squeezed by fertilizer and diesel costs from the Iran war, trade wars and monopolies. Wants to reverse the 2025 Medicaid cuts, which she links to rural clinic closures, raise the federal minimum wage and expand the Child Tax Credit and EITC.",
           inPractice: "Would vote against tariffs and for restoring Medicaid funding, a higher minimum wage and larger family tax credits.",
           sources: [
@@ -326,6 +335,7 @@ window.BALLOT_DATA.IA = {
           party: "Republican Party",
           incumbent: true,
           background: "U.S. Representative since 2023; an Air Force Reserve colonel and former National Security Council staffer who served in both chambers of the Iowa Legislature.",
+          keyPoints: ["Taxes: voted for the 2025 tax cuts (tips, overtime)", "Farming: ban foreign beef imports", "War powers: voted to limit U.S. action in Iran"],
           summary: "Voted for the 2025 federal budget law, calling it \"the largest tax cut in American history\" for tips and overtime; it also added Medicaid and SNAP work requirements. Introduced a bill to ban foreign beef imports and says he will focus on border security, energy independence and tax cuts. Broke with most Republicans to vote for a war-powers resolution limiting U.S. military action in Iran.",
           inPractice: "Would continue voting with House Republicans on taxes and spending while occasionally breaking with them on trade and war powers.",
           sources: [

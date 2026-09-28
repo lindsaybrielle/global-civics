@@ -19,6 +19,7 @@ window.BALLOT_DATA.NC = {
           party: "Democratic Party",
           incumbent: false,
           background: "Governor of North Carolina from 2017 to 2025 and state attorney general for 16 years before that. He also served in the state House and Senate.",
+          keyPoints: ["Costs: \"Make Stuff Cost Less\"", "Trade: end \"chaotic\" tariffs", "Health care: protect Medicare and Medicaid"],
           summary: "Runs mainly on living costs, touring the state on a \"Make Stuff Cost Less\" message. Wants to end what he calls \"chaotic\" tariffs, which he says raise costs for farmers and consumers. Points to the Medicaid expansion passed under his administration and says he would protect Medicare and Medicaid. Says violent criminals should be deported but opposes \"randomly sweeping up people based on what they look like.\"",
           inPractice: "Would vote against the current tariffs and against federal Medicaid cuts. His cost plan includes blocking grocery-chain mergers, banning algorithmic pricing aimed at individual shoppers and at rents, and requiring upfront health-care prices. As governor he vetoed the state's 2023 12-week abortion limit (the legislature overrode him) and a bill requiring sheriffs to cooperate with federal immigration authorities.",
           sources: [
@@ -36,6 +37,7 @@ window.BALLOT_DATA.NC = {
           party: "Republican Party",
           incumbent: false,
           background: "Lawyer from Gaston County; chaired the North Carolina Republican Party from 2019 to 2024 and then the Republican National Committee. This is his first run for office. Endorsed by President Trump.",
+          keyPoints: ["Trade: backs the President's tariffs and tax cuts", "Border: supports the deportation effort", "Energy: expand domestic production"],
           summary: "Runs in support of President Trump's agenda, saying the economy is improving under it and that voters will \"take home more money and keep more money.\" Backs the President's tariffs, saying they make America \"stronger, freer, and more prosperous,\" and his tax cuts. Calls border security \"a top priority\" and supports the administration's deportation efforts. Stresses expanding domestic energy production and criticizes Cooper's record on bail and crime.",
           inPractice: "Would generally vote with the Trump administration, including on tariffs, tax cuts and immigration enforcement. He praised the 2025 federal immigration operation in Charlotte. His campaign site gives few detailed policy proposals.",
           sources: [
@@ -89,6 +91,7 @@ window.BALLOT_DATA.NC = {
           party: "Democratic Party",
           incumbent: true,
           background: "U.S. Representative since 2023 and a former state senator and Air Force officer. GovTrack ranked him the House Democrat furthest to the right in 2023–2024.",
+          keyPoints: ["Pitch: independent voice, not a party loyalist", "Costs: rising prices in eastern NC", "Immigration: voted for the Laken Riley Act"],
           summary: "Presents himself as an independent voice rather than a party loyalist. Focuses on living costs, saying eastern North Carolinians \"feel that they're at their wit's end because of pricing.\" Points to federal money he secured for local infrastructure and to his work on veterans' caregiver programs.",
           inPractice: "Crosses party lines on some votes: he was the only North Carolina Democrat to vote for the Laken Riley Act, which requires detaining immigrants charged with certain crimes. He voted against the 2025 federal budget law (the \"One Big Beautiful Bill\"), saying families in his district would \"bear the brunt\" of its spending choices.",
           sources: [
@@ -104,6 +107,7 @@ window.BALLOT_DATA.NC = {
           party: "Republican Party",
           incumbent: false,
           background: "Retired Army colonel and business owner who worked on cybersecurity in the second Trump administration. Narrowly lost to Davis in 2024, then won the March 2026 primary. Endorsed by President Trump.",
+          keyPoints: ["Economy: jobs and farmers", "Border: border wall, \"Remain in Mexico\"", "Abortion: backed by SBA Pro-Life America"],
           summary: "Runs on jobs and economic development, saying eastern North Carolina \"has never really had a jobs champion,\" and on support for farmers. In her 2024 campaign she backed building a border wall and restoring the \"Remain in Mexico\" policy. Endorsed by SBA Pro-Life America; has said she supports limits on late-term abortion \"with reasonable exceptions.\"",
           inPractice: "Would be expected to vote with the Republican majority and the Trump administration on immigration enforcement. On veterans' care she favors letting more veterans use outside providers and new treatments for PTSD and brain injuries.",
           sources: [
@@ -141,6 +145,7 @@ window.BALLOT_DATA.NC = {
           party: "Democratic Party",
           incumbent: false,
           background: "Won the March Democratic primary. His grandfather Jamie Clarke represented the district in Congress, and his father and brother have served in the state House.",
+          keyPoints: ["Hurricane Helene: speed up recovery money", "Health care: reverse Medicare and Medicaid cuts", "Immigration: long-term reform"],
           summary: "Centers his campaign on Hurricane Helene recovery, saying \"mountain families have waited too long\" for federal recovery money. Wants to reverse the Medicare and Medicaid cuts in the 2025 federal budget law. Calls for long-term immigration reform, describing immigration as \"a root cause problem.\"",
           inPractice: "Would vote to restore Medicaid and Medicare funding cut in 2025 and push for faster release of Helene recovery funds. He had more than $2 million on hand this summer, well ahead of his opponent.",
           sources: [
@@ -157,6 +162,7 @@ window.BALLOT_DATA.NC = {
           party: "Republican Party",
           incumbent: false,
           background: "Second-term state representative from Henderson County, chosen by district Republicans in August to replace Rep. Chuck Edwards on the ballot.",
+          keyPoints: ["Costs: affordability for working families", "Border: \"secure borders... the legal way\"", "Health care: opposed Medicaid expansion"],
           summary: "Says she would work to \"make life more affordable for working families, improve community safety, support our farmers\" and keep Helene recovery resources flowing. On immigration: \"I believe in secure borders... We have to do it the legal way.\" As a state House candidate she opposed Medicaid expansion before it passed.",
           inPractice: "Would be expected to vote with the Republican House majority. She entered the race with under 90 days left and far less money than her opponent.",
           sources: [

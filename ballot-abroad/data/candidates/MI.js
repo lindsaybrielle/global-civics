@@ -20,6 +20,7 @@ window.BALLOT_DATA.MI = {
           incumbent: false,
           website: "https://abdulforsenate.com/",
           background: "Physician and epidemiologist who led the Detroit and Wayne County health departments; ran for governor in 2018. Endorsed by Sen. Bernie Sanders.",
+          keyPoints: ["Health care: Medicare for All", "Taxes: wealth tax, end corporate tax breaks", "Immigration: abolish ICE"],
           summary: "Built his campaign on \"money out of politics, money in your pocket, Medicare for All.\" Co-wrote a book on single-payer health care and wants to replace the current system with it, while letting workers keep supplemental union or employer coverage. Supports a wealth tax, ending corporate tax breaks and a \"steady, thoughtful and targeted\" approach to tariffs. Calls for abolishing ICE, which he says is being used as a \"paramilitary force.\" Supports abortion rights and has criticized U.S. aid to Israel's government.",
           inPractice: "Would vote for single-payer health care, higher taxes on the wealthy and corporations, and against funding ICE in its current form. Wants data-center developers and utilities held to rules on electric rates, reliability and Michigan's clean-energy law.",
           sources: [
@@ -36,6 +37,7 @@ window.BALLOT_DATA.MI = {
           party: "Republican Party",
           incumbent: false,
           background: "Former FBI agent and U.S. Representative (2001–2015) who chaired the House Intelligence Committee. Lost the 2024 Senate race to Elissa Slotkin by about 19,000 votes. Endorsed by President Trump.",
+          keyPoints: ["Loyalty: \"stand with\" President Trump", "Taxes: tax cuts for working families", "Immigration: backs the administration's enforcement"],
           summary: "Pledges to \"stand with\" President Trump. Wants tax cuts for working families and a manufacturing revival, and blames regulations and clean-energy standards for an \"artificial increase\" in energy prices. Defends the administration's immigration enforcement. Opposed the Affordable Care Act in Congress and opposed extending its enhanced premium subsidies; favors price-transparency penalties and expanding the TrumpRx drug-price program. In 2024 he said he would \"do nothing\" to change Michigan's constitutional abortion protections.",
           inPractice: "Would generally vote with the Trump administration, including on immigration and Homeland Security funding. Supports a one-year pause on new data centers. His housing plan would let families use 529 education savings for down payments.",
           sources: [
@@ -102,6 +104,7 @@ window.BALLOT_DATA.MI = {
           party: "Democratic Party",
           incumbent: false,
           background: "Michigan Secretary of State since 2019, overseeing the state's elections. Her running mate is Senate Majority Leader Winnie Brinks.",
+          keyPoints: ["Health care: drug-price board, caregiver tax credit", "Rights: protect abortion and voting rights", "Schools: invest in public schools and reading"],
           summary: "Runs on lowering costs, expanding housing and health-care access, investing in public schools and protecting abortion and voting rights. Wants a government that \"saves us time, saves us money and makes our life easier.\" Has not proposed eliminating the state income tax.",
           inPractice: "Would create a state Prescription Drug Affordability Board, a $5,000 tax credit for family caregivers and Medicaid-covered doula and midwife services. Her education plan tracks third-grade reading statewide and expands career and technical education.",
           sources: [
@@ -118,6 +121,7 @@ window.BALLOT_DATA.MI = {
           incumbent: false,
           website: "https://johnjamesmi.com/",
           background: "U.S. Representative for Michigan's 10th District since 2023 and a former Army aviation officer. Was the Republican Senate nominee in 2018 and 2020. His running mate is Jay DeBoyer.",
+          keyPoints: ["Taxes: phase out the state income tax", "Schools: school choice, charter expansion", "Abortion: endorsed by Right to Life"],
           summary: "Wants to phase out Michigan's 4.25% income tax, starting with a roughly 25% cut in his first year paid for partly by cutting what he calls waste and \"corporate welfare\" in Lansing. Runs on lower energy costs, school choice, road and bridge funding and support for police. Has been endorsed by Right to Life of Michigan.",
           inPractice: "Would audit state agencies and limit budget earmarks to fund the tax cut. Would opt Michigan into the federal Education Freedom Tax Credit for private-school scholarships, expand charter schools and back a \"Parents' Bill of Rights.\" In Congress he voted for the 2025 federal budget law that cut Medicaid funding.",
           sources: [
@@ -314,6 +318,7 @@ window.BALLOT_DATA.MI = {
           incumbent: false,
           website: "https://seanmccannforcongress.com/",
           background: "State senator from Kalamazoo, term-limited in the Legislature; previously a state representative, Kalamazoo city commissioner and American Red Cross disaster-relief worker. Endorsed by Gov. Gretchen Whitmer.",
+          keyPoints: ["Costs: lower costs for families", "Health care: accessible health care", "Record: tax relief and housing in the state Senate"],
           summary: "Runs on lowering costs and making health care accessible, pointing to his legislative record on tax relief for working families and housing. Casts the race as a choice between \"regular everyday people\" and \"special interests and millionaires and billionaires.\"",
           inPractice: "Would vote with House Democrats on health-care costs. Republicans attack his state tax votes; he says his record has helped working families.",
           sources: [
@@ -328,6 +333,7 @@ window.BALLOT_DATA.MI = {
           party: "Republican Party",
           incumbent: true,
           background: "U.S. Representative for West Michigan since 2011 and a former state representative; co-owns his family's gravel business.",
+          keyPoints: ["Taxes: \"cut taxes, strengthen our economy\"", "Health care: against \"government-run health care\"", "Record: votes with the House majority"],
           summary: "Runs on \"common-sense solutions\" to \"lower costs, cut taxes, strengthen our economy.\" Warns against what he describes as Democratic plans for \"government-run health care.\" Won his August primary with about 85% of the vote.",
           inPractice: "Would continue voting with the Republican majority on taxes and spending. He has been rated for bipartisan work by outside groups, which his campaign highlights.",
           sources: [
@@ -364,6 +370,7 @@ window.BALLOT_DATA.MI = {
           party: "Democratic Party",
           incumbent: false,
           background: "Organizer who co-founded the Sunrise Movement climate group and Lansing-area tenant groups. Beat former Ambassador Bridget Brink in the August primary. Endorsed by Sen. Bernie Sanders, the Michigan AFL-CIO and the UAW.",
+          keyPoints: ["Health care: universal coverage", "Workers: stronger union rights", "Climate: major climate action"],
           summary: "Runs on universal health care, labor rights, affordable housing, and child and senior care, including \"the right to form a union, so we and our coworkers can have each other's backs.\" Has built his political work around climate action.",
           inPractice: "Would vote for single-payer or universal health coverage, stronger union protections and climate spending.",
           sources: [
@@ -380,6 +387,7 @@ window.BALLOT_DATA.MI = {
           party: "Republican Party",
           incumbent: true,
           background: "U.S. Representative since 2025, former state senator and state representative, and an Army helicopter pilot who served in Iraq and Afghanistan.",
+          keyPoints: ["Costs: housing and affordability", "Taxes: lower taxes", "Endorsed by: President Trump, Club for Growth"],
           summary: "Runs on affordability, housing and lower taxes, saying \"I'll always put Michigan ahead of political party to make raising a family a little more affordable.\" Endorsed by President Trump, the Club for Growth and Americans for Prosperity Action.",
           inPractice: "Would continue voting with the House Republican majority on taxes and spending. He had raised about $6.3 million by mid-July, roughly five times his opponent.",
           sources: [
@@ -425,6 +433,7 @@ window.BALLOT_DATA.MI = {
           party: "Democratic Party",
           incumbent: false,
           background: "Former prosecutor in the Washtenaw and Wayne County offices for a decade; ran for Macomb County prosecutor in 2024. Endorsed by EMILY's List.",
+          keyPoints: ["Health care: lower health costs", "Abortion: \"reproductive freedom\"", "Voting: protect voting rights"],
           summary: "Runs on lowering health-care costs, protecting voting rights and \"reproductive freedom.\" Says \"both parties have left working families behind.\"",
           inPractice: "Would vote with House Democrats to protect abortion access and voting rights and to lower health-care costs.",
           sources: [
@@ -439,6 +448,7 @@ window.BALLOT_DATA.MI = {
           party: "Republican Party",
           incumbent: false,
           background: "Former Army captain who served in the 82nd and 101st Airborne divisions; son of longtime Oakland County Sheriff Mike Bouchard.",
+          keyPoints: ["Border: stronger enforcement", "Trade: calls tariffs \"temporary\" and agrees with them", "Schools: Parents Bill of Rights"],
           summary: "Runs on national security, border enforcement, American manufacturing and jobs, lower costs, support for law enforcement and parental choice in education. Calls the administration\'s tariffs \"temporary\" and says he agrees with the President\'s reasoning. Mostly backs the Parents Bill of Rights that passed the House in 2025. Endorsed by Right to Life of Michigan; his website gives few specifics on health care.",
           inPractice: "Would vote with House Republicans on border enforcement and immigration.",
           sources: [

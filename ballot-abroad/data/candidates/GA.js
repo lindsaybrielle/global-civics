@@ -57,6 +57,7 @@ window.BALLOT_DATA.GA = {
           incumbent: false,
           website: "https://www.keishaforgovernor.com/",
           background: "Former mayor of Atlanta (2018–2022) and former White House senior adviser.",
+          keyPoints: ["Costs: end state tax on groceries and diapers", "Health care: expand Medicaid", "Drugs: board to control prescription prices"],
           summary: "Focused on the cost of living: removing state tax on groceries, diapers and menstrual products, extending the gas tax suspension, free community college, and help for first-time homebuyers. Would expand Medicaid and create a board to control prescription drug prices.",
           inPractice: "Expanding Medicaid would cover about 300,000 more Georgians and send more federal money to struggling rural hospitals. She would crack down on corporate landlords buying up homes, rewrite the school funding formula, and slow the approval of new data centers because of their effect on power bills and water.",
           abroad: "Promises to protect absentee voting and limit the State Election Board's power over local election offices. Both affect how overseas ballots are handled.",
@@ -73,6 +74,7 @@ window.BALLOT_DATA.GA = {
           party: "Republican Party",
           incumbent: false,
           background: "Healthcare business founder and former foster youth. Making his first run for office, and won the Republican runoff.",
+          keyPoints: ["Taxes: halve the state income tax", "Health care: opposes Medicaid expansion", "Schools: ban DEI programs"],
           summary: "His \"Jackson Action Plan\" would cut Georgia's income tax in half over his first term, lower property taxes, end state income tax on tips, and speed up housing approvals. He opposes Medicaid expansion, would ban DEI programs in state government and public schools, and would keep Georgia's current abortion law.",
           inPractice: "Halving the income tax would be one of the largest state tax cuts in the country, with big trade-offs for the budget. Georgia would stay one of the few states that hasn't expanded Medicaid. His veterans plan adds a state veterans office, a 24/7 support hotline and license-fee waivers for military families.",
           sources: [

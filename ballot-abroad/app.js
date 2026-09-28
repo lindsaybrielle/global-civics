@@ -51,6 +51,7 @@
       e.preventDefault();
       ["zip", "city", "street"].forEach((k) => { state.where[k] = $("#" + k).value.trim(); });
       save();
+      renderPrompt();
       loadLocal();
     });
 
@@ -69,8 +70,43 @@
 
   function show(sel) { $(sel).classList.remove("hidden"); }
 
-  // ---------- step 2: registration ----------
+  // ---------- step 2: key dates + registration ----------
+  // FVAP lists several methods or voter groups in one cell. Break them onto lines,
+  // keep each group label with its date, and hide military-only rows (this app is
+  // for civilians abroad; military voters are pointed to FVAP).
+  function splitDates(s) {
+    const parts = String(s || "").split(/\s(?=(?:By |Return by |Request |Within the U\.S\.|Outside the U\.S\.|Uniformed Services|Overseas Citizens|All other UOCAVA))/).map((x) => x.trim()).filter(Boolean);
+    const lines = [];
+    for (let i = 0; i < parts.length; i++) {
+      const label = !/\d|Not Required|No Deadline|Not Permitted/.test(parts[i]) && i + 1 < parts.length;
+      if (label) { parts[i + 1] = `${parts[i]} · ${parts[i + 1]}`; continue; }
+      lines.push(parts[i]);
+    }
+    const civilian = lines.filter((l) => !/^Uniformed Services/.test(l));
+    return civilian.length ? civilian : lines;
+  }
+
+  function renderKeyDates() {
+    const box = $("#key-dates");
+    const d = (window.DEADLINES || {})[state.where.state];
+    if (!d) { box.innerHTML = ""; return; }
+    const st = stateName(state.where.state);
+    const row = (label, help, val) => `<div class="date-row">
+        <div class="date-label"><strong>${label}</strong><span class="fine">${help}</span></div>
+        <div class="date-val">${splitDates(val).map((x) => `<div>${esc(x)}</div>`).join("")}</div>
+      </div>`;
+    box.innerHTML = `<div class="dates">
+        ${row("Register", "Overseas voters register with the FPCA form", d.register)}
+        ${row("Request your ballot", "Also the FPCA. Send a new one every calendar year", d.request)}
+        ${row("Return your ballot", "Election Day is Nov 3, 2026", d.ret)}
+      </div>
+      <p class="fine"><strong>Received by</strong> means it must arrive by then. <strong>Postmarked</strong> or <strong>sent by</strong> means it must be sent by then.${d.runoff ? " Where a row shows two dates, the second is for the Dec. 1 runoff." : ""}</p>
+      ${d.notes ? `<details class="explain"><summary>Fine print for ${esc(st)}</summary><p class="fine">${esc(d.notes)}</p></details>` : ""}
+      <p class="fine">Deadlines for civilians living abroad (military voters: see FVAP) from <a href="${esc(d.fvap)}" target="_blank" rel="noopener">FVAP's ${esc(st)} page</a>, checked ${esc(window.DEADLINES_ASOF || "")}. Always confirm with your local election office.</p>`;
+  }
+
   function renderRegister() {
+    renderKeyDates();
     document.querySelectorAll("#step-register .chip").forEach((b) => {
       b.setAttribute("aria-pressed", String(b.dataset.status === state.status));
       b.onclick = () => { state.status = b.dataset.status; save(); renderRegister(); };
@@ -181,16 +217,18 @@
     const stName = stateName(state.where.state);
 
     if (!data) {
-      state.ballot = { ...window.DEMO_BALLOT, admin: null };
-      status.innerHTML = `<div class="callout"><strong>Demo mode:</strong> we haven't finished researching ${esc(stName)} yet, so these are made-up examples. Use "Show me my local races" below for your real ballot.</div>`;
+      state.ballot = { contests: [], demo: false, admin: null };
+      status.innerHTML = `<div class="callout">We don't have ${esc(stName)}'s races in the guide yet. Use the AI prompt below, or <a href="https://ballotpedia.org/Sample_Ballot_Lookup" target="_blank" rel="noopener">Ballotpedia's sample ballot</a>, to see what's on your ballot.</div>`;
     } else {
       state.ballot = { contests: staticContests(data), demo: false };
       const houseNote = !data.atLarge && !parseInt(state.where.district, 10)
-        ? ` <strong>Add your congressional district in step 1</strong> (or look up your local races below) to see your House race.` : "";
-      status.innerHTML = `<p class="hint">Federal and statewide races for ${esc(stName)}, researched ${esc(data.updated || "")}.${houseNote}</p>`;
+        ? ` Add your congressional district in step 1 to put your House race at the top. Every district is listed below.` : "";
+      status.innerHTML = `<p class="hint">Everyone running for Senate, House and governor in ${esc(stName)}, as of ${esc(data.updated || "")}. 🔥 marks races forecasters call competitive; those candidates get a short summary of their positions.${houseNote}</p>`;
     }
     renderRegister();
     renderBallot();
+    renderAllHouse();
+    renderPrompt();
     show("#step-quiz");
     renderQuizSummary();
   }
@@ -285,6 +323,37 @@
     return "#9a9aad";
   }
 
+  const shortParty = (p) => String(p || "").replace(/ Party$/, "");
+
+  // Three short "Topic: position" bullets, shown for competitive races.
+  function keyPointsHtml(info) {
+    if (!info || !info.keyPoints || !info.keyPoints.length) return "";
+    return `<ul class="kp">${info.keyPoints.map((k) => {
+      const i = k.indexOf(": ");
+      return i > 0 ? `<li><strong>${esc(k.slice(0, i))}:</strong> ${esc(k.slice(i + 2))}</li>` : `<li>${esc(k)}</li>`;
+    }).join("")}</ul>`;
+  }
+
+  // Every House district in the state, compact: names, parties, and key points for competitive seats.
+  function renderAllHouse() {
+    const box = $("#all-house");
+    const data = state.stateData;
+    if (!data || data.atLarge) { box.innerHTML = ""; return; }
+    const races = (data.races || []).filter((r) => r.kind === "usHouse").sort((a, b) => a.districtNumber - b.districtNumber);
+    if (!races.length) { box.innerHTML = ""; return; }
+    const mine = parseInt(state.where.district, 10);
+    const hot = races.filter((r) => r.competitive).length;
+    box.innerHTML = `<details class="all-house" ${mine ? "" : "open"}>
+      <summary><strong>Every U.S. House race in ${esc(stateName(state.where.state))}</strong> <span class="fine">${races.length} districts${hot ? `, ${hot} competitive` : ""}</span></summary>
+      ${races.map((r) => `<div class="house-row${r.districtNumber === mine ? " mine" : ""}">
+        <div class="house-head"><strong>District ${r.districtNumber}</strong>${r.districtNumber === mine ? ` <span class="fine">· your district</span>` : ""}${r.competitive ? ` <span class="hot">🔥 ${esc(r.rating || "Competitive")}</span>` : ""}</div>
+        <ul class="house-cands">${(r.candidates || []).map((c) => `<li>
+          <span class="party-dot" style="background:${partyColor(c.party)}"></span><span class="cand-name">${esc(c.name)}</span>
+          <span class="party">${esc(shortParty(c.party))}${c.incumbent ? " · incumbent" : ""}</span>${keyPointsHtml(c)}</li>`).join("")}</ul>
+      </div>`).join("")}
+    </details>`;
+  }
+
   function candidateMore(cand, stName) {
     const vetted = cand.info && cand.info.summary ? cand.info : null;
     const q = encodeURIComponent(cand.name);
@@ -294,9 +363,13 @@
       `<a href="https://www.vote411.org/ballot" target="_blank" rel="noopener">Vote411 answers</a>`,
       `<a href="https://www.google.com/search?q=${encodeURIComponent(`"${cand.name}" ${stName} 2026 positions`)}" target="_blank" rel="noopener">News search</a>`,
     ].filter(Boolean).join("");
+    if (vetted && vetted.incomplete) {
+      return `${vetted.background ? `<p><strong>Who they are:</strong> ${esc(vetted.background)}</p>` : ""}
+        <p class="fine">We summarize positions only for competitive races. To read about this candidate:</p>
+        <div class="cand-links">${links}</div>`;
+    }
     if (vetted) {
-      return `${vetted.incomplete ? `<p class="callout">Research in progress: we haven't summarized this candidate's platform yet. Use the links below in the meantime.</p>` : ""}
-        ${vetted.background ? `<p><strong>Who they are:</strong> ${esc(vetted.background)}</p>` : ""}
+      return `${vetted.background ? `<p><strong>Who they are:</strong> ${esc(vetted.background)}</p>` : ""}
         <p><strong>Where they stand:</strong> ${esc(vetted.summary)}</p>
         ${vetted.inPractice ? `<p><strong>In practice:</strong> ${esc(vetted.inPractice)}</p>` : ""}
         ${vetted.abroad ? `<p><strong>For you abroad:</strong> ${esc(vetted.abroad)}</p>` : ""}
@@ -306,6 +379,39 @@
     return `<p>We don't have a checked summary for this candidate yet. Their survey answers on Ballotpedia and Vote411 are the most direct way to compare them. Questions worth checking:</p>
       <ul>${window.ABROAD_QUESTIONS.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
       <div class="cand-links">${links}</div>`;
+  }
+
+  // ---------- AI prompt for the full, address-specific ballot ----------
+  function aiPromptText() {
+    const st = stateName(state.where.state) || "[your state]";
+    const w = state.where;
+    const addr = (w.aiAddress || "").trim() || [w.street, w.city, w.zip && `${w.state} ${w.zip}`].filter(Boolean).join(", ") || `[your full US voting address in ${st}]`;
+    return `I'm a US citizen living abroad and voting absentee in the November 3, 2026 midterm election. My US voting address is: ${addr}.
+
+Please explain everything on my ballot in plain, everyday language, as if to a friend who doesn't follow politics:
+
+1. List every race and ballot measure on my ballot at this address: federal, state, county, city, school board and judges. Use my official sample ballot or my state or county election office where you can, and tell me which source you used.
+2. For each race, explain in one or two sentences what the job does and how it could affect my life.
+3. For each candidate, give their party and a short, neutral summary of where they stand on 3 or 4 issues voters care about most (such as cost of living, health care, immigration, abortion, or whatever is biggest in that race). Link to where each position comes from. Don't tell me who to vote for.
+4. For each ballot measure, explain what a YES vote does and what a NO vote does.
+5. Remind me of ${st}'s deadlines for overseas voters: registering, requesting my ballot, and returning it, including whether I can return it by email or fax.
+
+If you're not sure about something, say so instead of guessing.`;
+  }
+
+  function renderPrompt() {
+    const input = $("#ai-address");
+    if (document.activeElement !== input) input.value = state.where.aiAddress || "";
+    $("#ai-prompt").value = aiPromptText();
+  }
+
+  function initPrompt() {
+    $("#ai-address").addEventListener("input", (e) => { state.where.aiAddress = e.target.value; save(); $("#ai-prompt").value = aiPromptText(); });
+    $("#copy-prompt").addEventListener("click", async () => {
+      const note = $("#copy-prompt-note");
+      try { await navigator.clipboard.writeText(aiPromptText()); note.textContent = "Copied. Paste it into your AI assistant."; }
+      catch (e) { $("#ai-prompt").select(); note.textContent = "Select the text above and copy it."; }
+    });
   }
 
   // ---------- values quiz ----------
@@ -418,7 +524,8 @@
           </label>
           ${!matches[j] && matches.some(Boolean) ? `<p class="match-why">Not enough recorded positions to match this candidate on your answers.</p>` : ""}
           ${matches[j] ? `<p class="match-why">Compared on ${matches[j].compared} issue${matches[j].compared === 1 ? "" : "s"}.${matches[j].agree.length ? ` You agree on ${esc(matches[j].agree.join(", "))}.` : ""}${matches[j].differ.length ? ` You differ on ${esc(matches[j].differ.join(", "))}.` : ""}</p>` : ""}
-          ${isMeasure ? "" : `<details class="more"><summary class="fine">Positions and what they mean</summary>${candidateMore(cand, stName)}</details>`}
+          ${isMeasure ? "" : keyPointsHtml(cand.info)}
+          ${isMeasure ? "" : `<details class="more"><summary class="fine">${cand.info && cand.info.summary && !cand.info.incomplete ? "More detail and sources" : "Who they are and where to read more"}</summary>${candidateMore(cand, stName)}</details>`}
         </div>`;
       }).join("");
 
@@ -583,6 +690,7 @@
   renderCountdown();
   initWhere();
   initShare();
+  initPrompt();
   renderQuiz();
   if (state.where.state) {
     show("#step-register");

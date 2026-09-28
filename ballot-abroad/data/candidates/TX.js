@@ -22,6 +22,7 @@ window.BALLOT_DATA.TX = {
           party: "Democratic Party",
           incumbent: false,
           background: "State representative from the Austin area since 2018 and a former public-school teacher; a seminary student who often frames his politics through his Christian faith. Beat U.S. Rep. Jasmine Crockett in the March primary.",
+          keyPoints: ["Taxes: raise taxes on billionaires and corporations", "Health care: Medicare buy-in for anyone", "Trade: repeal current tariffs"],
           summary: "Wants to raise taxes on billionaires and corporations, raise the minimum wage, and create a public option letting anyone buy into Medicare, along with restoring the expanded ACA premium credits and capping drug prices. Would repeal the current tariffs and the federal gas and diesel taxes to lower prices. Supports abortion rights. His immigration plan pairs more Border Patrol agents, immigration judges and port scanners with legal status for Dreamers and long-settled workers, and would focus ICE on traffickers and serious crimes.",
           inPractice: "Would vote with Senate Democrats on health care, taxes and abortion, and against the administration's tariffs. His campaign has focused heavily on the allegations behind Paxton's 2023 impeachment.",
           sources: [
@@ -39,6 +40,7 @@ window.BALLOT_DATA.TX = {
           party: "Republican Party",
           incumbent: false,
           background: "Texas Attorney General since 2015. The Texas House impeached him in 2023 on corruption-related charges; the state Senate acquitted him. Endorsed by President Trump.",
+          keyPoints: ["Economy: backs President Trump's agenda", "Voting: proof of citizenship to register (SAVE Act)", "Abortion: defended Texas's abortion ban"],
           summary: "Runs on backing President Trump's economic agenda. His economic plan offers new tax breaks for health-care expenses, home down payments and family benefits. As attorney general he filed many lawsuits on immigration, DEI, elections and other conservative priorities. Made passage of the SAVE America Act, which would require documentary proof of citizenship to register to vote, a condition in his primary.",
           inPractice: "Would vote with the most conservative Senate Republicans and has called for ending the filibuster to pass the SAVE America Act. As attorney general he has defended and enforced Texas's abortion ban.",
           sources: [
@@ -75,6 +77,7 @@ window.BALLOT_DATA.TX = {
           party: "Democratic Party",
           incumbent: false,
           background: "Fifth-term state representative from Austin, former Austin school board member, and a civil-rights and union lawyer.",
+          keyPoints: ["Costs: one-time $1,500 check to Texans", "Schools: against vouchers", "Abortion: would sign repeal of the ban"],
           summary: "Blames Abbott for rising costs and property taxes and proposes a one-time $1,500 check to Texans from state savings. Opposes private-school vouchers, which she calls a \"corruption scheme,\" and wants to end standardized testing. Says she would sign a repeal of the abortion ban but that expanding access would \"not be my priority\" in a Republican state; she would push to end criminal penalties for doctors who perform abortions to save a mother's life.",
           inPractice: "Would work to wind down the voucher program and veto new abortion restrictions. Wants to rein in private equity in health care and opposes the state's use of Flock license-plate cameras, which she calls \"warrantless surveillance.\" A Republican legislature would limit how much of this she could pass.",
           sources: [
@@ -90,6 +93,7 @@ window.BALLOT_DATA.TX = {
           party: "Republican Party",
           incumbent: true,
           background: "Governor since 2015, seeking a fourth term; previously Texas attorney general and a state Supreme Court justice.",
+          keyPoints: ["Taxes: abolish school property taxes", "Schools: expanded private-school vouchers", "Border: Operation Lone Star"],
           summary: "Proposes abolishing school property taxes and requiring a two-thirds vote of the public for local tax increases. Championed the state's new private-school voucher program, funded with $1 billion over two years. Runs on border security through Operation Lone Star, an $11 billion state program of razor wire, river buoys, drug seizures, arrests and deportations.",
           inPractice: "Would keep expanding vouchers and Operation Lone Star and press the Legislature to phase out school property taxes. He paused state funding for Flock cameras after a Texas Tribune investigation.",
           sources: [
@@ -598,6 +602,7 @@ window.BALLOT_DATA.TX = {
           party: "Democratic Party",
           incumbent: false,
           background: "Two-time Latin Grammy-winning Tejano singer from the Rio Grande Valley, making his first run for office.",
+          keyPoints: ["Pitch: moderate, \"Team you\"", "Health care: lower Medicare age to 55", "Immigration: border security without breaking up families"],
           summary: "Runs as a moderate (\"Not team red. Not team blue. Team you\") and has criticized progressive ideas in his party. Makes lowering health-care costs his top priority; opposes Medicare for All but would lower the Medicare age from 65 to 55. Supports border security \"without destroying families and our local economy,\" and opposes for-profit detention centers and ICE arrest quotas. Prefers closing tax loopholes and stronger antitrust enforcement to a wealth tax, and opposes the war in Iran.",
           inPractice: "Would likely join the Blue Dog Democrats and vote with them on budgets. Supports the Break Up Big Medicine Act. Says he would not have voted for the January 2025 increase in ICE funding.",
           sources: [
@@ -613,6 +618,7 @@ window.BALLOT_DATA.TX = {
           party: "Republican Party",
           incumbent: true,
           background: "U.S. Representative since 2023 and a former insurance agent; the first Republican and first Latina to hold the seat.",
+          keyPoints: ["Budget: voted for the 2025 federal budget law", "Immigration: more ICE funding", "Record: votes with the House majority"],
           summary: "Seeking a third term in a district redrawn in 2025. She voted for the 2025 federal budget law, which sharply increased ICE funding while cutting SNAP and health-insurance benefits. She has dismissed Pulido's celebrity, saying the race \"isn't about who you want performing at your niece's quinceañera.\"",
           inPractice: "Would continue voting with House Republicans and the Trump administration on immigration enforcement and spending.",
           sources: [
@@ -639,6 +645,7 @@ window.BALLOT_DATA.TX = {
           party: "Democratic Party",
           incumbent: true,
           background: "U.S. Representative since 2005 who calls himself a \"conservative Democrat.\" He and his wife were indicted on federal bribery and foreign-influence charges in 2024; President Trump pardoned them in December 2025.",
+          keyPoints: ["Border: \"deporting criminals is common sense\"", "Taxes: voted against the 2017 and 2025 tax cuts", "Record: among the most conservative Democrats"],
           summary: "Says \"securing the border and deporting criminals is common sense.\" Has broken with his party on some issues but voted against the Secure the Border Act in 2023, against the 2017 tax cuts and against their 2025 extension.",
           inPractice: "Would remain one of the most conservative House Democrats, voting with his party on taxes and budgets and sometimes with Republicans on border enforcement. The pardon ended his criminal case and let him resume a House subcommittee leadership post.",
           sources: [
@@ -654,6 +661,7 @@ window.BALLOT_DATA.TX = {
           party: "Republican Party",
           incumbent: false,
           background: "Webb County Judge since 2015 who switched from the Democratic to the Republican Party in December 2024, saying the national party had \"drifted further left.\" Former chair of the Texas Border Coalition.",
+          keyPoints: ["Border: secure the southern border", "Taxes: cut county property taxes six times", "Party: switched from Democrat in 2024"],
           summary: "Prioritizes securing the southern border and \"fair and effective immigration policies.\" Points to six cuts in Webb County's property tax rate during his tenure.",
           inPractice: "Would be expected to vote with House Republicans on border security and taxes.",
           sources: [
@@ -690,6 +698,7 @@ window.BALLOT_DATA.TX = {
           party: "Democratic Party",
           incumbent: true,
           background: "U.S. Representative since 2017 who has represented this district since 2023; described as a moderate-to-conservative Democrat.",
+          keyPoints: ["Budget: voted against the 2025 federal budget law", "Voting: against proof-of-citizenship rules", "Immigration: extended protections for Haitian migrants"],
           summary: "Voted against the 2025 federal budget law and the SAVE America Act's proof-of-citizenship requirement for voter registration. Voted against the 2023 Secure the Border Act and supported extending Temporary Protected Status for Haitian migrants.",
           inPractice: "Would continue voting with House Democrats on budgets and voting rules while positioning himself as fiscally moderate.",
           sources: [
@@ -706,6 +715,7 @@ window.BALLOT_DATA.TX = {
           party: "Republican Party",
           incumbent: false,
           background: "Former federal prosecutor who handled cartel and human-trafficking cases, and a former Texas Army National Guard infantry captain. Endorsed by President Trump, the National Border Patrol Council and Americans for Prosperity.",
+          keyPoints: ["Border: border security first", "Energy: U.S. energy independence", "Voting: supports voter ID"],
           summary: "Prioritizes border security and U.S. energy independence, and supports voter ID. Says \"South Texas needs a fighter, not a no-show congressman.\"",
           inPractice: "Would vote with House Republicans and the Trump administration on border enforcement and energy.",
           sources: [
@@ -752,6 +762,7 @@ window.BALLOT_DATA.TX = {
           party: "Democratic Party",
           incumbent: false,
           background: "Bexar County Sheriff's Office spokesman with patrol and SWAT crisis-negotiation experience; calls himself a moderate \"Blue Dog\" Democrat.",
+          keyPoints: ["Trade: end current tariffs", "Safety: fund police plus drug treatment", "Pitch: moderate \"Blue Dog\" Democrat"],
           summary: "Wants to end the administration's tariffs, which he says threaten San Antonio manufacturing jobs and raise everyday costs. Supports funding law enforcement while putting more into drug treatment and mental-health services.",
           inPractice: "Would likely join the Blue Dog Democrats and vote against tariff increases.",
           sources: [
@@ -767,6 +778,7 @@ window.BALLOT_DATA.TX = {
           party: "Republican Party",
           incumbent: false,
           background: "Air Force veteran of 20 years who deployed to Iraq and Afghanistan and later opened a kickboxing gym in San Antonio; brother of Rep. Monica De La Cruz. Endorsed by President Trump and Speaker Mike Johnson.",
+          keyPoints: ["Border: more money for enforcement", "Health care: insurance price transparency", "Record: backed by President Trump"],
           summary: "Wants more funding and infrastructure for border enforcement. On health care, favors insurance price transparency and more coverage options for small businesses.",
           inPractice: "Would vote with House Republicans and the Trump administration on immigration enforcement.",
           sources: [

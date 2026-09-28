@@ -14,7 +14,7 @@
   <header class="hero">
     <p class="eyebrow">2026 US midterms · for Americans abroad</p>
     <h1>Ballot Abroad</h1>
-    <p class="lede">Get registered, see every race on your ballot, and share your picks, from wherever you live.</p>
+    <p class="lede">See who's running in every federal race, your ballot deadlines, and where the candidates stand, from wherever you live.</p>
     <div class="countdown" id="countdown"></div>
   </header>
 
@@ -41,7 +41,9 @@
     <!-- Step 2 -->
     <section class="card step hidden" id="step-register">
       <div class="step-num">2</div>
-      <h2>Are you registered?</h2>
+      <h2>Your key dates</h2>
+      <div id="key-dates"></div>
+      <h3 class="subhead">Are you registered?</h3>
       <div class="choice-row" role="radiogroup" aria-label="Registration status">
         <button type="button" class="chip" data-status="done">Yes, and I requested my 2026 ballot</button>
         <button type="button" class="chip" data-status="registered">Registered, but haven't requested a 2026 ballot</button>
@@ -69,6 +71,21 @@
       <h2>Your ballot</h2>
       <div id="ballot-status"></div>
       <div id="ballot"></div>
+      <div id="all-house"></div>
+
+      <div class="ai-box">
+        <h3>Ask your own AI about everything on your ballot</h3>
+        <p class="hint">Local races and measures depend on your exact address. Copy this prompt into any AI assistant (ChatGPT, Claude, Gemini or another) for a plain-English walkthrough of your full ballot. Add your address first for the most accurate answer.</p>
+        <label>Your US voting address <span class="opt">optional, stays on your device</span>
+          <input id="ai-address" placeholder="e.g. 123 Main St, Atlanta, GA 30303" autocomplete="street-address">
+        </label>
+        <textarea id="ai-prompt" readonly rows="12"></textarea>
+        <div class="share-actions">
+          <button type="button" class="btn primary" id="copy-prompt">Copy prompt</button>
+          <span class="fine" id="copy-prompt-note"></span>
+        </div>
+        <p class="fine">AI tools can get details wrong. Double-check names and deadlines against your official sample ballot and your local election office.</p>
+      </div>
 
       <div class="local-box">
         <h3>Show me my local races</h3>
@@ -136,6 +153,7 @@
 
   <script src="config.js"></script>
   <script src="data/states.js"></script>
+  <script src="data/deadlines.js"></script>
   <script src="data/offices.js"></script>
   <script src="data/demo.js"></script>
   <script src="data/issues.js"></script>

@@ -22,6 +22,7 @@ window.BALLOT_DATA.ME = {
           incumbent: false,
           website: "https://www.jacksonformaine.com/",
           background: "Fifth-generation logger from Allagash who served about 20 years in the Maine Legislature, six as Senate president. Got into politics through the 1998 loggers' blockade over trade and wages. Chaired Bernie Sanders's 2016 Maine campaign.",
+          keyPoints: ["Workers: union rights and fair wages", "Immigration: abolish ICE", "Abortion: supports abortion rights"],
           summary: "Runs on \"working people across Maine and America,\" stressing union rights, fair wages, rural health care and lower drug prices. Says he would push to abolish ICE and would refuse to approve military funding for Israel. Early in his career he opposed abortion; he later passed what his campaign calls \"some of the strongest reproductive health protections anywhere in the country.\" Says he would not back Chuck Schumer for Democratic leader.",
           inPractice: "Would vote with the Senate's most progressive members on labor and health care, against ICE funding in its current form and against military aid to Israel. In the Legislature he passed a law letting loggers bargain collectively and backed nurse-to-patient ratios, universal school meals and property-tax relief.",
           sources: [
@@ -38,6 +39,7 @@ window.BALLOT_DATA.ME = {
           party: "Republican Party",
           incumbent: true,
           background: "U.S. Senator since 1997 and chair of the Senate Appropriations Committee since 2025. The only Republican senator from a state President Trump never won.",
+          keyPoints: ["Pitch: \"experience, seniority and independence\"", "Abortion: supports abortion rights", "Budget: voted against the 2025 federal budget law"],
           summary: "Seeking a sixth term on \"experience, seniority and independence,\" writing that \"true leaders bring both sides together to seek common ground.\" Has long supported abortion rights, unlike most Senate Republicans. Has criticized some administration actions, including cuts to science funding and the firing of federal scientists.",
           inPractice: "As Appropriations chair she has major influence over federal spending, including money for Maine. She voted against final passage of the 2025 federal budget law (the \"One Big Beautiful Bill\") but voted to confirm several of the President's nominees, including Robert F. Kennedy Jr. Democrats argue she has not pushed back enough on the administration.",
           sources: [

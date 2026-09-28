@@ -437,6 +437,7 @@ window.BALLOT_DATA.AL = {
           party: "Democratic Party",
           incumbent: true,
           background: "U.S. Representative since 2025; previously a Justice Department official and aide in the Obama administration.",
+          keyPoints: ["Health care: keep rural hospitals open", "Medicaid: against the 2025 Medicaid cuts", "Economy: federal money for infrastructure and job training"],
           summary: "Runs on his work to keep rural hospitals open and to bring money for infrastructure, job training and recreation to the district. In 2025 he introduced the bipartisan Rural Hospital Stabilization Act, which would give federal grants to struggling rural hospitals.",
           inPractice: "Would vote with House Democrats against Medicaid cuts and for rural health funding. His opponent faults him for voting against the 2025 budget law, which included a $50 billion rural health fund alongside Medicaid cuts.",
           sources: [
@@ -452,6 +453,7 @@ window.BALLOT_DATA.AL = {
           party: "Republican Party",
           incumbent: false,
           background: "State representative since 2018 and former Enterprise city council member. Endorsed by President Trump.",
+          keyPoints: ["Costs: cut taxes and government spending", "Health care: backs the administration's Medicaid changes", "Record: voted to raise Alabama's gas tax"],
           summary: "Says he would lower prices by cutting taxes and government spending, and has run a campaign website attacking Figures's voting record. Democrats point to his state votes to raise the gas tax and vehicle registration fees and his support for the administration's Medicaid cuts.",
           inPractice: "Would be expected to vote with House Republicans and the Trump administration on taxes and spending.",
           sources: [

@@ -37,6 +37,8 @@ for (const f of fs.readdirSync(dir).filter((x) => /^[A-Z]{2}\.js$/.test(x)).sort
       // Competitive races need at least 3 positions; a summary under ~3 sentences can't carry them.
       const sentences = ((c.summary || "") + " " + (c.inPractice || "")).match(/[.!?]["”)]?(\s|$)/g) || [];
       if (r.competitive && major && !c.incomplete && sentences.length < 3) warn(cw, "competitive race but fewer than 3 positions described");
+      if (r.competitive && major && !c.incomplete && (!Array.isArray(c.keyPoints) || c.keyPoints.length < 3)) warn(cw, "competitive race but fewer than 3 keyPoints");
+      for (const k of c.keyPoints || []) if (k.length > 90) warn(cw, `keyPoint too long (${k.length} chars): ${k}`);
       if (c.incomplete) totals.incomplete = (totals.incomplete || 0) + 1;
       if (c.website && /ballotpedia|wikipedia|\.gov\b|news|times|post/i.test(c.website)) warn(cw, `website is not a campaign site: ${c.website}`);
       for (const [k, v] of Object.entries(c.stances || {})) {
