@@ -1,6 +1,24 @@
 # Research status
 
-The first research wave (Senate, governor, other statewide offices, statewide measures) stopped when the session hit its 200-web-search limit. Use this file to resume. The notes below come from single search results. **Cross-check nominees before writing them into a state file.**
+## Where things stand (Sept 28, wave 3)
+
+The brief is now lighter (see README.md, "Depth"): rosters for every federal and governor race, 3+ positions for competitive races, and full voter guides only when someone asks for their address.
+
+- **Rosters: done for all 50 states.** Every U.S. Senate, U.S. House and governor race is in the files, with nominees, party and incumbent flags, and minor-party candidates where Wikipedia or an official list confirms they're on the ballot.
+  - **Louisiana:** its House primaries moved to Nov. 3 as all-candidate races with a December runoff, so every declared candidate is listed.
+  - **DC** is not yet included.
+- **Competitive races: done.** 138 of 139 Democratic and Republican candidates in races rated Toss-up or Lean by Cook or Sabato (late September) have at least 3 positions. The one exception is Gerald Heikes (AK Senate, a minor Republican candidate).
+  - Positions for the newer states come from smarter.vote's sourced issue summaries (the first sentence of each issue). Stance scores for the quiz were **not** added for these; add them during a deep dive.
+- **Known roster caveats:**
+  - Minor-party and independent candidates are incomplete where neither source lists them. 270towin lists mostly Democrats and Republicans.
+  - Spellings follow Wikipedia where it and 270towin differ, for example Andersen (FL-20), Udell (UT-3) and Anabilah-Azumah (NY-9).
+  - Unexpected facts both sources agree on were kept, such as Darline Graham as the appointed SC senator.
+- **Next steps:**
+  - Add DC (delegate race).
+  - Build the on-demand deep-dive flow into the app, or a documented prompt for it.
+  - Refresh ratings and rosters in mid-October.
+
+Everything below is the earlier log, kept for detail.
 
 ## Wave 2 progress (Sept 28 session)
 
