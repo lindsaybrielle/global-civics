@@ -439,13 +439,15 @@ window.BALLOT_DATA.MI = {
           party: "Republican Party",
           incumbent: false,
           background: "Former Army captain who served in the 82nd and 101st Airborne divisions; son of longtime Oakland County Sheriff Mike Bouchard.",
-          summary: "Runs on national security, border enforcement, American manufacturing and jobs, lower costs, support for law enforcement and parental choice in education.",
+          summary: "Runs on national security, border enforcement, American manufacturing and jobs, lower costs, support for law enforcement and parental choice in education. Calls the administration\'s tariffs \"temporary\" and says he agrees with the President\'s reasoning. Mostly backs the Parents Bill of Rights that passed the House in 2025. Endorsed by Right to Life of Michigan; his website gives few specifics on health care.",
           inPractice: "Would vote with House Republicans on border enforcement and immigration.",
           sources: [
+            "https://gandernewsroom.com/news/elections/hines-vs-bouchard-michigan-cd10/",
+            "https://www.bouchardforcongress.com/",
             "https://www.wmuk.org/2026-09-28/10th-congressional-race-michigan-michael-bouchard-christina-hines",
             "https://www.cbsnews.com/detroit/news/michael-bouchard-announces-candidacy-for-michigans-10th-congressional-district",
           ],
-          stances: { immigration: 1 },
+          stances: { immigration: 1, tariffs: 1 },
           asOf: "Sept 2026",
         },
         {
