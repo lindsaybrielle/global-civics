@@ -174,3 +174,7 @@ legend { font-weight: 500; font-size: 14px; margin-bottom: 8px; }
 .resources .links { padding-left: 18px; }
 .resources .links li { margin: 8px 0; }
 .foot { text-align: center; color: var(--muted); font-size: 13px; padding: 12px 16px 40px; }
+
+.local-box { margin-top: 24px; padding: 20px 16px; border-radius: 14px; background: var(--soft); }
+.local-box h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; margin-bottom: 4px; }
+.local-box .cand, .local-box input { background: var(--surface); }

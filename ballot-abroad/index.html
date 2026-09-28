@@ -23,23 +23,14 @@
     <section class="card step" id="step-where">
       <div class="step-num">1</div>
       <h2>Where do you vote?</h2>
-      <p class="hint">Use your <strong>last US address</strong>, even if you left years ago. That address decides which races you vote in. Never lived in the US? Some states let you use the address where your US-citizen parent last lived.</p>
+      <p class="hint">You vote in the state of your <strong>last US address</strong>, even if you left years ago. Never lived in the US? Some states let you use the address where your US-citizen parent last lived.</p>
       <form id="where-form" autocomplete="on">
         <label>State
           <select id="state" required><option value="">Choose your voting state</option></select>
         </label>
-        <div class="row">
-          <label>ZIP code
-            <input id="zip" inputmode="numeric" pattern="\d{5}" maxlength="5" placeholder="e.g. 60614" required>
-          </label>
-          <label>City <span class="opt">optional</span>
-            <input id="city" placeholder="e.g. Chicago">
-          </label>
-        </div>
-        <label>Street address <span class="opt">optional, but more accurate</span>
-          <input id="street" placeholder="e.g. 123 Main St" autocomplete="street-address">
+        <label>Congressional district <span class="opt">optional · <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">find yours by ZIP</a></span>
+          <input id="district" inputmode="numeric" maxlength="2" placeholder="e.g. 7 (leave blank if your state has only one)">
         </label>
-        <p class="fine">A single ZIP code can span several districts, so a street address gives you the exact ballot. Your address is sent only to Google's election data service to look up your ballot. This app never stores it anywhere else.</p>
         <label>Country you live in now <span class="opt">optional, shown on your share image</span>
           <input id="country" placeholder="e.g. Portugal">
         </label>
@@ -65,6 +56,28 @@
       <h2>Your ballot</h2>
       <div id="ballot-status"></div>
       <div id="ballot"></div>
+
+      <div class="local-box">
+        <h3>Show me my local races</h3>
+        <p class="hint">Mayor, county, school board, state legislature and local measures depend on your exact US address, so we look them up live.</p>
+        <form id="local-form" autocomplete="on">
+          <div class="row">
+            <label>ZIP code
+              <input id="zip" inputmode="numeric" pattern="\d{5}" maxlength="5" placeholder="e.g. 30303" required>
+            </label>
+            <label>City <span class="opt">optional</span>
+              <input id="city" placeholder="e.g. Atlanta">
+            </label>
+          </div>
+          <label>Street address <span class="opt">optional, but more accurate</span>
+            <input id="street" placeholder="e.g. 123 Main St" autocomplete="street-address">
+          </label>
+          <p class="fine">One ZIP code can span several districts, so a street address gives the exact list. Your address is sent only to Google's election data service to look up races, and this app doesn't store it anywhere else. Local candidates get research links, but no written summaries.</p>
+          <button type="submit" class="btn primary">Show my local races</button>
+        </form>
+        <div id="local-status"></div>
+        <div id="local-ballot"></div>
+      </div>
     </section>
 
     <!-- Step 4 -->
@@ -111,7 +124,6 @@
   <script src="config.js"></script>
   <script src="data/states.js"></script>
   <script src="data/offices.js"></script>
-  <script src="data/positions.js"></script>
   <script src="data/demo.js"></script>
   <script src="story.js"></script>
   <script src="app.js"></script>

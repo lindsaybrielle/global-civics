@@ -14,7 +14,7 @@ Everything runs in the browser. There's no backend, no account and no cost.
 ```
 cd ballot-abroad && python3 -m http.server 8000
 ```
-Then open http://localhost:8000. Without an API key, the app runs in **demo mode** with made-up candidates.
+Then open http://localhost:8000. Without an API key, the app shows the researched races for states that have a data file, and made-up demo candidates for states that don't yet.
 
 ## Get a free API key (real ballots)
 
@@ -35,6 +35,4 @@ See the main README of this repo. Once Pages is on, the app lives at `https://<u
 
 ## Candidate positions
 
-The Civic API gives names, parties and campaign links, but **not positions**. Each candidate card links to Ballotpedia, Vote411 (where candidates answer the same questions) and a news search, and lists the questions that matter most to voters abroad.
-
-To show a vetted, plain-language summary for a candidate, add an entry to `ballot-abroad/data/positions.js`, keyed by their name in lowercase. Only add summaries you can back with a source link.
+Researched, sourced summaries for each state are stored in `data/candidates/<STATE>.js` (format in `data/candidates/README.md`). They're written once from campaign sites and news coverage, and they aren't updated automatically. With no API key, the app shows these federal and statewide races directly. Voters enter their congressional district to see their House race. Candidates without a summary get links to their campaign site, Ballotpedia, Vote411 and a news search.

@@ -4,7 +4,7 @@
   const STORAGE_KEY = "ballot-abroad-v1";
 
   const state = {
-    where: { state: "", zip: "", city: "", street: "", country: "" },
+    where: { state: "", zip: "", city: "", street: "", country: "", district: "" },
     status: "",
     ballot: null,       // { contests, demo, admin }
     picks: {},          // contestKey -> { choices: [], why: "" }
@@ -44,11 +44,19 @@
   function initWhere() {
     const sel = $("#state");
     window.STATES.forEach(([code, name]) => sel.add(new Option(name, code)));
-    ["state", "zip", "city", "street", "country"].forEach((k) => { $("#" + k).value = state.where[k] || ""; });
+    ["state", "zip", "city", "street", "country", "district"].forEach((k) => { $("#" + k).value = state.where[k] || ""; });
+    $("#local-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      ["zip", "city", "street"].forEach((k) => { state.where[k] = $("#" + k).value.trim(); });
+      save();
+      loadLocal();
+    });
 
     $("#where-form").addEventListener("submit", (e) => {
       e.preventDefault();
-      ["state", "zip", "city", "street", "country"].forEach((k) => { state.where[k] = $("#" + k).value.trim(); });
+      ["state", "country", "district"].forEach((k) => { state.where[k] = $("#" + k).value.trim(); });
+      state.local = null;
+      $("#local-ballot").innerHTML = ""; $("#local-status").innerHTML = "";
       save();
       show("#step-register");
       renderRegister();
@@ -112,49 +120,131 @@
     return [w.street, w.city, `${w.state} ${w.zip}`].filter(Boolean).join(", ");
   }
 
+  // Researched candidate data lives in data/candidates/<STATE>.js and is
+  // loaded on demand, so only the chosen state's file is downloaded.
+  function loadStateData(code) {
+    window.BALLOT_DATA = window.BALLOT_DATA || {};
+    if (window.BALLOT_DATA[code]) return Promise.resolve(window.BALLOT_DATA[code]);
+    return new Promise((resolve) => {
+      const s = document.createElement("script");
+      s.src = `data/candidates/${code}.js`;
+      s.onload = () => resolve(window.BALLOT_DATA[code] || null);
+      s.onerror = () => resolve(null);
+      document.head.appendChild(s);
+    });
+  }
+
+  // Converts researched races into the same shape the Civic API returns.
+  function staticContests(data) {
+    const district = parseInt(state.where.district, 10);
+    return (data.races || []).filter((r) => {
+      if (r.kind !== "usHouse" && !r.localArea) return true;
+      if (r.kind === "usHouse") return data.atLarge || (district && r.districtNumber === district);
+      return false;
+    }).map((r) => r.kind === "measure"
+      ? { type: "Referendum", kind: "measure", referendumTitle: r.office, referendumSubtitle: r.subtitle, referendumText: r.text, referendumBallotResponses: r.responses || ["Yes", "No"], district: { name: r.district || "Statewide" } }
+      : { office: r.office, kind: r.kind, district: { name: r.district || "Statewide" }, numberVotingFor: r.numberVotingFor,
+          candidates: r.candidates.map((c) => ({ name: c.name, party: c.party, candidateUrl: c.website, info: c })) });
+  }
+
+  const lastName = (n) => String(n || "").toLowerCase().replace(/\b(jr|sr|ii|iii|iv)\b\.?/g, "").replace(/[^a-z\s-]/g, "").trim().split(/\s+/).pop();
+
+  // Attaches researched summaries to API candidates, matching on race type and
+  // last name (the API often uses legal names, e.g. "Thomas Jonathan Ossoff").
+  function enrich(contests, data) {
+    if (!data) return contests;
+    contests.forEach((c) => {
+      const kind = classify(c);
+      (c.candidates || []).forEach((cand) => {
+        for (const r of data.races || []) {
+          if (r.kind !== kind) continue;
+          const hit = (r.candidates || []).find((x) => lastName(x.name) === lastName(cand.name));
+          if (hit) { cand.info = hit; break; }
+        }
+      });
+    });
+    return contests;
+  }
+
   async function loadBallot() {
     const status = $("#ballot-status");
     show("#step-ballot");
+    status.innerHTML = `<p class="hint">Loading your ballot…</p>`;
+    $("#ballot").innerHTML = "";
+    const data = await loadStateData(state.where.state);
+    state.stateData = data;
+    const stName = stateName(state.where.state);
+
+    if (!data) {
+      state.ballot = { ...window.DEMO_BALLOT, admin: null };
+      status.innerHTML = `<div class="callout"><strong>Demo mode:</strong> we haven't finished researching ${esc(stName)} yet, so these are made-up examples. Use "Show me my local races" below for your real ballot.</div>`;
+    } else {
+      state.ballot = { contests: staticContests(data), demo: false };
+      const houseNote = !data.atLarge && !parseInt(state.where.district, 10)
+        ? ` <strong>Add your congressional district in step 1</strong> (or look up your local races below) to see your House race.` : "";
+      status.innerHTML = `<p class="hint">Federal and statewide races for ${esc(stName)}, researched ${esc(data.updated || "")}.${houseNote}</p>`;
+    }
+    renderRegister();
+    renderBallot();
+  }
+
+  // Races already covered by the researched data are left out of the live list.
+  const COVERED_SCOPES = ["national", "statewide", "congressional"];
+
+  async function loadLocal() {
+    const status = $("#local-status");
+    const box = $("#local-ballot");
+    box.innerHTML = "";
+    const fallback = `Find them on <a href="https://ballotpedia.org/Sample_Ballot_Lookup" target="_blank" rel="noopener">Ballotpedia's sample ballot</a>, <a href="https://www.vote411.org" target="_blank" rel="noopener">Vote411</a>, or your county election office's website.`;
 
     if (!CFG.civicApiKey) {
-      state.ballot = { ...window.DEMO_BALLOT, admin: null };
-      status.innerHTML = `<div class="callout"><strong>Demo mode:</strong> these are made-up candidates so you can try the app. To show real ballots, add a free Google Civic API key to <code>config.js</code> (see README).</div>`;
-      renderBallot();
+      status.innerHTML = `<div class="callout">Live local lookup isn't switched on for this site yet. ${fallback}</div>`;
       return;
     }
-
-    status.innerHTML = `<p class="hint">Looking up the ballot for ${esc(addressString())}…</p>`;
-    $("#ballot").innerHTML = "";
+    status.innerHTML = `<p class="hint">Looking up races for ${esc(addressString())}…</p>`;
     try {
       const url = new URL("https://www.googleapis.com/civicinfo/v2/voterinfo");
       url.searchParams.set("key", CFG.civicApiKey);
       url.searchParams.set("address", addressString());
       url.searchParams.set("returnAllAvailableData", "true");
       const res = await fetch(url);
-      const data = await res.json();
-      if (!res.ok) throw new Error((data.error && data.error.message) || res.statusText);
+      const json = await res.json();
+      if (!res.ok) throw new Error((json.error && json.error.message) || res.statusText);
 
-      // Keep only contests in the selected state, in case the address resolved elsewhere.
-      const contests = (data.contests || []).filter((c) => (c.candidates && c.candidates.length) || c.type === "Referendum");
-      const admin = data.state && data.state[0] && data.state[0].electionAdministrationBody;
-      const resolvedState = data.normalizedInput && data.normalizedInput.state;
+      const resolvedState = json.normalizedInput && json.normalizedInput.state;
       if (resolvedState && resolvedState.toUpperCase() !== state.where.state) {
-        throw new Error(`That address matched ${resolvedState}, not ${state.where.state}. Please check your state and ZIP.`);
+        throw new Error(`that ZIP is in ${resolvedState}, not ${state.where.state}. Check the state you picked in step 1`);
       }
-      state.ballot = { contests, demo: false, admin };
-      const note = state.where.street ? "" : " Without a street address, some local or district races may be missing. Add one in step 1 for your full ballot.";
-      status.innerHTML = contests.length
-        ? `<p class="hint">${contests.length} races and measures for ${esc(data.election ? data.election.name : "the next election")}.${note}</p>`
-        : `<div class="callout">No races found yet for this address. Ballot data sometimes appears only a few weeks before the election.${note} Try the <a href="https://ballotpedia.org/Sample_Ballot_Lookup" target="_blank" rel="noopener">Ballotpedia sample ballot</a> in the meantime.</div>`;
-      renderRegister();
-      renderBallot();
+      const all = (json.contests || []).filter((c) => (c.candidates && c.candidates.length) || c.type === "Referendum");
+
+      // The lookup reveals the congressional district, so fill it in if missing.
+      const house = all.find((c) => classify(c) === "usHouse");
+      const m = house && /(\d+)/.exec((house.district && house.district.name) || house.office || "");
+      if (m && !parseInt(state.where.district, 10) && state.stateData) {
+        state.where.district = m[1];
+        $("#district").value = m[1];
+        save();
+        loadBallot();
+      }
+
+      const covered = state.stateData && !(state.ballot && state.ballot.demo);
+      const local = all.filter((c) => !covered || !COVERED_SCOPES.includes(((c.district && c.district.scope) || "").toLowerCase()));
+      state.local = enrich(local, state.stateData);
+      const admin = json.state && json.state[0] && json.state[0].electionAdministrationBody;
+      if (admin) { state.ballot.admin = admin; renderRegister(); }
+
+      const note = state.where.street ? "" : " Add your street address for a more complete list.";
+      status.innerHTML = local.length
+        ? `<p class="hint">${local.length} local races and measures found.${note}</p>`
+        : `<div class="callout">No local races found for this address yet. Local ballot data often appears only a few weeks before the election.${note} ${fallback}</div>`;
+      renderLocal();
     } catch (err) {
-      state.ballot = null;
-      status.innerHTML = `<div class="callout">We couldn't load your ballot: ${esc(err.message)}. Try adding your street address, or look it up on <a href="https://ballotpedia.org/Sample_Ballot_Lookup" target="_blank" rel="noopener">Ballotpedia</a> or <a href="https://www.vote411.org" target="_blank" rel="noopener">Vote411</a>.</div>`;
+      status.innerHTML = `<div class="callout">We couldn't look up your local races: ${esc(err.message)}. ${fallback}</div>`;
     }
   }
 
   function classify(c) {
+    if (c.kind) return c.kind;
     if (c.type === "Referendum") return "measure";
     const level = (c.level || [])[0] || "";
     const roles = c.roles || [];
@@ -176,7 +266,7 @@
     return "other";
   }
 
-  const contestKey = (c, i) => `${i}:${c.office || c.referendumTitle || "contest"}`;
+  const contestKey = (c, i, prefix) => `${prefix}${i}:${c.office || c.referendumTitle || "contest"}`;
   const contestTitle = (c) => c.office || c.referendumTitle || "Ballot measure";
 
   function partyColor(p) {
@@ -189,7 +279,7 @@
   }
 
   function candidateMore(cand, stName) {
-    const vetted = window.CANDIDATE_POSITIONS[(cand.name || "").toLowerCase()];
+    const vetted = cand.info && cand.info.summary ? cand.info : null;
     const q = encodeURIComponent(cand.name);
     const links = [
       cand.candidateUrl && `<a href="${esc(cand.candidateUrl)}" target="_blank" rel="noopener">Campaign site</a>`,
@@ -198,9 +288,11 @@
       `<a href="https://www.google.com/search?q=${encodeURIComponent(`"${cand.name}" ${stName} 2026 positions`)}" target="_blank" rel="noopener">News search</a>`,
     ].filter(Boolean).join("");
     if (vetted) {
-      return `<p><strong>Where they stand:</strong> ${esc(vetted.summary)}</p>
+      return `${vetted.background ? `<p><strong>Who they are:</strong> ${esc(vetted.background)}</p>` : ""}
+        <p><strong>Where they stand:</strong> ${esc(vetted.summary)}</p>
         ${vetted.inPractice ? `<p><strong>In practice:</strong> ${esc(vetted.inPractice)}</p>` : ""}
         ${vetted.abroad ? `<p><strong>For you abroad:</strong> ${esc(vetted.abroad)}</p>` : ""}
+        <p class="fine">Summary written from campaign sites and news coverage${vetted.asOf ? `, as of ${esc(vetted.asOf)}` : ""}. Check the sources for detail.</p>
         <div class="cand-links">${(vetted.sources || []).map((s, i) => `<a href="${esc(s)}" target="_blank" rel="noopener">Source ${i + 1}</a>`).join("")}${links}</div>`;
     }
     return `<p>We don't have a checked summary for this candidate yet. Their survey answers on Ballotpedia and Vote411 are the most direct way to compare them. Questions worth checking:</p>
@@ -209,13 +301,18 @@
   }
 
   function renderBallot() {
-    const box = $("#ballot");
-    const contests = (state.ballot && state.ballot.contests) || [];
+    renderContests($("#ballot"), (state.ballot && state.ballot.contests) || [], "s", state.ballot && state.ballot.demo);
+  }
+  function renderLocal() {
+    renderContests($("#local-ballot"), state.local || [], "l", false);
+  }
+
+  function renderContests(box, contests, prefix, demo) {
     const stName = stateName(state.where.state);
-    const demoTag = state.ballot && state.ballot.demo ? " (demo)" : "";
+    const demoTag = demo ? " (demo)" : "";
 
     box.innerHTML = contests.map((c, i) => {
-      const key = contestKey(c, i);
+      const key = contestKey(c, i, prefix);
       const kind = classify(c);
       const guide = window.OFFICE_GUIDE[kind];
       const pick = state.picks[key] || { choices: [], why: "" };
@@ -227,11 +324,12 @@
 
       const opts = options.map((cand, j) => {
         const checked = pick.choices.includes(cand.name);
-        const id = `c${i}-${j}`;
+        const id = `${prefix}${i}-${j}`;
         return `<div class="cand ${checked ? "picked" : ""}">
           <label class="cand-top" for="${id}">
             <input type="checkbox" id="${id}" data-key="${esc(key)}" data-name="${esc(cand.name)}" data-max="${max}" ${checked ? "checked" : ""}>
             <span><span class="cand-name">${esc(cand.name)}</span>
+            ${cand.info && cand.info.incumbent ? ` <span class="party">· incumbent</span>` : ""}
             ${cand.party ? `<br><span class="party"><span class="party-dot" style="background:${partyColor(cand.party)}"></span>${esc(cand.party)}</span>` : ""}</span>
           </label>
           ${isMeasure ? "" : `<details class="more"><summary class="fine">Positions and what they mean</summary>${candidateMore(cand, stName)}</details>`}
@@ -288,9 +386,10 @@
 
   // Picks in ballot order, ready for the story renderer.
   function pickedList() {
-    const contests = (state.ballot && state.ballot.contests) || [];
-    return contests.map((c, i) => {
-      const p = state.picks[contestKey(c, i)];
+    const tagged = (list, prefix) => (list || []).map((c, i) => [c, contestKey(c, i, prefix)]);
+    const all = [...tagged(state.ballot && state.ballot.contests, "s"), ...tagged(state.local, "l")];
+    return all.map(([c, key]) => {
+      const p = state.picks[key];
       if (!p || !p.choices.length) return null;
       const isMeasure = c.type === "Referendum";
       return {
@@ -396,7 +495,7 @@
   renderCountdown();
   initWhere();
   initShare();
-  if (state.where.state && state.where.zip) {
+  if (state.where.state) {
     show("#step-register");
     renderRegister();
     loadBallot();
