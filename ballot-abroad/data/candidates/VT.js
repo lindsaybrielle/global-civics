@@ -251,5 +251,33 @@ window.BALLOT_DATA.VT = {
         "https://lwvofvt.org/vermont-proposal-4-on-november-3-ballot/",
       ],
     },
+    {
+      office: "U.S. House, At-large",
+      kind: "usHouse",
+      district: "At-large",
+      competitive: false,
+      candidates: [
+        {
+          name: "Becca Balint",
+          party: "Democratic Party",
+          incumbent: true,
+          background: "U.S. Representative for Vermont, running for re-election.",
+          summary: "Platform not yet researched for this guide.",
+          sources: ["https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_Vermont"],
+          asOf: "Sept 2026",
+          incomplete: true,
+        },
+        {
+          name: "Gerald Malloy",
+          party: "Republican Party",
+          incumbent: false,
+          background: "Retired military officer and Republican nominee for U.S. Senate in 2022 and 2024.",
+          summary: "Platform not yet researched for this guide.",
+          sources: ["https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_Vermont"],
+          asOf: "Sept 2026",
+          incomplete: true,
+        },
+      ],
+    },
   ],
 };

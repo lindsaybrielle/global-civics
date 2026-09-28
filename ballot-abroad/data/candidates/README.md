@@ -21,6 +21,7 @@ window.BALLOT_DATA.XX = {
       candidates: [{
         name, party, incumbent, website,  // website = campaign site only
         background,   // who they are, one or two sentences
+        keyPoints,    // competitive races: 3 short "Topic: position" bullets, shown on the card
         summary,      // where they stand
         inPractice,   // what that would actually change
         abroad,       // only when they've said something relevant to Americans abroad
@@ -39,8 +40,22 @@ Writing rules: neutral wording, no adjectives borrowed from either campaign or i
 
 ## Depth
 
-- **Competitive races** (`competitive: true`): full entry with `background`, `summary` (3–4 sentences), `inPractice` and 3+ sources.
-- **Non-competitive races**: a shorter entry with `background` (1 sentence), `summary` (2–3 sentences), no `inPractice`, and 1–2 sources.
+The stored data is deliberately light. The full deep dive happens on request (see below).
+
+- **Every federal race and every governor race**: list everyone on the ballot, including name, party, incumbent flag and a one-line `background` where known. Candidates who haven't been researched get `summary: "Platform not yet researched for this guide."`, `incomplete: true`, and the official candidate list (or its closest substitute) as the source.
+- **What the app shows:** each candidate's name, party and incumbent flag. For competitive races it also shows the 3 `keyPoints` bullets, each under 90 characters (for example, `"Health care: Medicare for All"`). The longer `summary` and its sources sit behind a "More detail" link. Keep it light; people won't read walls of text.
+- **Competitive races** (`competitive: true`, meaning Cook or Sabato rates it Toss-up or Lean): each Democratic and Republican candidate gets a `summary` covering **at least 3 positions voters care most about**: cost of living and taxes, health care, immigration, abortion, tariffs and trade, and so on. Add the matching `stances` scores where there's evidence, plus 2–3 sources. `inPractice` is optional.
+- **Everything else** (down-ballot statewide offices, courts, measures, and platforms in safe seats) is optional in the stored data. Earlier files go further; that's fine, but don't expand them now.
+
+### On-demand deep dive
+
+When someone asks for "the full voter guide for my ZIP code or address," research that ballot live instead of pre-storing it for every state. Look up their districts (congressional, state legislative, county), list every race on their ballot from the official sample ballot or the state's candidate list, and write full entries (background, summary, `inPractice`, stances, 3+ sources) for those races only. Add the results to the state file so the next person with the same ballot benefits.
+
+### Roster sources that work
+
+- **270towin.com** (`/2026-house-election/`, `/2026-senate-election/`, `/2026-governor-election/`) embeds JSON with every Democratic and Republican nominee and incumbent flags. It has occasional typos and few minor-party candidates, so cross-check it.
+- **Wikipedia's raw wikitext** (`index.php?title=<page>&action=raw`) for each state's House, Senate and governor pages lists nominees, including minor parties, under "Nominee" headings.
+- **Official state lists** where they can be downloaded, such as the NC State Board PDF, MI Dept. of State listing and TX SOS ballot certification.
 
 ## Stances (for the values quiz)
 

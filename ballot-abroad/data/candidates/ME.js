@@ -1,0 +1,170 @@
+// Maine: researched from campaign coverage and candidate sites. Neutral
+// wording; every summary links its sources. Schema: see data/candidates/README.md.
+// No statewide referendum questions were found for November 2026 (the one
+// citizen initiative was removed in May); check again for legislative bond
+// questions.
+window.BALLOT_DATA = window.BALLOT_DATA || {};
+window.BALLOT_DATA.ME = {
+  updated: "Sept 2026",
+  atLarge: false,
+  races: [
+    {
+      office: "U.S. Senate",
+      kind: "usSenate",
+      district: "Statewide",
+      competitive: true,
+      rating: "Toss-up",
+      note: "Ranked-choice voting is used in this race. Democratic primary winner Graham Platner withdrew in July 2026 after sexual-assault allegations, and a party convention nominated Troy Jackson on July 25. Cook and Sabato rate the race a Toss-up.",
+      candidates: [
+        {
+          name: "Troy Jackson",
+          party: "Democratic Party",
+          incumbent: false,
+          website: "https://www.jacksonformaine.com/",
+          background: "Fifth-generation logger from Allagash who served about 20 years in the Maine Legislature, six as Senate president. Got into politics through the 1998 loggers' blockade over trade and wages. Chaired Bernie Sanders's 2016 Maine campaign.",
+          keyPoints: ["Workers: union rights and fair wages", "Immigration: abolish ICE", "Abortion: supports abortion rights"],
+          summary: "Runs on \"working people across Maine and America,\" stressing union rights, fair wages, rural health care and lower drug prices. Says he would push to abolish ICE and would refuse to approve military funding for Israel. Early in his career he opposed abortion; he later passed what his campaign calls \"some of the strongest reproductive health protections anywhere in the country.\" Says he would not back Chuck Schumer for Democratic leader.",
+          inPractice: "Would vote with the Senate's most progressive members on labor and health care, against ICE funding in its current form and against military aid to Israel. In the Legislature he passed a law letting loggers bargain collectively and backed nurse-to-patient ratios, universal school meals and property-tax relief.",
+          sources: [
+            "https://www.jacksonformaine.com/about",
+            "https://www.thenation.com/article/politics/troy-jackson-democrats-convention-maine-senate/",
+            "https://maineaflcio.org/news/unions-help-power-troy-jackson-win-us-senate-nomination",
+            "https://www.bangordailynews.com/2026/09/24/politics/troy-jackson-leads-susan-collins-polls/",
+          ],
+          stances: { immigration: -2, abortion: 2, healthcare: 1 },
+          asOf: "Sept 2026",
+        },
+        {
+          name: "Susan Collins",
+          party: "Republican Party",
+          incumbent: true,
+          background: "U.S. Senator since 1997 and chair of the Senate Appropriations Committee since 2025. The only Republican senator from a state President Trump never won.",
+          keyPoints: ["Pitch: \"experience, seniority and independence\"", "Abortion: supports abortion rights", "Budget: voted against the 2025 federal budget law"],
+          summary: "Seeking a sixth term on \"experience, seniority and independence,\" writing that \"true leaders bring both sides together to seek common ground.\" Has long supported abortion rights, unlike most Senate Republicans. Has criticized some administration actions, including cuts to science funding and the firing of federal scientists.",
+          inPractice: "As Appropriations chair she has major influence over federal spending, including money for Maine. She voted against final passage of the 2025 federal budget law (the \"One Big Beautiful Bill\") but voted to confirm several of the President's nominees, including Robert F. Kennedy Jr. Democrats argue she has not pushed back enough on the administration.",
+          sources: [
+            "https://www.yahoo.com/news/articles/susan-collins-officially-launches-2026-143318156.html",
+            "https://en.wikipedia.org/wiki/Susan_Collins",
+            "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Maine",
+            "https://www.bangordailynews.com/2026/09/24/politics/troy-jackson-leads-susan-collins-polls/",
+          ],
+          stances: { abortion: 1 },
+          asOf: "Sept 2026",
+        },
+      ],
+    },
+    {
+      office: "Governor",
+      kind: "governor",
+      district: "Statewide",
+      competitive: false,
+      note: "Open seat: Gov. Janet Mills (D) is term-limited. Ranked-choice voting is not used in the governor's general election; the candidate with the most votes wins. Cook rates the race Solid D; Sabato rates it Likely D.",
+      candidates: [
+        {
+          name: "Hannah Pingree",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "Former Maine House speaker who led Gov. Janet Mills's policy office; daughter of U.S. Rep. Chellie Pingree.",
+          summary: "Focuses on bringing down housing and health-care costs. Her opponents cast her as a continuation of the Mills administration. She leads in fundraising and in September polls.",
+          sources: [
+            "https://www.centralmaine.com/2026/09/25/hannah-pingree-continues-to-hold-a-big-lead-in-new-poll-of-maine-governors-race/",
+            "https://www.pressherald.com/2026/07/21/pingree-bennett-agree-to-four-debates-in-maine-governors-race-bobby-charles-wants-more/",
+          ],
+          asOf: "Sept 2026",
+        },
+        {
+          name: "Bobby Charles",
+          party: "Republican Party",
+          incumbent: false,
+          background: "Lawyer from Leeds and former naval intelligence officer and assistant U.S. secretary of state.",
+          summary: "Pledges to eliminate the state income tax over four years and cut property taxes by reducing state mandates on towns and school administrative costs. Points to energy costs \"through the roof\" and proposes tax incentives for low-cost and prefabricated housing. Wants debates focused on crime, immigration and the state budget.",
+          sources: [
+            "https://www.pressherald.com/2026/07/21/pingree-bennett-agree-to-four-debates-in-maine-governors-race-bobby-charles-wants-more/",
+            "https://www.centralmaine.com/2026/09/25/hannah-pingree-continues-to-hold-a-big-lead-in-new-poll-of-maine-governors-race/",
+          ],
+          stances: { taxes: -2 },
+          asOf: "Sept 2026",
+        },
+        {
+          name: "Rick Bennett",
+          party: "Independent",
+          incumbent: false,
+          background: "Longtime state senator from Oxford County and former Maine Republican Party chairman, now running as an independent.",
+          summary: "Focuses on housing, including faster approvals and removing duplicative reviews for building projects. Casts Pingree as a continuation of the status quo.",
+          sources: [
+            "https://www.pressherald.com/2026/07/21/pingree-bennett-agree-to-four-debates-in-maine-governors-race-bobby-charles-wants-more/",
+            "https://www.centralmaine.com/2026/09/25/hannah-pingree-continues-to-hold-a-big-lead-in-new-poll-of-maine-governors-race/",
+          ],
+          asOf: "Sept 2026",
+        },
+      ],
+    },
+    {
+      office: "U.S. House, District 1",
+      kind: "usHouse",
+      district: "District 1",
+      districtNumber: 1,
+      competitive: false,
+      note: "Ranked-choice voting is used in this race.",
+      candidates: [
+        {
+          name: "Chellie Pingree",
+          party: "Democratic Party",
+          incumbent: true,
+          background: "U.S. Representative for Maine's 1st District since 2009.",
+          summary: "Platform not yet researched for this guide.",
+          sources: ["https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Maine"],
+          asOf: "Sept 2026",
+          incomplete: true,
+        },
+        {
+          name: "Ronald Russell",
+          party: "Republican Party",
+          incumbent: false,
+          background: "Defense contractor and the Republican nominee for this seat in 2024.",
+          summary: "Platform not yet researched for this guide.",
+          sources: ["https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Maine"],
+          asOf: "Sept 2026",
+          incomplete: true,
+        },
+      ],
+    },
+    {
+      office: "U.S. House, District 2",
+      kind: "usHouse",
+      district: "District 2",
+      districtNumber: 2,
+      competitive: false,
+      note: "Open seat: Rep. Jared Golden (D) is not running. Ranked-choice voting is used in this race. Cook and Sabato rate it Likely R, though a September UNH poll showed Dunlap ahead 51% to 45%. Trump won the district in 2016, 2020 and 2024.",
+      candidates: [
+        {
+          name: "Matt Dunlap",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "Maine State Auditor and former longtime secretary of state; won the Democratic nomination in a ranked-choice primary.",
+          summary: "Says he will push for \"Medicare for All, affordable childcare, a lower cost of living, and stopping this illegal war in Iran.\" Republicans argue he is too liberal for the district.",
+          sources: [
+            "https://news.ballotpedia.org/2026/08/06/dunlap-lepage-running-for-maines-2nd-one-of-23-trump-won-districts-democrats-are-defending-in-2026/",
+            "https://www.mainepublic.org/politics/2026-06-19/matt-dunlap-wins-democratic-nomination-in-maines-2nd-district-after-ranked-choice-runoff",
+            "https://en.wikipedia.org/wiki/Matthew_Dunlap",
+          ],
+          stances: { healthcare: 2 },
+          asOf: "Sept 2026",
+        },
+        {
+          name: "Paul LePage",
+          party: "Republican Party",
+          incumbent: false,
+          background: "Governor of Maine from 2011 to 2019; lost the 2022 governor's race to Janet Mills.",
+          summary: "Platform not yet researched for this guide.",
+          sources: [
+            "https://news.ballotpedia.org/2026/08/06/dunlap-lepage-running-for-maines-2nd-one-of-23-trump-won-districts-democrats-are-defending-in-2026/",
+            "https://www.pressherald.com/2026/09/25/matt-dunlap-leads-paul-lepage-in-2nd-district-race-unh-poll-finds/",
+          ],
+          asOf: "Sept 2026",
+          incomplete: true,
+        },
+      ],
+    },
+  ],
+};

@@ -1,0 +1,127 @@
+// Utah: federal and governor races. Rosters come from 270towin.com's race
+// data cross-checked against Wikipedia's nominee lists (Wikipedia wins on
+// conflicts and adds minor parties). Platforms are researched only for
+// competitive races; see data/candidates/README.md.
+window.BALLOT_DATA = window.BALLOT_DATA || {};
+window.BALLOT_DATA.UT = {
+  updated: "Sept 2026",
+  atLarge: false,
+  races: [
+    {
+      office: "U.S. House, District 1",
+      kind: "usHouse",
+      district: "District 1",
+      districtNumber: 1,
+      competitive: false,
+      candidates: [
+        {
+          name: "Ben McAdams",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "Former U.S. representative from the 4th district (2019–2021).",
+          summary: "Platform not yet researched for this guide.",
+          sources: ["https://www.270towin.com/2026-house-election/", "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Utah"],
+          asOf: "Sept 2026",
+          incomplete: true,
+        },
+        {
+          name: "Riley Owen",
+          party: "Republican Party",
+          incumbent: false,
+          background: "Former White House policy analyst.",
+          summary: "Platform not yet researched for this guide.",
+          sources: ["https://www.270towin.com/2026-house-election/", "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Utah"],
+          asOf: "Sept 2026",
+          incomplete: true,
+        },
+      ],
+    },
+    {
+      office: "U.S. House, District 2",
+      kind: "usHouse",
+      district: "District 2",
+      districtNumber: 2,
+      competitive: false,
+      candidates: [
+        {
+          name: "Blake Moore",
+          party: "Republican Party",
+          incumbent: true,
+          background: "Incumbent U.S. Representative for Utah's District 2, running for re-election.",
+          summary: "Platform not yet researched for this guide.",
+          sources: ["https://www.270towin.com/2026-house-election/", "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Utah"],
+          asOf: "Sept 2026",
+          incomplete: true,
+        },
+        {
+          name: "Peter Crosby",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "Project manager.",
+          summary: "Platform not yet researched for this guide.",
+          sources: ["https://www.270towin.com/2026-house-election/", "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Utah"],
+          asOf: "Sept 2026",
+          incomplete: true,
+        },
+      ],
+    },
+    {
+      office: "U.S. House, District 3",
+      kind: "usHouse",
+      district: "District 3",
+      districtNumber: 3,
+      competitive: false,
+      candidates: [
+        {
+          name: "Celeste Maloy",
+          party: "Republican Party",
+          incumbent: true,
+          background: "Incumbent U.S. Representative for Utah's District 3, running for re-election.",
+          summary: "Platform not yet researched for this guide.",
+          sources: ["https://www.270towin.com/2026-house-election/", "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Utah"],
+          asOf: "Sept 2026",
+          incomplete: true,
+        },
+        {
+          name: "Kent Udell",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "Engineer and cousin of former U.S. Interior Secretary Stewart Udall.",
+          summary: "Platform not yet researched for this guide.",
+          sources: ["https://www.270towin.com/2026-house-election/", "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Utah"],
+          asOf: "Sept 2026",
+          incomplete: true,
+        },
+      ],
+    },
+    {
+      office: "U.S. House, District 4",
+      kind: "usHouse",
+      district: "District 4",
+      districtNumber: 4,
+      competitive: false,
+      candidates: [
+        {
+          name: "Mike Kennedy",
+          party: "Republican Party",
+          incumbent: true,
+          background: "Incumbent U.S. Representative for Utah's District 4, running for re-election.",
+          summary: "Platform not yet researched for this guide.",
+          sources: ["https://www.270towin.com/2026-house-election/", "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Utah"],
+          asOf: "Sept 2026",
+          incomplete: true,
+        },
+        {
+          name: "Jonny Larsen",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "U.S. Marine Corps veteran.",
+          summary: "Platform not yet researched for this guide.",
+          sources: ["https://www.270towin.com/2026-house-election/", "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Utah"],
+          asOf: "Sept 2026",
+          incomplete: true,
+        },
+      ],
+    },
+  ],
+};
