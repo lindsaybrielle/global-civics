@@ -9,6 +9,8 @@
     ballot: null,       // { contests, demo, admin }
     picks: {},          // contestKey -> { choices: [], why: "" }
     theme: "sunset",
+    quiz: {},           // issue key -> -2..2
+    weights: {},        // issue key -> true if it matters most
     images: [],         // generated canvases
   };
 
@@ -16,7 +18,7 @@
   function save() {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
-        where: state.where, status: state.status, picks: state.picks, theme: state.theme,
+        where: state.where, status: state.status, picks: state.picks, theme: state.theme, quiz: state.quiz, weights: state.weights,
       }));
     } catch (e) { /* storage unavailable: app still works */ }
   }
@@ -137,13 +139,16 @@
   // Converts researched races into the same shape the Civic API returns.
   function staticContests(data) {
     const district = parseInt(state.where.district, 10);
-    return (data.races || []).filter((r) => {
+    const order = ["usSenate", "usHouse", "governor", "ltGovernor", "attorneyGeneral", "secretaryOfState", "stateFinance", "education", "judge", "local", "other", "measure"];
+    const rank = (k) => (order.indexOf(k) + 1) || order.length;
+    return (data.races || []).slice().sort((a, b) => rank(a.kind) - rank(b.kind)).filter((r) => {
       if (r.kind !== "usHouse" && !r.localArea) return true;
       if (r.kind === "usHouse") return data.atLarge || (district && r.districtNumber === district);
       return false;
     }).map((r) => r.kind === "measure"
-      ? { type: "Referendum", kind: "measure", referendumTitle: r.office, referendumSubtitle: r.subtitle, referendumText: r.text, referendumBallotResponses: r.responses || ["Yes", "No"], district: { name: r.district || "Statewide" } }
+      ? { type: "Referendum", kind: "measure", sources: r.sources, referendumTitle: r.office, referendumSubtitle: r.subtitle, referendumText: r.text, referendumBallotResponses: r.responses || ["Yes", "No"], district: { name: r.district || "Statewide" } }
       : { office: r.office, kind: r.kind, district: { name: r.district || "Statewide" }, numberVotingFor: r.numberVotingFor,
+          competitive: r.competitive, rating: r.rating, note: r.note,
           candidates: r.candidates.map((c) => ({ name: c.name, party: c.party, candidateUrl: c.website, info: c })) });
   }
 
@@ -186,6 +191,8 @@
     }
     renderRegister();
     renderBallot();
+    show("#step-quiz");
+    renderQuizSummary();
   }
 
   // Races already covered by the researched data are left out of the live list.
@@ -300,6 +307,78 @@
       <div class="cand-links">${links}</div>`;
   }
 
+  // ---------- values quiz ----------
+  const SCALE = [[-2, "Strongly disagree"], [-1, "Disagree"], [0, "Not sure"], [1, "Agree"], [2, "Strongly agree"]];
+
+  function renderQuiz() {
+    $("#quiz").innerHTML = window.ISSUES.map((q, n) => `<div class="q" data-issue="${q.key}">
+      <div class="q-topic">${n + 1}/10 · ${esc(q.topic)}</div>
+      <p class="q-text">${esc(q.statement)}</p>
+      <div class="scale">${SCALE.map(([v, label]) =>
+        `<button type="button" data-v="${v}" aria-pressed="${state.quiz[q.key] === v}">${label}</button>`).join("")}</div>
+      <button type="button" class="star" aria-pressed="${!!state.weights[q.key]}">${state.weights[q.key] ? "★ Matters most to me" : "☆ Mark as a top issue"}</button>
+    </div>`).join("");
+    $("#quiz").querySelectorAll(".q").forEach((el) => {
+      const key = el.dataset.issue;
+      el.querySelectorAll(".scale button").forEach((b) => b.onclick = () => {
+        const v = +b.dataset.v;
+        if (state.quiz[key] === v) delete state.quiz[key]; else state.quiz[key] = v;
+        afterQuizChange();
+      });
+      el.querySelector(".star").onclick = () => { state.weights[key] = !state.weights[key]; afterQuizChange(); };
+    });
+  }
+
+  function afterQuizChange() {
+    save();
+    renderQuiz();
+    renderBallot();
+    if (state.local) renderLocal();
+    renderQuizSummary();
+  }
+
+  // Share of agreement (0–100) across the issues both sides have a position on.
+  // "Not sure" (0) answers are ignored. Top issues count double.
+  function matchScore(stances) {
+    if (!stances) return null;
+    let total = 0, weight = 0;
+    const agree = [], differ = [];
+    for (const q of window.ISSUES) {
+      const u = state.quiz[q.key], c = stances[q.key];
+      if (u === undefined || u === 0 || c === undefined) continue;
+      const w = state.weights[q.key] ? 2 : 1;
+      const sim = 1 - Math.abs(u - c) / 4;
+      total += w * sim; weight += w;
+      if (sim >= 0.75) agree.push(q.topic); else if (sim <= 0.25) differ.push(q.topic);
+    }
+    const compared = window.ISSUES.filter((q) => state.quiz[q.key] && stances[q.key] !== undefined).length;
+    if (compared < 2) return null;
+    return { pct: Math.round((total / weight) * 100), compared, agree, differ };
+  }
+
+  const quizAnswered = () => Object.values(state.quiz).filter((v) => v !== 0).length;
+
+  function renderQuizSummary() {
+    const box = $("#quiz-summary");
+    if (quizAnswered() < 3) {
+      box.innerHTML = quizAnswered() ? `<p class="fine">Answer at least 3 questions to see matches.</p>` : "";
+      return;
+    }
+    const contests = (state.ballot && state.ballot.contests) || [];
+    const rows = contests.filter((c) => c.candidates).map((c) => {
+      const scored = c.candidates.map((cand) => ({ cand, m: matchScore(cand.info && cand.info.stances) })).filter((x) => x.m);
+      if (scored.length < 2) {
+        return `<li><strong>${esc(c.office)}:</strong> <span class="fine">not enough recorded positions to compare these candidates yet</span></li>`;
+      }
+      scored.sort((a, b) => b.m.pct - a.m.pct);
+      const best = scored[0];
+      return `<li><strong>${esc(c.office)}:</strong> ${esc(best.cand.name)} <span class="match top">${best.m.pct}% match</span></li>`;
+    }).filter(Boolean);
+    box.innerHTML = rows.length
+      ? `<h3>Your closest matches</h3><ul class="summary-list">${rows.join("")}</ul><p class="fine">See the details on each race below.</p>`
+      : `<p class="fine">We don't have enough recorded positions for the candidates on your ballot to match them yet.</p>`;
+  }
+
   function renderBallot() {
     renderContests($("#ballot"), (state.ballot && state.ballot.contests) || [], "s", state.ballot && state.ballot.demo);
   }
@@ -321,6 +400,9 @@
       const options = isMeasure
         ? (c.referendumBallotResponses || ["Yes", "No"]).map((r) => ({ name: r }))
         : c.candidates;
+      const matches = isMeasure || quizAnswered() < 3 ? [] : options.map((cand) => matchScore(cand.info && cand.info.stances));
+      // Only highlight a "top" match when there's someone to compare against.
+      const bestPct = matches.filter(Boolean).length >= 2 ? Math.max(...matches.filter(Boolean).map((m) => m.pct)) : -1;
 
       const opts = options.map((cand, j) => {
         const checked = pick.choices.includes(cand.name);
@@ -330,8 +412,11 @@
             <input type="checkbox" id="${id}" data-key="${esc(key)}" data-name="${esc(cand.name)}" data-max="${max}" ${checked ? "checked" : ""}>
             <span><span class="cand-name">${esc(cand.name)}</span>
             ${cand.info && cand.info.incumbent ? ` <span class="party">· incumbent</span>` : ""}
+            ${matches[j] ? `<span class="match ${matches[j].pct === bestPct ? "top" : ""}">${matches[j].pct}% match</span>` : ""}
             ${cand.party ? `<br><span class="party"><span class="party-dot" style="background:${partyColor(cand.party)}"></span>${esc(cand.party)}</span>` : ""}</span>
           </label>
+          ${!matches[j] && matches.some(Boolean) ? `<p class="match-why">Not enough recorded positions to match this candidate on your answers.</p>` : ""}
+          ${matches[j] ? `<p class="match-why">Compared on ${matches[j].compared} issue${matches[j].compared === 1 ? "" : "s"}.${matches[j].agree.length ? ` You agree on ${esc(matches[j].agree.join(", "))}.` : ""}${matches[j].differ.length ? ` You differ on ${esc(matches[j].differ.join(", "))}.` : ""}</p>` : ""}
           ${isMeasure ? "" : `<details class="more"><summary class="fine">Positions and what they mean</summary>${candidateMore(cand, stName)}</details>`}
         </div>`;
       }).join("");
@@ -339,9 +424,11 @@
       return `<div class="contest" data-key="${esc(key)}">
         <div class="contest-head">
           <span class="tag">${esc(guide.label)}${demoTag}</span>
+          ${c.competitive ? `<span class="hot" title="Rated ${esc(c.rating || "competitive")} by nonpartisan forecasters">🔥 Competitive${c.rating ? ` · ${esc(c.rating)}` : ""}</span>` : c.rating ? `<span class="rating">Rated ${esc(c.rating)}</span>` : ""}
           <span class="district">${esc(c.district && c.district.name)}</span>
         </div>
         <h3>${esc(contestTitle(c))}</h3>
+        ${c.note ? `<p class="fine">${esc(c.note)}</p>` : ""}
         ${isMeasure && c.referendumSubtitle ? `<p class="measure-text">${esc(c.referendumSubtitle)}</p>` : ""}
         ${isMeasure && c.referendumText ? `<details class="explain"><summary>Full text</summary><p>${esc(c.referendumText)}</p></details>` : ""}
         <details class="explain"><summary>What this ${isMeasure ? "means" : "office does"}, and why it matters abroad</summary>
@@ -495,6 +582,7 @@
   renderCountdown();
   initWhere();
   initShare();
+  renderQuiz();
   if (state.where.state) {
     show("#step-register");
     renderRegister();

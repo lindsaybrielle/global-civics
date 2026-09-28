@@ -50,6 +50,19 @@
       <div id="register-steps"></div>
     </section>
 
+    <!-- Values quiz -->
+    <section class="card step hidden" id="step-quiz">
+      <div class="step-num">✦</div>
+      <h2>Who matches your values?</h2>
+      <p class="hint">Answer 10 quick questions (about 2 minutes), and we'll show how closely each candidate lines up with you. It's optional, and you can skip any question.</p>
+      <details id="quiz-details">
+        <summary class="btn primary">Take the quiz</summary>
+        <div id="quiz"></div>
+        <p class="fine">Matches only use issues where we found the candidate's position on record: their statements, campaign site or voting record. We never guess from party. Treat a match as a starting point for your own reading.</p>
+      </details>
+      <div id="quiz-summary"></div>
+    </section>
+
     <!-- Step 3 -->
     <section class="card step hidden" id="step-ballot">
       <div class="step-num">3</div>
@@ -125,6 +138,7 @@
   <script src="data/states.js"></script>
   <script src="data/offices.js"></script>
   <script src="data/demo.js"></script>
+  <script src="data/issues.js"></script>
   <script src="story.js"></script>
   <script src="app.js"></script>
 </body>
