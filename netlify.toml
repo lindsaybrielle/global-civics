@@ -1,0 +1,9 @@
+# Free hosting on Netlify: the site serves the Downballot app from its root.
+[build]
+  publish = "downballot"
+
+# Old GitHub Pages-style paths still work.
+[[redirects]]
+  from = "/ballot-abroad/*"
+  to = "/"
+  status = 301

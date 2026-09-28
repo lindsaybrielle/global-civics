@@ -1,5 +1,5 @@
 // Checks every state data file against the schema and writing rules.
-// Usage: node ballot-abroad/data/candidates/validate.js
+// Usage: node downballot/data/candidates/validate.js
 const fs = require("fs");
 const path = require("path");
 const dir = __dirname;
