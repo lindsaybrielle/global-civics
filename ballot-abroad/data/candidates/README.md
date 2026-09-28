@@ -27,6 +27,7 @@ window.BALLOT_DATA.XX = {
         stances: { healthcare: 2, taxes: 2, guns: 2 }, // quiz issues, -2..+2 (see data/issues.js)
         sources: [],  // links the summary was written from
         asOf: "Sept 2026",
+        incomplete: true, // optional: platform not yet researched; the app says so
       }],
     },
     // Ballot measures: { office, kind: "measure", subtitle, text, responses: ["Yes","No"] }

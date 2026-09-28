@@ -1,0 +1,398 @@
+// Alabama: researched from campaign sites and news coverage. Neutral wording;
+// every summary links its sources. Schema: see data/candidates/README.md.
+window.BALLOT_DATA = window.BALLOT_DATA || {};
+window.BALLOT_DATA.AL = {
+  updated: "Sept 2026",
+  atLarge: false,
+  races: [
+    {
+      office: "U.S. Senate",
+      kind: "usSenate",
+      district: "Statewide",
+      competitive: false,
+      rating: "Solid R",
+      note: "Open seat: Sen. Tommy Tuberville is running for governor instead of seeking a second term.",
+      candidates: [
+        {
+          name: "Barry Moore",
+          party: "Republican Party",
+          incumbent: false,
+          background: "U.S. Representative from Alabama and former state legislator. Endorsed by President Trump.",
+          summary: "Identifies as pro-life and has cosponsored federal bills to ban abortion once a fetal heartbeat is detected and to restrict abortion pills. Backs tougher border enforcement and more deportations, and has sponsored the Americans First Immigration Act. Votes as a fiscal conservative, with a 97% lifetime rating from the Club for Growth.",
+          sources: [
+            "https://www.congress.gov/member/barry-moore/M001212",
+            "https://smarter.vote/races/al-senate-2026/barry-moore/",
+            "https://www.yahoo.com/news/politics/articles/trump-backed-moore-leads-alabama-042500539.html",
+          ],
+          stances: { abortion: -2, immigration: 2, smallGov: 2 },
+          asOf: "Sept 2026",
+        },
+        {
+          name: "Everett Wess",
+          party: "Democratic Party",
+          incumbent: false,
+          website: "https://wessforsenate.com/",
+          background: "Birmingham attorney and former Midfield Municipal Court judge, making his first major run for office.",
+          summary: "Runs on protecting Social Security and Medicare, supporting organized labor, voting rights and public education. Wants to make prescription drugs and health care more affordable and recruit more doctors to rural and underserved areas, but has not endorsed a specific plan such as Medicaid expansion or a public option.",
+          sources: [
+            "https://alabamareflector.com/2026/09/25/democratic-u-s-senate-nominee-everett-wess-campaigns-against-long-odds/",
+            "https://wessforsenate.com/",
+          ],
+          stances: { voting: 1 },
+          asOf: "Sept 2026",
+        },
+      ],
+    },
+    {
+      office: "Governor",
+      kind: "governor",
+      district: "Statewide",
+      competitive: false,
+      rating: "Solid R",
+      note: "A rematch of the 2020 U.S. Senate race, which Tuberville won.",
+      candidates: [
+        {
+          name: "Tommy Tuberville",
+          incomplete: true,
+          party: "Republican Party",
+          incumbent: false,
+          background: "U.S. Senator since 2021 and former college football head coach. Leaving the Senate to run for governor.",
+          summary: "Won the Republican nomination outright in the May primary. Little detailed coverage of his governing plans was gathered for this guide; see the linked coverage for his platform.",
+          sources: [
+            "https://www.wsfa.com/2026/05/20/live-tuberville-jones-projected-winners-alabama-gop-democratic-gubernatorial-nominations/",
+            "https://ballotpedia.org/Alabama_gubernatorial_election,_2026",
+          ],
+          asOf: "Sept 2026",
+        },
+        {
+          name: "Doug Jones",
+          incomplete: true,
+          party: "Democratic Party",
+          incumbent: false,
+          background: "Former U.S. Senator (2018–2021) and former U.S. Attorney. Lost his Senate seat to Tuberville in 2020.",
+          summary: "Won the Democratic nomination in the May primary over five other candidates. Little detailed coverage of his governing plans was gathered for this guide; see the linked coverage for his platform.",
+          sources: [
+            "https://www.wsfa.com/2026/05/20/live-tuberville-jones-projected-winners-alabama-gop-democratic-gubernatorial-nominations/",
+            "https://alabamareflector.com/2026/05/18/six-democrats-seek-partys-nomination-for-governor/",
+          ],
+          asOf: "Sept 2026",
+        },
+      ],
+    },
+    {
+      office: "Lieutenant Governor",
+      kind: "ltGovernor",
+      district: "Statewide",
+      competitive: false,
+      candidates: [
+        {
+          name: "John Wahl",
+          party: "Republican Party",
+          incumbent: false,
+          background: "Former chair of the Alabama Republican Party.",
+          summary: "Won the June Republican runoff with 57% of the vote. Little coverage of his specific plans for the office was found for this guide.",
+          sources: [
+            "https://www.wvtm13.com/article/alabama-primary-election-runoff-2026-lieutenant-governor/71525257",
+            "https://alabamareflector.com/voter-guides/contests/alltgov/",
+          ],
+          asOf: "Sept 2026",
+        },
+        {
+          name: "Phillip Ensler",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "Lawyer who has served in the Alabama House of Representatives since 2022.",
+          summary: "The Democratic nominee. Little coverage of his specific plans for the office was found for this guide.",
+          sources: [
+            "https://alabamareflector.com/voter-guides/contests/alltgov/",
+            "https://ballotpedia.org/Alabama_lieutenant_gubernatorial_election,_2026",
+          ],
+          asOf: "Sept 2026",
+        },
+      ],
+    },
+    {
+      office: "Attorney General",
+      kind: "attorneyGeneral",
+      district: "Statewide",
+      competitive: false,
+      candidates: [
+        {
+          name: "Katherine Robertson",
+          party: "Republican Party",
+          incumbent: false,
+          background: "Lawyer who won the June Republican runoff with 55% of the vote.",
+          summary: "The Republican nominee. Little coverage of her specific plans for the office was found for this guide.",
+          sources: [
+            "https://www.wvtm13.com/article/alabama-primary-election-runoff-2026-attorney-general/71525389",
+          ],
+          asOf: "Sept 2026",
+        },
+        {
+          name: "Jeff McLaughlin",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "The Democratic nominee for attorney general.",
+          summary: "Little published coverage of his background or plans was found for this guide.",
+          sources: [
+            "https://ballotpedia.org/Alabama_state_executive_official_elections,_2026",
+          ],
+          asOf: "Sept 2026",
+        },
+      ],
+    },
+    {
+      office: "Secretary of State",
+      kind: "secretaryOfState",
+      district: "Statewide",
+      competitive: false,
+      candidates: [
+        {
+          name: "Caroleene Dobson",
+          party: "Republican Party",
+          incumbent: false,
+          background: "Lawyer who won the Republican primary with 65% of the vote.",
+          summary: "The Republican nominee for the office that runs Alabama's elections, including overseas and military ballots. Little coverage of her specific plans was found for this guide.",
+          sources: [
+            "https://www.alabamarealtors.com/posts/2026/05/26/primary-election-results-recap",
+          ],
+          asOf: "Sept 2026",
+        },
+        {
+          name: "Wayne Rogers",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "The Democratic nominee for secretary of state.",
+          summary: "Little published coverage of his background or plans was found for this guide.",
+          sources: [
+            "https://ballotpedia.org/Alabama_state_executive_official_elections,_2026",
+          ],
+          asOf: "Sept 2026",
+        },
+      ],
+    },
+    {
+      office: "State Treasurer",
+      kind: "stateFinance",
+      district: "Statewide",
+      competitive: false,
+      candidates: [
+        {
+          name: "Young Boozer",
+          party: "Republican Party",
+          incumbent: true,
+          background: "State treasurer since 2021, and previously from 2011 to 2019.",
+          summary: "Seeking another term after defeating Steve Lolley in the Republican primary with 68% of the vote. Little coverage of new plans for the office was found for this guide.",
+          sources: [
+            "https://www.alreporter.com/2025/06/05/young-boozer-launches-2026-bid-for-alabama-treasurer/",
+            "https://ballotpedia.org/Young_Boozer",
+          ],
+          asOf: "Sept 2026",
+        },
+        {
+          name: "Rosilyn Houston",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "The Democratic nominee for state treasurer.",
+          summary: "Little published coverage of her background or plans was found for this guide.",
+          sources: [
+            "https://alabamareflector.com/voter-guides/contests/alstatetreasurer/",
+          ],
+          asOf: "Sept 2026",
+        },
+      ],
+    },
+    {
+      office: "State Auditor",
+      kind: "stateFinance",
+      district: "Statewide",
+      competitive: false,
+      candidates: [
+        {
+          name: "Andrew Sorrell",
+          party: "Republican Party",
+          incumbent: true,
+          background: "State auditor since 2023 and a former member of the Alabama House (2018–2022).",
+          summary: "First announced a run for secretary of state, then switched to seeking re-election as auditor and won the Republican primary. Little coverage of new plans for the office was found for this guide.",
+          sources: [
+            "https://alabamareflector.com/voter-guides/contests/alstateauditor/",
+            "https://ballotpedia.org/Alabama_Auditor_election,_2026",
+          ],
+          asOf: "Sept 2026",
+        },
+        {
+          name: "Violet Edwards",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "The Democratic nominee for state auditor.",
+          summary: "Little published coverage of her background or plans was found for this guide.",
+          sources: [
+            "https://alabamareflector.com/voter-guides/contests/alstateauditor/",
+          ],
+          asOf: "Sept 2026",
+        },
+      ],
+    },
+    {
+      office: "Commissioner of Agriculture and Industries",
+      kind: "other",
+      district: "Statewide",
+      competitive: false,
+      candidates: [
+        {
+          name: "Corey Hill",
+          party: "Republican Party",
+          incumbent: false,
+          background: "Farmer and mayor of Douglas in Marshall County.",
+          summary: "Won the June Republican runoff over Christina McInnis with about 53% of the vote. Little coverage of his specific plans was found for this guide.",
+          sources: [
+            "https://alabamareflector.com/2026/06/17/corey-hill-secures-gop-nominee-for-commissioner-of-agriculture-and-industries/",
+            "https://aldailynews.com/corey-hill-wins-republican-nomination-for-alabama-ag-commissioner/",
+          ],
+          asOf: "Sept 2026",
+        },
+        {
+          name: "Ron Sparks",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "Former Alabama agriculture commissioner.",
+          summary: "The Democratic nominee, seeking to return to the office he held before. Little coverage of his current plans was found for this guide.",
+          sources: [
+            "https://abc3340.com/news/local/alabama-corey-hill-wins-gop-runoff-for-agriculture-commissioner-ron-sparks-june-2026-november-election",
+          ],
+          asOf: "Sept 2026",
+        },
+      ],
+    },
+    {
+      office: "Public Service Commission, Place 1",
+      kind: "other",
+      district: "Statewide",
+      competitive: false,
+      candidates: [
+        {
+          name: "Matt Gentry",
+          party: "Republican Party",
+          incumbent: false,
+          background: "Cullman County sheriff.",
+          summary: "Defeated incumbent Commissioner Jeremy Oden in the Republican primary with 75% of the vote. The commission regulates utility rates. Little coverage of his specific plans was found for this guide.",
+          sources: [
+            "https://alabamareflector.com/2026/05/21/gop-voters-reject-one-alabama-psc-commissioner-send-another-to-a-runoff/",
+          ],
+          asOf: "Sept 2026",
+        },
+        {
+          name: "James O. Gordon",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "Won the Democratic primary with 58% of the vote.",
+          summary: "Little published coverage of his background or plans was found for this guide.",
+          sources: [
+            "https://ballotpedia.org/Alabama_Public_Service_Commission_election,_2026",
+          ],
+          asOf: "Sept 2026",
+        },
+      ],
+    },
+    {
+      office: "Public Service Commission, Place 2",
+      kind: "other",
+      district: "Statewide",
+      competitive: false,
+      note: "The Democratic nominee (Sheila McNeil or Wilkie Sherard Frieson ran in the primary) could not be confirmed for this guide.",
+      candidates: [
+        {
+          name: "Jim Zeigler",
+          party: "Republican Party",
+          incumbent: false,
+          background: "Former Alabama state auditor.",
+          summary: "Defeated incumbent Commissioner Chris Beeker III in the June Republican runoff, 51% to 49%. Little coverage of his specific plans was found for this guide.",
+          sources: [
+            "https://alabamareflector.com/2026/06/17/former-state-auditor-jim-zeigler-wins-gop-nomination-for-public-service-commission/",
+          ],
+          asOf: "Sept 2026",
+        },
+      ],
+    },
+    {
+      office: "Supreme Court, Place 2",
+      kind: "judge",
+      district: "Statewide",
+      competitive: false,
+      candidates: [
+        {
+          name: "Greg Shaw",
+          party: "Republican Party",
+          incumbent: true,
+          background: "Associate justice of the Alabama Supreme Court since 2009.",
+          summary: "Seeking another term. Joined the court's 2024 ruling that frozen embryos count as children under state law, which led some fertility clinics to pause IVF treatment.",
+          sources: [
+            "https://boltsmag.org/your-state-by-state-guide-to-the-2026-supreme-court-elections/",
+            "https://ballotpedia.org/Greg_Shaw",
+          ],
+          asOf: "Sept 2026",
+        },
+        {
+          name: "AshLeigh Dunham",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "Juvenile court referee in Jefferson County and a fertility-law attorney.",
+          summary: "Says she conceived a child through IVF and decided to run because of the court's 2024 embryo ruling.",
+          sources: [
+            "https://boltsmag.org/your-state-by-state-guide-to-the-2026-supreme-court-elections/",
+            "https://alabamareflector.com/briefs/ashleigh-dunham-announces-candidacy-for-associate-justice-of-alabama-supreme-court/",
+          ],
+          asOf: "Sept 2026",
+        },
+      ],
+    },
+    {
+      office: "Amendment 1: Lieutenant governor vacancies and legislative pay",
+      kind: "measure",
+      district: "Statewide",
+      subtitle: "Lets voters elect a new lieutenant governor if the office opens up early, and changes how legislative salaries and travel are set.",
+      text: "A YES vote provides for electing a new lieutenant governor if the office becomes vacant during the first two years of a term, lets the Legislature set the salaries of the lieutenant governor and legislative officers, and requires the Legislature to approve spending of legislative funds on travel. A NO vote keeps the current rules.",
+      responses: ["Yes", "No"],
+      sources: [
+        "https://alabamareflector.com/2026/08/05/alabamians-to-vote-on-four-statewide-constitutional-amendments-in-november/",
+        "https://www.wsfa.com/2026/08/04/alabama-fair-ballot-commission-approves-ballot-explanation-4-constitutional-amendments/",
+      ],
+    },
+    {
+      office: "Amendment 2: Lieutenant governor vacancies in presidential years",
+      kind: "measure",
+      district: "Statewide",
+      subtitle: "Allows a lieutenant governor vacancy to be filled at a presidential-year election.",
+      text: "A YES vote allows the state to elect a new lieutenant governor in a presidential election year, as long as the office became vacant more than 60 days before that election. A NO vote keeps the current rules.",
+      responses: ["Yes", "No"],
+      sources: [
+        "https://alabamareflector.com/2026/08/05/alabamians-to-vote-on-four-statewide-constitutional-amendments-in-november/",
+        "https://www.wtvy.com/2026/08/04/alabama-fair-ballot-commission-approves-ballot-explanation-four-constitutional-amendments/",
+      ],
+    },
+    {
+      office: "Amendment 3: Pledge of Allegiance and student-led prayer in schools",
+      kind: "measure",
+      district: "Statewide",
+      subtitle: "Requires public schools to hold the Pledge and set aside time for voluntary student-led prayer each morning.",
+      text: "A YES vote requires local school boards to adopt policies under which public K-12 schools start the day with the Pledge of Allegiance and time for student-initiated prayer, with student participation in both voluntary and violations reviewed by the local superintendent. A NO vote leaves these decisions as they are now.",
+      responses: ["Yes", "No"],
+      sources: [
+        "https://alabamareflector.com/2026/08/05/alabamians-to-vote-on-four-statewide-constitutional-amendments-in-november/",
+        "https://www.wsfa.com/2026/08/04/alabama-fair-ballot-commission-approves-ballot-explanation-4-constitutional-amendments/",
+      ],
+    },
+    {
+      office: "Amendment 4: National anthem in schools",
+      kind: "measure",
+      district: "Statewide",
+      subtitle: "Requires public schools to play or perform the national anthem at least once a week.",
+      text: "A YES vote requires local school boards to adopt policies under which every public K-12 school broadcasts or holds a performance of The Star-Spangled Banner at least once a week during school hours. A NO vote leaves this to schools as it is now.",
+      responses: ["Yes", "No"],
+      sources: [
+        "https://alabamareflector.com/2026/08/05/alabamians-to-vote-on-four-statewide-constitutional-amendments-in-november/",
+        "https://www.wtvy.com/2026/08/04/alabama-fair-ballot-commission-approves-ballot-explanation-four-constitutional-amendments/",
+      ],
+    },
+  ],
+};

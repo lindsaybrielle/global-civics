@@ -1,0 +1,113 @@
+// Missouri: researched from campaign sites and news coverage. Neutral wording;
+// every summary links its sources. Schema: see data/candidates/README.md.
+window.BALLOT_DATA = window.BALLOT_DATA || {};
+window.BALLOT_DATA.MO = {
+  updated: "Sept 2026",
+  atLarge: false,
+  races: [
+    {
+      office: "State Auditor",
+      kind: "stateFinance",
+      district: "Statewide",
+      competitive: false,
+      note: "Missouri has no U.S. Senate or governor race in 2026. State auditor is the only statewide office on the ballot.",
+      candidates: [
+        {
+          name: "Scott Fitzpatrick",
+          party: "Republican Party",
+          incumbent: true,
+          background: "Missouri's state auditor since 2023 and a former state treasurer and state representative from Cassville. Founded a marina repair and marine construction company.",
+          summary: "Seeking a second term. His office has focused on audits that turn up fraud and misused public money in local governments. For a second term he points to reviewing school districts, measuring how well local governments perform, and tracking what taxes pay for.",
+          sources: [
+            "https://www.dailyjournalonline.com/news/missouris-2026-auditor-race-fitzpatrick-seeks-second-term-as-challengers-line-up-7e41bd7f",
+            "https://missouriindependent.com/2026/08/04/state-auditor-fitzpatrick-cruises-to-nomination-for-second-term-in-low-key-primary/",
+          ],
+          asOf: "Sept 2026",
+        },
+        {
+          name: "Quentin Wilson",
+          party: "Democratic Party",
+          incumbent: false,
+          background: "Former Missouri director of revenue and, most recently, director of the St. Louis County Department of Revenue. Has worked for Democratic governors Mel Carnahan and Bob Holden and for members of Congress.",
+          summary: "Says Missouri's economic growth has stalled and wants the auditor's office to push state agencies toward responsible spending. Plans to consult teachers, healthcare workers and other groups on the best uses of state money. Won the Democratic primary with about 70% of the vote.",
+          sources: [
+            "https://www.kcur.org/politics-elections-and-government/2025-12-06/missouri-auditor-2026-fitzpatrick-quentin-wilson",
+            "https://www.stlpr.org/2026-08-04/missouri-voters-choses-contenders-for-state-auditor-race-in-november",
+          ],
+          asOf: "Sept 2026",
+        },
+        {
+          name: "Dustin Coffell",
+          party: "Libertarian Party",
+          incumbent: false,
+          background: "Chair of the Missouri Libertarian Party and an accountant from the St. Louis area. Ran twice for a state House seat.",
+          summary: "Little has been published on his plans for the auditor's office, and he has no campaign website. The party he chairs calls for ending personal property taxes, repealing the state income tax and paying for government through user fees where possible.",
+          sources: [
+            "https://www.stlpr.org/2026-08-04/missouri-voters-choses-contenders-for-state-auditor-race-in-november",
+          ],
+          asOf: "Sept 2026",
+        },
+      ],
+    },
+    {
+      office: "Amendment 3: Repeal the 2024 abortion-rights amendment",
+      kind: "measure",
+      district: "Statewide",
+      subtitle: "Replaces the 2024 reproductive-rights amendment with a ban on abortion with limited exceptions, and bans gender-transition procedures for minors.",
+      text: "A YES vote repeals the 2024 constitutional right to abortion and prohibits abortion except for medical emergencies, fetal anomalies, and rape or incest (before 12 weeks); it also requires parental consent for minors and bans gender-transition procedures for minors. A NO vote keeps the 2024 amendment, which allows abortion up to fetal viability.",
+      responses: ["Yes", "No"],
+      sources: [
+        "https://ballotpedia.org/Missouri_Amendment_3,_Prohibit_Abortion_and_Gender_Transition_Procedures_for_Minors_Amendment_(2026)",
+        "https://www.ozarksfirst.com/news/missouri-amendment-3-set-for-november-ballots-what-would-it-do/",
+      ],
+    },
+    {
+      office: "Amendment 6: Limit lawmakers' changes to voter-approved measures",
+      kind: "measure",
+      district: "Statewide",
+      subtitle: "Citizen initiative that would make it much harder for the legislature to change or repeal laws and amendments passed by voters.",
+      text: "A YES vote requires an 80% vote in the General Assembly plus a statewide vote to change a voter-approved initiative, keeps the current signature and majority-vote rules, and lets courts require clear, unbiased ballot language. A NO vote leaves the legislature able to amend or repeal voter-approved laws by ordinary vote.",
+      responses: ["Yes", "No"],
+      sources: [
+        "https://missouriindependent.com/2026/09/03/missouri-voters-will-decide-limits-on-lawmakers-rewriting-ballot-measures/",
+        "https://www.ky3.com/2026/09/24/missourians-vote-whether-raise-threshold-lawmakers-change-voter-approved-laws/",
+      ],
+    },
+    {
+      office: "Amendment 7: Show-Me Prosperity Fund",
+      kind: "measure",
+      district: "Statewide",
+      subtitle: "Creates a permanent state endowment meant to eventually earn enough to replace state taxes.",
+      text: "A YES vote creates a permanent fund, invested by the state treasurer in S&P 500 index funds, that cannot be spent from until its earnings could replace state-imposed taxes; yearly withdrawals would then be capped at 3% of its average value. A NO vote means no such fund is created.",
+      responses: ["Yes", "No"],
+      sources: [
+        "https://abc17news.com/politics/your-voice-your-vote/2026/09/15/amendment-7-could-eliminate-all-state-imposed-taxes-but-the-timeline-is-unclear/",
+        "https://www.kq2.com/voter-guide/mo-ballot-issues/2026/09/16/missouri-constitutional-amendment-7/",
+      ],
+    },
+    {
+      office: "Amendment 8: Elected county sheriffs",
+      kind: "measure",
+      district: "Statewide",
+      subtitle: "Puts the election of county sheriffs and limits on removing them into the state constitution.",
+      text: "A YES vote requires most counties to elect their sheriffs, names sheriffs as each county's chief law enforcement officer, and allows removal only through a court action brought by the attorney general. A NO vote leaves sheriff elections and removal rules to state law.",
+      responses: ["Yes", "No"],
+      sources: [
+        "https://news.ballotpedia.org/2026/05/19/missouri-voters-to-decide-constitutional-amendment-to-require-election-of-county-sheriffs/",
+        "https://www.kq2.com/voter-guide/mo-ballot-issues/2026/09/16/missouri-amendment-8/",
+      ],
+    },
+    {
+      office: "Proposition A: Referendum on the 2025 congressional map",
+      kind: "measure",
+      district: "Statewide",
+      subtitle: "Voters decide whether the congressional districts the legislature drew in 2025 (HB 1) take effect.",
+      text: "A YES vote approves the 2025 congressional map, which among other changes splits Kansas City among three districts. A NO vote rejects it, keeping the map enacted in 2022. Under a Missouri Supreme Court order, the 2022 map is used for the November 2026 elections either way.",
+      responses: ["Yes", "No"],
+      sources: [
+        "https://ballotpedia.org/Missouri_Congressional_Map_Referendum_(2026)",
+        "https://missouriindependent.com/2026/09/03/missouri-supreme-court-blocks-gerrymandered-congressional-map-orders-referendum-vote/",
+      ],
+    },
+  ],
+};

@@ -295,7 +295,8 @@
       `<a href="https://www.google.com/search?q=${encodeURIComponent(`"${cand.name}" ${stName} 2026 positions`)}" target="_blank" rel="noopener">News search</a>`,
     ].filter(Boolean).join("");
     if (vetted) {
-      return `${vetted.background ? `<p><strong>Who they are:</strong> ${esc(vetted.background)}</p>` : ""}
+      return `${vetted.incomplete ? `<p class="callout">Research in progress: we haven't summarized this candidate's platform yet. Use the links below in the meantime.</p>` : ""}
+        ${vetted.background ? `<p><strong>Who they are:</strong> ${esc(vetted.background)}</p>` : ""}
         <p><strong>Where they stand:</strong> ${esc(vetted.summary)}</p>
         ${vetted.inPractice ? `<p><strong>In practice:</strong> ${esc(vetted.inPractice)}</p>` : ""}
         ${vetted.abroad ? `<p><strong>For you abroad:</strong> ${esc(vetted.abroad)}</p>` : ""}
