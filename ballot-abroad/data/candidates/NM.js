@@ -109,6 +109,7 @@ window.BALLOT_DATA.NM = {
           keyPoints: ["Economy: corporations pay their fair share", "Health care: affordable care for all", "Immigration: border security plus reform"],
           summary: "Vasquez says his economic agenda prioritizes lowering costs for working families, making corporations pay their fair share, creating good-paying jobs, and supporting small businesses. Vasquez says every New Mexican should have access to affordable, high-quality healthcare. Vasquez supports what his campaign calls “real immigration reform”: increased border security, deportation of violent criminals, stronger penalties for cartels, human smugglers, fentanyl traffickers, and other criminals who enter the country, among other measures. Vasquez supports protecting access to abortion and reproductive healthcare, and opposes congressional efforts to ban abortion or birth control.",
           sources: ["https://smarter.vote/races/nm-house-02-2026/gabriel-vasquez/", "https://gabeforcongress.com/issues", "http://vasquez.house.gov/lowercosts", "http://vasquez.house.gov/issues/energy"],
+          stances: { healthcare: 1, taxes: 1, immigration: 0, abortion: 2, guns: 0 },
           asOf: "Sept 2026",
         },
         {
@@ -119,6 +120,7 @@ window.BALLOT_DATA.NM = {
           keyPoints: ["Economy: cut taxes and regulations", "Immigration: tougher border security", "Abortion: opposes abortion rights"],
           summary: "Cunningham's campaign-associated economic agenda emphasizes growing the economy by cutting taxes and regulations, expanding American energy production, and promoting domestic manufacturing. Cunningham supports increased border security and describes immigration without assimilation as an invasion, while supporting legal immigration measures such as modernizing agricultural guest-worker programs and reducing the costs and administrative barriers for New Mexico growers. Cunningham has maintained an anti-abortion position. In an iVoterGuide questionnaire for his 2026 New Mexico U.S. House District 2 race, Cunningham said: “The Second Amendment shall not be infringed, according to the Constitution,” in response to what restrictions on gun ownership are needed for public safety.",
           sources: ["https://smarter.vote/races/nm-house-02-2026/greg-cunningham/", "https://sourcenm.com/2026/08/24/us-house-speaker-mike-johnson-to-campaign-in-albuquerque-for-gop-congressional-challenger-cunningham/", "https://sourcenm.com/2026/04/17/new-mexico-election-2026-trail-notes-9/", "https://www.localcandidates.org/politicians/greg-cunningham/positions/123b4079-7c17-417d-bfde-8bb54d60e800"],
+          stances: { taxes: -1, immigration: 2, abortion: -2, guns: -2, climate: -2 },
           asOf: "Sept 2026",
         },
       ],

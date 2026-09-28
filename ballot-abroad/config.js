@@ -7,7 +7,7 @@ window.APP_CONFIG = {
   civicApiKey: "",
 
   // Printed on the share images so friends can make their own plan.
-  siteUrl: "",
+  siteUrl: "lindsaybrielle.github.io/global-civics",
 
   electionDate: "2026-11-03",
 };

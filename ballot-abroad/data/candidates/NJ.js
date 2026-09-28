@@ -262,6 +262,7 @@ window.BALLOT_DATA.NJ = {
             "https://whyy.org/articles/election-2026-new-jersey-7th-congressional-district-voter-guide/",
             "https://centraljersey.com/2026/09/19/poll-shows-bennett-narrowly-ahead-of-kean-in-nj-7-as-firefighters-union-switches/",
           ],
+          stances: { taxes: -1 },
           asOf: "Sept 2026",
         },
         {
@@ -276,7 +277,7 @@ window.BALLOT_DATA.NJ = {
             "https://whyy.org/articles/election-2026-new-jersey-7th-congressional-district-voter-guide/",
             "https://centraljersey.com/2026/09/19/poll-shows-bennett-narrowly-ahead-of-kean-in-nj-7-as-firefighters-union-switches/",
           ],
-          stances: { smallGov: 1 },
+          stances: { smallGov: 1, allies: 1 },
           asOf: "Sept 2026",
         },
       ],

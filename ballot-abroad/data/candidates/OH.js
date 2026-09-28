@@ -92,6 +92,7 @@ window.BALLOT_DATA.OH = {
           keyPoints: ["Health care: protect Medicaid, cut drug prices, relieve medical debt", "Economy: against \"pay-to-play\" politics", "Immigration: against illegal immigration, enforce the law"],
           summary: "Acton says Ohio should move away from what she calls a trickle-down, pay-to-play economic approach. Amy Acton says she would protect Medicaid and Medicare by reducing enrollment red tape and approval wait times and addressing waste, fraud, and abuse; lower prescription costs through an Ohio Rx purchasing platform and require prescription payments to count toward insurance deductibles; increase hospital and insurance price transparency, strengthen protections against surprise billing, support small-business coverage, and direct the state to relieve medical debt. Acton states that she does not support illegal immigration and supports enforcing state and federal law against people who are in the country unlawfully. Acton says she will protect reproductive freedom and oppose government interference in reproductive-health decisions.",
           sources: ["https://smarter.vote/races/oh-governor-2026/amy-acton/", "https://actonforgovernor.com/issue/affordable-healthcare-for-all-ohioans", "https://actonforgovernor.com/dr-amy-acton-meets-ohioans-in-steubenville-for-a-roundtable-on-healthcare-costs/", "https://actonforgovernor.com/dr-amy-acton-meets-ohioans-in-zanesville-for-a-roundtable-on-healthcare-costs/"],
+          stances: { healthcare: 1, immigration: 1, abortion: 2, guns: 1 },
           asOf: "Sept 2026",
         },
         {
@@ -102,6 +103,7 @@ window.BALLOT_DATA.OH = {
           keyPoints: ["Taxes: phase out the state income tax", "Health care: crack down on Medicaid fraud", "Immigration: end birthright citizenship"],
           summary: "Ramaswamy’s Ohio economic plan emphasizes making the state more affordable and business-friendly by cutting government waste and regulatory barriers, lowering property taxes, phasing out the state income tax beginning with capital-gains taxes, among other measures. Ramaswamy proposes making Medicaid fraud enforcement a top statewide priority, simplifying Medicaid administration, and seeking federal approval for Ohio to retain a larger share of recovered fraud savings. Ramaswamy has proposed ending birthright citizenship for U.S.-born children of undocumented immigrants, a position he advocated during his 2024 presidential campaign and has not disavowed in his Ohio governor bid. Ramaswamy has publicly described himself as “unapologetically pro-life,” praised Iowa’s six-week abortion ban, and said Dobbs was correct, while arguing abortion policy should be decided by the states rather than through a federal ban.",
           sources: ["https://smarter.vote/races/oh-governor-2026/vivek-ramaswamy/", "https://vivekforohio.com/the-plan/", "https://ohiocapitaljournal.com/2026/08/12/candidates-highlight-data-center-plans-next-ohio-governor-will-select-regulators/", "https://vivekforohio.com/powering-ohios-future-why-coal-still-matters-and-innovation-cant-wait/"],
+          stances: { taxes: -2, immigration: 2, abortion: -2, guns: -2, climate: -1 },
           asOf: "Sept 2026",
         },
         {
@@ -294,6 +296,7 @@ window.BALLOT_DATA.OH = {
             "https://rollcall.com/2026/05/06/ohios-kaptur-set-for-rematch-with-merrin-in-bid-for-23rd-house-term/",
             "https://thehill.com/homenews/campaign/5858241-landsman-conroy-ohio-house-election/",
           ],
+          stances: { allies: 2 },
           asOf: "Sept 2026",
         },
         {
@@ -311,7 +314,7 @@ window.BALLOT_DATA.OH = {
             "https://rollcall.com/2026/05/06/ohios-kaptur-set-for-rematch-with-merrin-in-bid-for-23rd-house-term/",
             "https://ballotpedia.org/Eric_Conroy",
           ],
-          stances: { smallGov: 1, allies: 1 },
+          stances: { immigration: 2, smallGov: 1, allies: 1 },
           asOf: "Sept 2026",
         },
       ],
@@ -550,6 +553,7 @@ window.BALLOT_DATA.OH = {
           summary: "Marcy Kaptur's top priority is strengthening the economy. Marcy Kaptur supports strengthening the Affordable Care Act to expand access and lower health-care costs, including expanding premium subsidies and encouraging Medicaid expansion where states have not adopted it. Marcy Kaptur supports secure borders and legal immigration. Says a woman's health decisions \"must be between a woman and her doctor.\"",
           inPractice: "Would continue as a senior Democrat on the Appropriations Committee.",
           sources: ["https://smarter.vote/races/oh-house-09-2026/marcy-kaptur/", "https://marcykaptur.com/priorities", "https://kaptur.house.gov/issues/energy", "http://kaptur.house.gov/media-center/press-releases/inflation-reduction-act-kaptur-votes-lower-healthcare-and-energy-costs"],
+          stances: { healthcare: 2, immigration: 1, abortion: 2, guns: 1 },
           asOf: "Sept 2026",
         },
         {
@@ -561,6 +565,7 @@ window.BALLOT_DATA.OH = {
           summary: "Advocates pro-growth, business-friendly economic policy by lowering taxes and reducing regulatory burdens to help small businesses grow and create jobs. Supports lowering health care costs by increasing price transparency and reducing government mandates; advocates for policies that require providers to post prices so patients can compare costs. Advocates for strict immigration enforcement and secure borders; opposes amnesty for illegal immigrants and supports deportation of those who enter illegally. Advocates for strict abortion restrictions, including bans before fetal viability (such as six-week bans) with limited or no exceptions for rape or incest; co-sponsored near-total abortion bans and supported Ohio's Heartbeat Bill and related measures, among other measures.",
           inPractice: "Would be expected to vote with House Republicans. Little detail on his platform was found in the coverage reviewed for this guide.",
           sources: ["https://smarter.vote/races/oh-house-09-2026/derek-merrin/", "https://www.facebook.com/derekmerrinforohio/videos/health-care/713709912341128/", "https://www.linkedin.com/posts/derek-merrin-584a856_ohio-lawmakers-want-hospitals-to-follow-pricing-activity-7032179689368535040-BVzj?trk=public_profile_share_view", "https://ohiohouse.gov/news/republican/representative-derek-merrin-proposes-tax-change-to-support-small-businesses-83204"],
+          stances: { taxes: -2, immigration: 2, abortion: -2, guns: -2 },
           asOf: "Sept 2026",
         },
         {

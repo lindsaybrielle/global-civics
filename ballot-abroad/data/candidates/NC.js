@@ -116,7 +116,7 @@ window.BALLOT_DATA.NC = {
             "https://www.dailyadvance.com/news/local/buckhout-weighs-in-on-immigration-ukraine-abortion-ending-aca-smith-did-not-respond-to-questions/article_345d8f58-d043-11ee-ace4-db2f8ac99ada.html",
             "https://ivoterguide.com/candidate/77557/race/11100/election/1090?culture=en-us",
           ],
-          stances: { immigration: 2, abortion: -2 },
+          stances: { healthcare: -1, immigration: 2, abortion: -2 },
           asOf: "Sept 2026",
         },
         {

@@ -112,7 +112,7 @@ window.BALLOT_DATA.MI = {
             "https://michiganindependent.com/politics/michigan-governor-candidates-offer-competing-proposals-on-healthcare-and-education/",
             "https://gandernewsroom.com/news/elections/benson-vs-james-michigan-governor/",
           ],
-          stances: { abortion: 2, voting: 2 },
+          stances: { healthcare: 1, abortion: 2, voting: 2 },
           asOf: "Sept 2026",
         },
         {
@@ -326,6 +326,7 @@ window.BALLOT_DATA.MI = {
             "https://www.heraldpalladium.com/news/elections/huizenga-mccann-advance-in-4th-congressional-district-race/article_19b32fb1-4864-526b-9ae5-39ed071c0b95.html",
             "https://seanmccannforcongress.com/state-sen-sean-mccann-statement-on-news-that-bill-huizenga-will-run-for-re-election/",
           ],
+          stances: { healthcare: 1 },
           asOf: "Sept 2026",
         },
         {
@@ -440,7 +441,7 @@ window.BALLOT_DATA.MI = {
             "https://www.wmuk.org/2026-09-28/10th-congressional-race-michigan-michael-bouchard-christina-hines",
             "https://www.yahoo.com/news/articles/hines-nets-emily-list-endorsement-120035771.html",
           ],
-          stances: { abortion: 2, voting: 1 },
+          stances: { healthcare: 1, abortion: 2, voting: 1 },
           asOf: "Sept 2026",
         },
         {
@@ -457,7 +458,7 @@ window.BALLOT_DATA.MI = {
             "https://www.wmuk.org/2026-09-28/10th-congressional-race-michigan-michael-bouchard-christina-hines",
             "https://www.cbsnews.com/detroit/news/michael-bouchard-announces-candidacy-for-michigans-10th-congressional-district",
           ],
-          stances: { immigration: 1, tariffs: 1 },
+          stances: { immigration: 1, abortion: -2, tariffs: 1 },
           asOf: "Sept 2026",
         },
         {

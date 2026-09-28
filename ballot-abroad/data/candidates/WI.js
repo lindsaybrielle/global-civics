@@ -235,7 +235,7 @@ window.BALLOT_DATA.WI = {
             "https://www.weau.com/2026/08/12/rematch-wisconsins-3rd-congressional-district/",
             "https://en.wikipedia.org/wiki/Derrick_Van_Orden",
           ],
-          stances: { immigration: 1, taxes: -1 },
+          stances: { taxes: -1, immigration: 1 },
           asOf: "Sept 2026",
         },
       ],

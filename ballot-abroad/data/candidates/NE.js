@@ -119,6 +119,7 @@ window.BALLOT_DATA.NE = {
           keyPoints: ["Health care: Medicare drug negotiation, $35 insulin", "Immigration: path to citizenship plus border security", "Guns: universal background checks"],
           summary: "Powell champions a growth-oriented, worker-focused economy. Powell supports expanding affordable health coverage by allowing Medicare to negotiate drug prices and capping insulin costs at $35 per month for everyone. Supports secure borders and a humane, bipartisan pathway to citizenship for long-term immigrants and Dreamers. Powell supports universal background checks for all firearm sales, supports red-flag laws to temporarily remove guns from individuals deemed a danger to themselves or others, and advocates funding for community violence intervention programs to reduce gun violence.",
           sources: ["https://smarter.vote/races/ne-house-02-2026/denise-powell/", "https://deniseforcongress.org/priorities/", "https://deniseforcongress.org/denise-powell-statement-on-aca-vote/", "https://nebraskapublicmedia.org/es/news/news-articles/2nd-district-democratic-candidates-address-affordability-immigration-and-iran-war/"],
+          stances: { healthcare: 1, immigration: -1, abortion: 2, guns: 2, climate: 1 },
           asOf: "Sept 2026",
         },
         {
@@ -129,6 +130,7 @@ window.BALLOT_DATA.NE = {
           keyPoints: ["Health care: more affordable care, including IVF", "Immigration: deport violent criminals", "Abortion: restrictions from conception"],
           summary: "Calls to make healthcare, including IVF, more accessible and affordable for Nebraska families. Calls to deport criminal illegal immigrants who commit violent crimes. Brinker Harding supports abortion restrictions from conception onward as part of a pro-life framework. Calls to expand domestic energy production to lower energy costs for consumers in the short term while advancing long-term environmental stewardship.",
           sources: ["https://smarter.vote/races/ne-house-02-2026/brinker-harding/", "https://www.brinkerharding.com/vision", "https://www.localcandidates.org/politicians/brinker-harding/positions/2664c1db-70dc-4a62-a462-85d8231b677e", "https://ballotpedia.org/Brinker_Harding"],
+          stances: { immigration: 1, abortion: -2, climate: -1 },
           asOf: "Sept 2026",
         },
         {

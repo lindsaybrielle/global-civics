@@ -23,6 +23,7 @@ window.BALLOT_DATA.AZ = {
           keyPoints: ["Costs: child tax credits, targeted sales-tax cuts", "Health care: protect Medicaid, lower drug costs", "Border: secure border plus path to citizenship"],
           summary: "Hobbs says she wants to lower costs for Arizona families through child tax credits and targeted sales-tax exemptions, expand child-care assistance and career and technical education, and support job and business growth to strengthen the state economy. Hobbs supports expanding access to healthcare and reproductive care, protecting Medicaid and eligible patients, lowering prescription-drug costs, and making care more affordable. Hobbs says Arizona should secure the border while pressing for federal comprehensive immigration reform, including a path to citizenship for undocumented immigrants and DREAMers. Hobbs supports reproductive freedom and says abortion and reproductive-care decisions should be made by patients and doctors rather than government.",
           sources: ["https://smarter.vote/races/az-governor-2026/katie-hobbs/", "https://azgovernor.gov/governor/priorities/health-and-reproductive-rights", "https://azgovernor.gov/office-arizona-governor/news/2026/08/governor-hobbs-erases-historic-1-billion-medical-debt-arizonans", "https://azgovernor.gov/office-arizona-governor/news/2025/05/governor-katie-hobbs-and-health-care-providers-across-arizona"],
+          stances: { healthcare: 1, immigration: -1, abortion: 2, guns: 1, climate: 1 },
           asOf: "Sept 2026",
         },
         {
@@ -33,6 +34,7 @@ window.BALLOT_DATA.AZ = {
           keyPoints: ["Taxes: phase out the state income tax", "Border: work with President Trump on enforcement", "Abortion: opposes abortion rights"],
           summary: "Biggs says he would make Arizona more affordable by incrementally eliminating the state income tax to attract businesses, encouraging job growth, reducing government interference, and pursuing cheaper fuel and electricity. Biggs' campaign says he supports protecting Arizonans' health choice and implementing the MAHA agenda at the state level. Biggs says he would partner with President Trump and local law enforcement to secure Arizona’s southern border and crack down on drug and human trafficking. Biggs has a record of opposing abortion access: he has described himself as pro-life, supported or co-sponsored federal legislation that could ban abortion nationwide—including personhood legislation extending constitutional protections to a fertilized egg—and supported abortion restrictions as an Arizona lawmaker.",
           sources: ["https://smarter.vote/races/az-governor-2026/andy-biggs/", "https://biggsforarizona.com/issues", "https://azmirror.com/2026/07/23/doctors-warn-andy-biggs-record-on-healthcare-abortion-should-alarm-arizona-voters/", "https://biggsforarizona.com/issues/"],
+          stances: { taxes: -2, immigration: 2, abortion: -2, guns: -2, climate: -1 },
           asOf: "Sept 2026",
         },
       ],
@@ -54,6 +56,7 @@ window.BALLOT_DATA.AZ = {
           keyPoints: ["Costs: roll back tariffs raising prices", "Health care: universal coverage", "Immigration: enforce laws but rein in current ICE tactics"],
           summary: "Shah says costs are too high for Arizona working families and attributes rising prices for groceries, gas, cars, and housing in part to tariffs. Shah's campaign describes him as a champion of universal healthcare. Shah said the United States should enforce its immigration laws, but argued that curtailing current U.S. Immigration and Customs Enforcement practices is necessary. Shah says reproductive-health decisions should be made by a woman and her health-care provider, without government interference.",
           sources: ["https://smarter.vote/races/az-01-house-2026/amish-shah/", "https://www.amishforarizona.com/issues", "https://www.amishforarizona.com/", "https://www.facebook.com/AmishShahMD/posts/proud-to-be-endorsed-by-the-nrdc-action-fund-in-congress-ill-continue-working-to/1528345552451302/"],
+          stances: { healthcare: 2, immigration: -1, abortion: 2, guns: 2, tariffs: -2 },
           asOf: "Sept 2026",
         },
         {
@@ -64,6 +67,7 @@ window.BALLOT_DATA.AZ = {
           keyPoints: ["Economy: extend Trump tax cuts, cut regulations", "Border: finish the wall, back ICE", "Guns: defend Second Amendment rights"],
           summary: "Feely says he would slash regulations, expand Trump-era tax cuts, support domestic manufacturing, and work to reduce inflation. Feely says he would prioritize border security, finish the border wall, dismantle what he calls the Biden/Harris “open-borders agenda,” and support Border Patrol and ICE. His campaign specifically supports mass deportations of violent offenders and efforts to stop fentanyl from entering communities. Feely’s campaign says he will defend Arizonans’ Second Amendment rights. Feely's campaign says he supports President Trump's America-First energy agenda and expanding American oil, natural gas, clean coal, and innovation.",
           sources: ["https://smarter.vote/races/az-01-house-2026/jay-feely/", "https://www.jayfeelyforcongress.com/issues", "https://www.jayfeelyforcongress.com/news", "https://ktar.com/arizona-politics-news/election/jay-feely-affordability-independent"],
+          stances: { taxes: -2, immigration: 2, guns: -2, climate: -2 },
           asOf: "Sept 2026",
         },
         {
@@ -241,6 +245,7 @@ window.BALLOT_DATA.AZ = {
           keyPoints: ["Economy: small business and job training", "Health care: says he won't cut Medicaid for vulnerable people", "Abortion: opposes a federal ban; supports exceptions"],
           summary: "Ciscomani emphasizes supporting small businesses, workforce training, and infrastructure investment as ways to strengthen Arizona's 6th District economy. Ciscomani says he supports fiscally responsible healthcare reforms that lower costs and protect families, and he has said he will not support legislation that reduces Medicaid benefits for vulnerable populations. Juan Ciscomani supports stricter border enforcement and immigration-law enforcement, including reinstating Remain in Mexico, strengthening Customs and Border Protection, targeting cartels and human-smuggling operations, and increasing DHS resources. Ciscomani says he opposes a federal abortion ban and supports exceptions for rape, incest, and protecting the life of the mother.",
           sources: ["https://smarter.vote/races/az-06-house-2026/juan-ciscomani/", "http://ciscomani.house.gov/media/press-releases/ciscomani-house-republicans-call-fiscally-responsible-healthcare-reforms-not", "https://www.tucsonsentinel.com/local/report/010926_aca_vote_az/", "https://ciscomani.house.gov/media/press-releases/ciscomani-concludes-productive-district-week-highlights-millions-secured-pima"],
+          stances: { healthcare: 0, immigration: 2, abortion: -1, guns: -1 },
           asOf: "Sept 2026",
         },
         {
@@ -251,6 +256,7 @@ window.BALLOT_DATA.AZ = {
           keyPoints: ["Health care: reverse Medicaid and ACA cuts", "Border: more security at ports, deport violent criminals", "Abortion: supports abortion access"],
           summary: "Mendoza says one job should provide a livable wage, benefits, and the ability to retire with dignity. JoAnna Mendoza says she would reverse cuts to healthcare, including AHCCCS and enhanced Affordable Care Act subsidies; protect people with pre-existing conditions; expand Medicare’s prescription-drug negotiation; train more doctors and nurses; and oppose privatizing Medicare. Mendoza says she supports stronger border security at ports of entry, deporting violent criminals, holding cartels accountable, and professional, lawful, and accountable immigration enforcement. Mendoza has publicly supported abortion access and reproductive rights, including the right to make personal health-care decisions.",
           sources: ["https://smarter.vote/races/az-06-house-2026/joanna-mendoza/", "https://www.joannamendoza.com/issues/economy/", "https://www.facebook.com/Mendoza4AZ/posts/for-nearly-30-years-the-southern-arizona-leadership-council-salc-has-worked-to-g/1421368869807008/", "https://www.joannamendoza.com/issues/environment/"],
+          stances: { healthcare: 2, immigration: 0, abortion: 2, guns: 1 },
           asOf: "Sept 2026",
         },
         {

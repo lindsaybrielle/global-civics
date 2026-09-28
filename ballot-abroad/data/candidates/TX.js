@@ -85,7 +85,7 @@ window.BALLOT_DATA.TX = {
             "https://www.houstonchronicle.com/politics/texas/article/gina-hinojosa-abortion-trans-22449025.php",
             "https://www.houstonchronicle.com/politics/texas/article/hinojosa-greg-abbott-race-22437058.php",
           ],
-          stances: { abortion: 1 },
+          stances: { healthcare: 1, abortion: 1 },
           asOf: "Sept 2026",
         },
         {
@@ -101,7 +101,7 @@ window.BALLOT_DATA.TX = {
             "https://www.houstonchronicle.com/politics/texas/article/abbott-ad-hinojosa-property-tax-22444137.php",
             "https://www.ksat.com/news/texas/2026/09/25/texas-governor-2026-who-is-running-and-what-to-know/",
           ],
-          stances: { immigration: 2, taxes: -2 },
+          stances: { taxes: -2, immigration: 2, abortion: -2 },
           asOf: "Sept 2026",
         },
         {
@@ -653,7 +653,7 @@ window.BALLOT_DATA.TX = {
             "https://news.ballotpedia.org/2026/08/24/incumbent-henry-cuellar-d-tano-tijerina-r-and-marlon-duran-g-face-off-in-redrawn-texas-congressional-district/",
             "https://ballotpedia.org/Henry_Cuellar",
           ],
-          stances: { immigration: 1 },
+          stances: { taxes: 1, immigration: 1 },
           asOf: "Sept 2026",
         },
         {
@@ -669,7 +669,7 @@ window.BALLOT_DATA.TX = {
             "https://www.kgns.tv/2026/03/04/tijerina-leads-gop-primary-texas-district-28-congressional-race/",
             "https://news.ballotpedia.org/2026/08/24/incumbent-henry-cuellar-d-tano-tijerina-r-and-marlon-duran-g-face-off-in-redrawn-texas-congressional-district/",
           ],
-          stances: { immigration: 1, taxes: -1 },
+          stances: { taxes: -1, immigration: 1, smallGov: 1 },
           asOf: "Sept 2026",
         },
         {
@@ -723,7 +723,7 @@ window.BALLOT_DATA.TX = {
             "https://myrgv.com/publications/the-brownsville-herald/2026/03/04/eric-flores-trounces-mayra-flores-in-district-34-republican-primary/",
             "https://texpolls.com/races/us-house-tx34-2026",
           ],
-          stances: { immigration: 2 },
+          stances: { immigration: 2, climate: -1, voting: -1 },
           asOf: "Sept 2026",
         },
         {
@@ -786,7 +786,7 @@ window.BALLOT_DATA.TX = {
             "https://www.tpr.org/government-politics/2026-05-27/trump-backed-carlos-de-la-cruz-wins-gop-runoff-setting-up-november-test-of-redistricting-in-tx-35",
             "https://sanantonioreport.org/profile/carlos-de-la-cruz-2026-candidate-for-texas-35th-congressional-district/",
           ],
-          stances: { immigration: 2 },
+          stances: { healthcare: -1, immigration: 2 },
           asOf: "Sept 2026",
         },
       ],

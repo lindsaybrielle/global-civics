@@ -52,6 +52,7 @@ window.BALLOT_DATA.VA = {
           keyPoints: ["Taxes: tax relief for families and small business", "Health care: competition and HSAs", "Immigration: stricter enforcement"],
           summary: "Wittman supports a pro-growth, pro-worker agenda centered on tax relief for working families and small businesses, affordable American energy, streamlined permitting, reduced regulatory barriers, domestic manufacturing and supply-chain security, and expanded workforce training. Wittman supports a patient- and provider-centered health care approach focused on competition, transparency, lower costs, expanded choice, telehealth, Health Savings Accounts, and stronger access in rural communities. Rob Wittman supports stricter immigration enforcement and border security, including securing the border, ending catch-and-release, using Migrant Protection Protocols, enforcing existing immigration laws, and providing more resources to DHS and law enforcement. Rob Wittman has taken positions opposing abortion access and supporting abortion restrictions.",
           sources: ["https://smarter.vote/races/va-house-01-2026/rob-wittman/", "https://wittman.house.gov/priorities/energy", "https://wittman.house.gov/priorities/environmental-conservation", "https://wittman.house.gov/priorities/jobs-economy"],
+          stances: { taxes: -1, immigration: 2, abortion: -2, guns: -2, climate: -1 },
           asOf: "Sept 2026",
         },
         {
@@ -62,6 +63,7 @@ window.BALLOT_DATA.VA = {
           keyPoints: ["Taxes: cut for working families, not billionaires", "Health care: restore ACA tax credits", "Abortion: restore Roe protections"],
           summary: "Taylor says she would cut taxes for working families and small businesses rather than billionaires and corporate special interests, rein in tariffs and wars that she says raise prices, and invest in energy, infrastructure, and good-paying jobs to strengthen Virginia's economy. Shannon Taylor says she would fight to restore Affordable Care Act tax credits, restore funding for hospitals including Rappahannock General, expand Medicare's ability to negotiate prescription-drug prices, end surprise billing through transparent medical billing, and protect Medicare for seniors. Taylor says she would fight in Congress to restore the protections of Roe v. Wade, protect access to contraception and IVF, and prevent women or doctors from being criminalized for abortion care. Taylor supports gun-safety measures including universal background checks, a ban on untraceable ghost guns, and disarming domestic abusers.",
           sources: ["https://smarter.vote/races/va-house-01-2026/shannon-taylor/", "https://shannontaylorva.com/", "https://shannontaylorva.com/rob-wittman-says-his-vote-to-gut-health-care-and-slash-his-own-taxes-helps-everybody/", "https://shannontaylorva.com/agenda"],
+          stances: { healthcare: 1, taxes: 1, abortion: 2, guns: 2 },
           asOf: "Sept 2026",
         },
       ],
@@ -83,6 +85,7 @@ window.BALLOT_DATA.VA = {
           keyPoints: ["Economy: tax relief and small business", "Health care: ACA credits only with reforms and income caps", "Abortion: leave to states, with exceptions"],
           summary: "Kiggans has emphasized economic growth and lower costs through tax relief, support for small businesses and domestic manufacturing. Kiggans opposed a clean extension of enhanced Affordable Care Act tax credits, saying an extension should include income caps and other reforms; she said she would support a one-year extension paired with significant healthcare reforms. Kiggans supports stricter border security and expanded immigration enforcement. Kiggans describes herself as opposed to abortion and says abortion laws should be determined at the state level, with exceptions for rape, incest, and the life of the mother.",
           sources: ["https://smarter.vote/races/va-house-02-2026/jennifer-kiggans/", "https://virginiamercury.com/2026/08/12/what-candidates-have-planned-for-virginias-coast-could-decide-a-key-congressional-race/", "https://kiggans.house.gov/2025/06/06/kiggans-continues-to-fight-for-smart-energy-policy-in-reconciliation/", "https://kiggans.house.gov/posts/icymi-op-ed-applauds-kiggans-for-protecting-clean-energy-in-virginia"],
+          stances: { immigration: 2, abortion: -1, guns: -2, climate: 1 },
           asOf: "Sept 2026",
         },
         {
@@ -93,6 +96,7 @@ window.BALLOT_DATA.VA = {
           keyPoints: ["Trade: tariffs are a tax on families", "Health care: lower costs", "Immigration: border security plus path to citizenship"],
           summary: "Luria says tariffs function as a tax on working families, have slowed the economy, and increased the average household's costs; she says she would work to lower the cost of living, including by making health care more affordable and reversing President Trump's tax policies. Luria has supported expanding access and lowering healthcare costs. Luria's campaign website says she supported comprehensive efforts in Congress to deter illegal immigration and strengthen border security, while also providing a pathway to citizenship for those who follow the nation's laws. Luria's campaign says she supports codifying Roe v. Wade, enshrining a nationwide right to abortion, and protecting the right to travel for abortion care.",
           sources: ["https://smarter.vote/races/va-house-02-2026/elaine-luria/", "https://insideclimatenews.org/news/11082026/virginia-coast-key-congressional-race/", "https://virginiamercury.com/2026/08/12/what-candidates-have-planned-for-virginias-coast-could-decide-a-key-congressional-race/", "https://www.lcv.org/moc/elaine-luria/"],
+          stances: { healthcare: 1, immigration: 0, abortion: 2, guns: 1, climate: 2, tariffs: -2 },
           asOf: "Sept 2026",
         },
       ],

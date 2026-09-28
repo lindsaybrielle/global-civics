@@ -73,7 +73,7 @@ window.BALLOT_DATA.IA = {
             "https://iowacapitaldispatch.com/2026/06/08/crawford-county-supervisor-dave-muhlbauer-picked-as-rob-sands-gubernatorial-running-mate/",
             "https://dailyiowan.com/2026/09/14/right-wing-left-wing-same-bird-rob-sand-pitches-bipartisanship/",
           ],
-          stances: { abortion: 1 },
+          stances: { healthcare: 1, abortion: 1 },
           asOf: "Sept 2026",
         },
         {
@@ -92,7 +92,7 @@ window.BALLOT_DATA.IA = {
             "https://www.iowapublicradio.org/political-news/2026-06-03/zach-lahn-wins-republican-nomination-for-iowa-governor",
             "https://iowastartingline.com/news/elections/iowa-governor-rob-sand-zach-lahn/",
           ],
-          stances: { abortion: -2, immigration: 1 },
+          stances: { taxes: 1, immigration: 1, abortion: -2 },
           asOf: "Sept 2026",
         },
       ],
@@ -229,7 +229,7 @@ window.BALLOT_DATA.IA = {
             "https://www.thegazette.com/campaigns-elections/campaign-almanac-bohannan-rolls-out-ethics-plan-as-miller-meeks-presses-to-ban-congressional-stock/",
             "https://news.ballotpedia.org/2026/07/23/rep-miller-meeks-and-bohannan-to-meet-for-third-consecutive-election-in-iowas-1st-district-on-november-3-2026/",
           ],
-          stances: { tariffs: -2, healthcare: 2 },
+          stances: { healthcare: 2, abortion: 2, tariffs: -2 },
           asOf: "Sept 2026",
         },
         {
@@ -245,7 +245,7 @@ window.BALLOT_DATA.IA = {
             "https://iowacapitaldispatch.com/2026/06/02/iowa-1st-district-bohannan-miller-meeks-to-face-off-in-november-ap-projects/",
             "https://www.thegazette.com/campaigns-elections/campaign-almanac-bohannan-rolls-out-ethics-plan-as-miller-meeks-presses-to-ban-congressional-stock/",
           ],
-          stances: { healthcare: -1 },
+          stances: { healthcare: -1, smallGov: 1 },
           asOf: "Sept 2026",
         },
         {
@@ -282,7 +282,7 @@ window.BALLOT_DATA.IA = {
             "https://qctimes.com/news/state-regional/government-politics/article_5a8fe564-fa6d-52f6-9104-799c33f23746.html",
             "https://en.wikipedia.org/wiki/Lindsay_James_(politician)",
           ],
-          stances: { healthcare: 1 },
+          stances: { healthcare: 1, abortion: 2 },
           asOf: "Sept 2026",
         },
         {
@@ -327,7 +327,7 @@ window.BALLOT_DATA.IA = {
             "https://news.ballotpedia.org/2026/07/23/nunn-trone-garriott-and-battaglia-are-running-in-iowas-3rd-district-decided-by-fewer-than-four-points-in-each-of-the-last-two-elections/",
             "https://iowacapitaldispatch.com/2025/05/05/state-sen-sarah-trone-garriott-launches-congressional-campaign-in-iowas-3rd-district/",
           ],
-          stances: { tariffs: -2, healthcare: 1 },
+          stances: { healthcare: 1, taxes: 1, tariffs: -2 },
           asOf: "Sept 2026",
         },
         {
@@ -343,7 +343,7 @@ window.BALLOT_DATA.IA = {
             "https://news.ballotpedia.org/2026/07/23/nunn-trone-garriott-and-battaglia-are-running-in-iowas-3rd-district-decided-by-fewer-than-four-points-in-each-of-the-last-two-elections/",
             "https://ballotpedia.org/Zach_Nunn",
           ],
-          stances: { taxes: -1, healthcare: -1 },
+          stances: { healthcare: -1, taxes: -1, allies: -1 },
           asOf: "Sept 2026",
         },
         {

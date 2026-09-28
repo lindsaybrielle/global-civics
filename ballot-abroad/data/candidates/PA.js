@@ -62,6 +62,7 @@ window.BALLOT_DATA.PA = {
           keyPoints: ["Economy: affordability and domestic manufacturing", "Health care: protect Medicare, Medicaid, pre-existing conditions", "Immigration: secure border with due process"],
           summary: "Fitzpatrick says economic policy should make goods and housing more affordable, support American workers and domestic manufacturing, and put the federal government on a more sustainable fiscal path. Fitzpatrick says healthcare should be affordable, expand access and competition, lower prescription-drug costs, protect Medicare, Medicaid, CHIP, and preserve continuous coverage and protections for people with preexisting conditions. Fitzpatrick supports securing the border and enforcing immigration law while protecting the dignity and due-process rights of undocumented immigrants, especially children brought to the United States through no fault of their own. Fitzpatrick has expressed support for Pennsylvania’s law allowing abortion up to 24 weeks and for access to out-of-state abortion, but his congressional record is mixed: he voted for a federal 20-week abortion ban and against federal abortion-access protections in 2021 and 2022.",
           sources: ["https://smarter.vote/races/pa-house-01-2026/brian-fitzpatrick/", "https://www.brianfitzpatrick.com/issues/a-health-care-system-that-works-for-everyone", "https://fitzpatrick.house.gov/2026/2/from-warrington-to-washington-fitzpatrick-led-joe-fiandra-home-infusion-act-signed-into-law", "https://fitzpatrick.house.gov/2025/9/fitzpatrick-leads-bipartisan-effort-to-extend-premium-tax-credits"],
+          stances: { healthcare: 1, immigration: 1, abortion: 1, guns: 1, climate: 1 },
           asOf: "Sept 2026",
         },
         {
@@ -72,6 +73,7 @@ window.BALLOT_DATA.PA = {
           keyPoints: ["Taxes: middle-class tax cut; wealthy pay more", "Health care: a right, not a privilege", "Trade: roll back tariffs"],
           summary: "Harvie says he would pursue a middle-class tax cut financed by requiring large corporations and the ultra-wealthy to pay more; roll back tariffs he says raise consumer prices; raise the federal minimum wage to $15 per hour; crack down on corporate price gouging and AI-driven surveillance pricing; and invest in clean energy, housing, and infrastructure to create jobs and lower energy costs. Harvie says healthcare should be a right, not a privilege. Harvie supports restructuring ICE with more and better officer training and creating pathways to citizenship for longtime undocumented residents. Harvie supports abortion as healthcare and believes women should make their own reproductive-healthcare choices without government interference.",
           sources: ["https://smarter.vote/races/pa-house-01-2026/bob-harvie/", "https://bobharvieforcongress.com/priorities", "https://www.phillyburbs.com/story/news/politics/elections/2026/04/01/bucks-county-democrats-differ-on-health-care-ice-in-race-for-congress-fitzpatrick-harvie-simonelli/89386839007/", "https://www.phillyburbs.com/story/news/politics/elections/2026/08/11/bob-harvie-policies-congress-new-fair-deal-plan-released-before-midterms-pa-01-2026-elections/91258122007/"],
+          stances: { healthcare: 2, taxes: 2, immigration: -1, abortion: 2, guns: 1, tariffs: -2 },
           asOf: "Sept 2026",
         },
       ],
@@ -238,6 +240,7 @@ window.BALLOT_DATA.PA = {
           keyPoints: ["Taxes: more tax relief for families", "Energy: more U.S. energy to cut bills", "Immigration: enforce the law; against sanctuary policies"],
           summary: "Mackenzie says he wants to make living costs more affordable through additional tax relief for working families, lower healthcare and prescription costs, expanded American energy production to reduce utility rates, and tighter control of government spending. Ryan Mackenzie says he supports reducing healthcare and prescription-drug costs, increasing transparency, and expanding access to quality care. Mackenzie supports securing the U.S. border and enforcing immigration laws, including ICE action against immigrants who commit violent crimes, and opposes sanctuary policies that restrict cooperation with federal immigration authorities. Mackenzie has described himself as pro-life and has supported restricting abortion access, while stating that exceptions should include the life or health of the pregnant woman and cases of rape and incest and that abortion policy is better left to the states.",
           sources: ["https://smarter.vote/races/pa-house-07-2026/ryan-mackenzie/", "https://www.mackenzieforcongress.com/issues", "https://mackenzie.house.gov/media/press-releases/congressman-mackenzie-votes-favor-enhanced-premium-tax-credit-extension", "https://mackenzie.house.gov/media/press-releases/mackenzie-introduces-bipartisan-resolution-recognizing-medicares-61st"],
+          stances: { taxes: -1, immigration: 2, abortion: -1, guns: -2, climate: -1 },
           asOf: "Sept 2026",
         },
         {
@@ -248,6 +251,7 @@ window.BALLOT_DATA.PA = {
           keyPoints: ["Health care: Medicare for All", "Economy: higher wages", "Abortion: government shouldn't decide"],
           summary: "Bob Brooks says the economy is not working for working people and proposes policies focused on affordability, higher wages, and redistribution. Bob Brooks supports restoring Medicaid cuts and establishing Medicare for All, a universal government healthcare system. Brooks's campaign platform supports securing the border and deterring illegal entry while treating immigrants humanely. Brooks supports abortion and reproductive autonomy, stating that government should not dictate people's bodily or reproductive choices.",
           sources: ["https://smarter.vote/races/pa-house-07-2026/bob-brooks/", "https://brooksforcongress.com/issues", "https://www.nationalnursesunited.org/press/national-nurses-united-endorses-bob-brooks-for-pennsylvanias-7th-district", "https://www.localcandidates.org/politicians/bob-brooks/positions/1c43a352-acf6-438b-abc0-45a62b8c51da"],
+          stances: { healthcare: 2, immigration: 0, abortion: 2, guns: 1, climate: 2 },
           asOf: "Sept 2026",
         },
       ],
@@ -269,6 +273,7 @@ window.BALLOT_DATA.PA = {
           keyPoints: ["Economy: federal money for Northeast PA", "Health care: voted to extend ACA tax credits", "Immigration: secure the border"],
           summary: "Rob Bresnahan Jr. supports targeted federal investment in Northeastern Pennsylvania infrastructure, community projects, agriculture, and economic-development initiatives intended to create jobs and attract investment. He voted to extend Affordable Care Act enhanced premium tax credits for three years, saying it protects the roughly 28,000 people in his district from premium spikes, and has pushed to release COVID relief funds for Pennsylvania hospitals and to protect seniors and veterans from healthcare fraud. Rob Bresnahan Jr. advocates securing the southern border and enforcing immigration law, describing unauthorized immigration as a national-security and community-safety concern. He has said he would 'never support a federal ban on abortion' and supports Pennsylvania's 24-week abortion law, while also supporting the overturning of Roe v. Wade and saying the Dobbs decision 'put it back to the states' for voters in each state to decide.",
           sources: ["https://smarter.vote/races/pa-house-08-2026/rob-bresnahan-jr/", "https://bresnahan.house.gov/issues/economy", "https://bresnahan.house.gov/media/press-releases/bresnahan-introduces-bipartisan-bill-protect-funding-community-infrastructure", "https://www.congress.gov/bill/119th-congress/house-bill/2907/text"],
+          stances: { healthcare: 0, immigration: 2, abortion: 0, climate: -1 },
           asOf: "Sept 2026",
         },
         {
@@ -279,6 +284,7 @@ window.BALLOT_DATA.PA = {
           keyPoints: ["Economy: bring back manufacturing jobs", "Trade: against broad tariffs, open to targeted ones", "Immigration: path to citizenship"],
           summary: "Paige Cognetti supports reshoring manufacturing jobs including defense manufacturing in Northeastern Pennsylvania, cutting red tape and permitting delays to help businesses grow, opposing broad tariffs that hurt families while supporting targeted tariffs to protect domestic manufacturing, among other measures. Paige Cognetti supports strengthening health care access by preventing health care middlemen from denying care or medications, and reforming the insurance system so that people are protected when they need care, including efforts to expand affordable options through a healthcare marketplace. Paige Cognetti has supported a pathway to citizenship for undocumented immigrants, co-signing letters with other mayors in 2021 and 2023 urging Congress to include immigration reform (including via budget reconciliation) and to pass reform legislation. Paige Cognetti supports abortion rights and has stated that abortion should be \"legal, safe\" and treated as reproductive healthcare.",
           sources: ["https://smarter.vote/races/pa-house-08-2026/paige-cognetti/", "https://giffords.org/candidates/paige-cognetti/", "https://www.everytown.org/press/everytown-for-gun-safety-action-fund-endorses-mayors-cognetti-gainey-and-tuerk-for-re-election-in-pennsylvania/", "https://paigeforpa.com/priorities"],
+          stances: { immigration: -2, abortion: 2, guns: 2, tariffs: -1 },
           asOf: "Sept 2026",
         },
       ],
@@ -329,6 +335,7 @@ window.BALLOT_DATA.PA = {
           keyPoints: ["Budget: cut federal spending and regulation", "Health care: says the ACA failed", "Abortion: supports Dobbs, with exceptions"],
           summary: "Perry supports simplifying and making the tax code fairer, reducing federal spending and excessive regulation, and promoting private-sector job creation. Perry says the ACA reduced consumer choice and failed to lower healthcare costs. Perry says immigration reform should begin with securing the border and transparent, measurable DHS enforcement standards. Perry supports the Supreme Court's Dobbs decision and state authority over abortion policy, describes abortion as the termination of innocent lives, and says laws should include exceptions for rape, incest, and the life of the mother.",
           sources: ["https://smarter.vote/races/pa-house-10-2026/scott-perry/", "https://perry.house.gov/issues/health-issues.htm", "https://www.pennlive.com/news/2026/01/some-pa-republicans-but-not-perry-side-with-dems-on-extending-health-insurance-subsidies.html", "https://pennsylvaniaindependent.com/health-care/rep-scott-perry-faces-mounting-criticism-over-health-care-cuts/"],
+          stances: { healthcare: -2, immigration: 2, abortion: -2, guns: -2, smallGov: 2 },
           asOf: "Sept 2026",
         },
         {
@@ -339,6 +346,7 @@ window.BALLOT_DATA.PA = {
           keyPoints: ["Taxes: middle-class relief, not billionaire cuts", "Trade: against broad tariffs", "Abortion: women decide, not government"],
           summary: "Stelson says she would lower living costs through middle-class tax relief rather than tax breaks for billionaires, oppose broad tariffs that raise prices and hurt jobs, raise Pennsylvania’s minimum wage, expand workforce and vocational training, among other measures. Stelson supports high-quality, affordable health care; improved access to urgent and primary care; and allowing the government to negotiate prescription-drug prices. Stelson says the U.S. has a broken immigration system and opposes open borders. Stelson says women should make reproductive-health decisions with recommendations from their doctors and supports restoring federal protections guaranteed under Roe v. Wade.",
           sources: ["https://smarter.vote/races/pa-house-10-2026/janelle-stelson/", "https://janellestelson.com/priorities", "https://www.wgal.com/article/janelle-stelson-pennsylvania-10th-congressional-district-candidate/71316648", "https://www.cityandstatepa.com/prediction-markets/candidates/janelle-stelson"],
+          stances: { taxes: 1, immigration: 1, abortion: 2, guns: 0, tariffs: -1 },
           asOf: "Sept 2026",
         },
       ],

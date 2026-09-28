@@ -23,6 +23,7 @@ window.BALLOT_DATA.NV = {
           keyPoints: ["Economy: pro-business, job growth", "Border: against sanctuary cities", "Abortion: personally pro-life but opposes a Nevada ban"],
           summary: "Lombardo says he favors pro-growth, business-friendly policies and highlights job growth and investment as evidence of his approach. Lombardo says he supports expanding access to health care and lowering costs, including through hospital transparency, patient protections, and broader system reforms. Lombardo supports stronger border security, opposes sanctuary cities, and backs cooperation with federal immigration authorities. Lombardo says he is personally pro-life but opposes a Nevada abortion ban and says the state’s abortion rights should be decided by voters rather than politicians.",
           sources: ["https://smarter.vote/races/nv-governor-2026/joe-lombardo/", "https://www.joelombardofornv.com/taxes-the-economy", "https://www.joelombardofornv.com/reproductive-health", "https://www.joelombardofornv.com/a-note-from-joe-lombardo"],
+          stances: { immigration: 1, abortion: 0, guns: -2, climate: -1 },
           asOf: "Sept 2026",
         },
         {
@@ -33,6 +34,7 @@ window.BALLOT_DATA.NV = {
           keyPoints: ["Health care: cap drug prices at Medicare levels", "Immigration: opposes expanded ICE funding", "Abortion: supports abortion rights"],
           summary: "Ford’s economic agenda combines lowering costs for families with a “Workers First” approach. Ford says he would lower health-care costs by capping prescription-drug prices at Medicare-negotiated levels, pursuing a nonprofit-partnered program to relieve medical debt, requiring pharmacy benefit managers to pass rebate savings to consumers, and cracking down on price gouging, among other measures. Ford says immigration enforcement is primarily a federal responsibility and opposes expanded ICE funding and enforcement against children and families. Ford supports reproductive freedom, including access to abortion and contraception.",
           sources: ["https://smarter.vote/races/nv-governor-2026/aaron-ford/", "https://www.fordfornevada.com/news/aaron-ford-unveils-second-plank-of-affordable-nevada-agenda-health-care", "https://www.fordfornevada.com/issues", "https://www.cbsnews.com/news/nevada-governor-race-affordable-healthcare/"],
+          stances: { healthcare: 1, immigration: -2, abortion: 2, guns: 2, climate: 1 },
           asOf: "Sept 2026",
         },
       ],
@@ -112,6 +114,7 @@ window.BALLOT_DATA.NV = {
           keyPoints: ["Costs: lower costs", "Immigration: border security plus path to citizenship", "Abortion: write Roe protections into law"],
           summary: "Susie Lee says lowering costs and expanding economic opportunity are top priorities. Susie Lee says she supports making healthcare more affordable and expanding access. Susie Lee supports increased border security and enforcement against human and drug traffickers, while advocating comprehensive bipartisan immigration reform that includes a path to citizenship and more efficient asylum processing. Susie Lee supports protecting access to abortion and other reproductive-health care, including contraception and IVF, and supports federal legislation codifying the protections of Roe v. Wade.",
           sources: ["https://smarter.vote/races/nv-house-03-2026/susie-lee/", "http://susielee.house.gov/issues/economy-jobs", "https://susielee.house.gov/media/press-releases/lee-stands-hardworking-nevadans-against-trumps-corruption-washington-making", "https://susieleeforcongress.com/"],
+          stances: { healthcare: 1, immigration: 0, abortion: 2, guns: 1, climate: 1 },
           asOf: "Sept 2026",
         },
         {
@@ -122,6 +125,7 @@ window.BALLOT_DATA.NV = {
           keyPoints: ["Workers: protect jobs as AI grows", "Border: end benefits that attract illegal immigration", "Guns: defend the Second Amendment"],
           summary: "O'Donnell says he would prioritize American workers and protect livelihoods while supporting investment in automation and AI alongside safeguards and additional protections for workers. O'Donnell supports securing the U.S. border, ending what he describes as benefits that attract illegal immigration, and aggressively targeting human and drug trafficking. In a campaign video he opposed a Nevada ballot measure that he said would allow abortions up to nine months, arguing that legal abortion in Nevada had already been decided. O'Donnell's campaign priorities emphasize protecting constitutional rights, and his campaign materials highlight his support for the Second Amendment.",
           sources: ["https://smarter.vote/races/nv-house-03-2026/marty-o-donnell/", "https://martyforcongress.vote/priorities", "https://nevadacurrent.com/2026/08/13/who-is-marty-odonnell/", "https://thenevadaindependent.com/article/odonnell-launches-first-tv-ad-of-the-general-election-plans-more-than-2m-in-spending"],
+          stances: { immigration: 2, abortion: -1, guns: -2 },
           asOf: "Sept 2026",
         },
       ],
