@@ -181,7 +181,11 @@
     return `<div class="date-card"><span class="date-label">${label}</span>${splitDates(val).map((x) => `<span class="date-val">${esc(x)}</span>`).join("")}</div>`;
   }
 
-  const FPCA_BTN = `<a class="btn primary" href="https://www.fvap.gov/fpca" target="_blank" rel="noopener">Fill out the FPCA on FVAP.gov</a>`;
+  // VoteFromAbroad.org fills in the FPCA online and adds a photo of your
+  // signature, so most voters can send it without a printer.
+  const VFA = "https://www.votefromabroad.org/";
+  const FPCA_BTN = `<a class="btn primary" href="${VFA}" target="_blank" rel="noopener">Request your ballot on VoteFromAbroad.org</a>`;
+  const FPCA_HELP = `<p class="fine">Fill in the form online and add a photo of your signature. Most voters can send it right from the site, with no printer or scanner. Stuck? They run free drop-in voter help on ${ext("https://www.votefromabroad.org/voter-support", "Zoom")}. Prefer the government's own site? Use ${ext("https://www.fvap.gov/fpca", "FVAP.gov")}.</p>`;
 
   function renderRegister() {
     $$("#register .chip").forEach((b) => {
@@ -195,11 +199,11 @@
       box.innerHTML = `<p class="good">You're registered and your ballot is on its way. ${`<a href="#request">Check your return deadline</a>`}.</p>`;
     } else if (state.status === "registered") {
       box.innerHTML = `<p>You still need to ask for a 2026 ballot. Overseas voters send a new request, called the <strong>FPCA</strong>, every calendar year. It's one free form.</p>
-        <div class="actions">${FPCA_BTN}</div>`;
+        <div class="actions">${FPCA_BTN}</div>${FPCA_HELP}`;
     } else if (state.status === "no") {
       box.innerHTML = `<p>You can register and ask for your ballot with one free form, the <strong>FPCA</strong>. It's late in the season, so do it today.</p>
         ${regDate}
-        <div class="actions">${FPCA_BTN}</div>
+        <div class="actions">${FPCA_BTN}</div>${FPCA_HELP}
         <p class="fine">Not sure if you're registered? Send the FPCA anyway. It updates your registration if you already have one.</p>`;
     } else {
       box.innerHTML = "";
@@ -216,7 +220,7 @@
     const steps = state.status === "done"
       ? [["Watch your inbox", "States had to send overseas ballots by Sept 19. Check your email, including spam. Nothing yet? Contact your local election office."],
          ["Vote and send it back", `Before your return deadline. ${ext(fvapUrl(), `${esc(st)}'s rules on FVAP`)} say whether you can return it by email or fax.`]]
-      : [["Send your FPCA", `Many states take it by email or fax, and some only by mail. ${ext(fvapUrl(), `See how ${esc(st)} takes it`)}.`],
+      : [["Send your request", `${ext(VFA, "VoteFromAbroad.org")} walks you through it and tells you how ${esc(st)} accepts it. Many states take it online or by email, and some only by mail.`],
          ["Watch your inbox", "Your ballot usually arrives by email. Check spam too."],
          ["Vote and send it back", "Before your return deadline."]];
     box.innerHTML = `${dates}

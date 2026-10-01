@@ -295,3 +295,12 @@ legend { font-weight: 500; font-size: 15px; margin-bottom: 8px; }
 .more-races[open] > summary::after { content: "－"; }
 .more-races[open] > summary { margin-bottom: 12px; }
 .more-races .count { font-size: 13px; font-weight: 700; color: var(--muted); background: var(--bg); border-radius: 999px; padding: 2px 9px; }
+
+/* Accuracy warning: shown before step 1 and above the candidate list */
+.accuracy {
+  display: grid; gap: 4px; margin: 40px 0 0;
+  background: var(--warn-bg); color: var(--warn-ink);
+  border: 2px solid currentColor; border-radius: 16px; padding: 16px 20px; font-size: 16px;
+}
+.accuracy a { color: inherit; font-weight: 700; }
+#running .accuracy { margin: 0 0 24px; }
