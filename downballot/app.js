@@ -184,7 +184,9 @@
   // VoteFromAbroad.org fills in the FPCA online and adds a photo of your
   // signature, so most voters can send it without a printer.
   const VFA = "https://www.votefromabroad.org/";
-  const FPCA_BTN = `<a class="btn primary" href="${VFA}" target="_blank" rel="noopener">Request your ballot on VoteFromAbroad.org</a>`;
+  const VFA_STATES = "https://www.votefromabroad.org/states";
+  const VFA_HELP = "https://www.votefromabroad.org/voter-support";
+  const FPCA_BTN = `<span class="badge-row"><span class="badge">Recommended</span></span><a class="btn primary vfa" href="${VFA}" target="_blank" rel="noopener">Request your ballot on VoteFromAbroad.org</a>`;
   const FPCA_HELP = `<p class="fine">Fill in the form online and add a photo of your signature. Most voters can send it right from the site, with no printer or scanner. Stuck? They run free drop-in voter help on ${ext("https://www.votefromabroad.org/voter-support", "Zoom")}. Prefer the government's own site? Use ${ext("https://www.fvap.gov/fpca", "FVAP.gov")}.</p>`;
 
   function renderRegister() {
@@ -196,7 +198,8 @@
     const d = deadlines();
     const regDate = d ? `<div class="dates">${dateCard("Register by", d.register)}</div>` : "";
     if (state.status === "done") {
-      box.innerHTML = `<p class="good">You're registered and your ballot is on its way. ${`<a href="#request">Check your return deadline</a>`}.</p>`;
+      box.innerHTML = `<p class="good">You're registered and your ballot is on its way. ${`<a href="#request">Check your return deadline</a>`}.</p>
+        <p class="fine">When it's time to send it back, ${ext(VFA_STATES, "VoteFromAbroad.org")} shows how your state accepts returned ballots.</p>`;
     } else if (state.status === "registered") {
       box.innerHTML = `<p>You still need to ask for a 2026 ballot. Overseas voters send a new request, called the <strong>FPCA</strong>, every calendar year. It's one free form.</p>
         <div class="actions">${FPCA_BTN}</div>${FPCA_HELP}`;
@@ -219,14 +222,15 @@
       <p class="fine"><strong>Received by</strong> means it has to arrive by then. <strong>Postmarked</strong> or <strong>sent by</strong> means it has to be sent by then.${d.runoff ? " Where you see two dates, the second is for the Dec. 1 runoff." : ""}</p>` : "";
     const steps = state.status === "done"
       ? [["Watch your inbox", "States had to send overseas ballots by Sept 19. Check your email, including spam. Nothing yet? Contact your local election office."],
-         ["Vote and send it back", `Before your return deadline. ${ext(fvapUrl(), `${esc(st)}'s rules on FVAP`)} say whether you can return it by email or fax.`]]
+         ["Vote and send it back", `Before your return deadline. ${ext(VFA_STATES, "VoteFromAbroad.org")} shows whether ${esc(st)} lets you return it by email, online upload or fax.`]]
       : [["Send your request", `${ext(VFA, "VoteFromAbroad.org")} walks you through it and tells you how ${esc(st)} accepts it. Many states take it online or by email, and some only by mail.`],
          ["Watch your inbox", "Your ballot usually arrives by email. Check spam too."],
-         ["Vote and send it back", "Before your return deadline."]];
+         ["Vote and send it back", `Before your return deadline. ${ext(VFA_STATES, "VoteFromAbroad.org")} shows how ${esc(st)} accepts returned ballots.`]];
     box.innerHTML = `${dates}
       <ol class="steps-list">${steps.map(([t, p]) => `<li><strong>${t}</strong><span>${p}</span></li>`).join("")}</ol>
+      <p class="vfa-help">💬 Stuck at any step? ${ext(VFA_HELP, "VoteFromAbroad.org")} runs free drop-in voter help on Zoom.</p>
       <details class="quiet"><summary>Ballot hasn't arrived and time is short?</summary>
-        <p>Use the backup ballot, the ${ext("https://www.fvap.gov/fwab", "Federal Write-In Absentee Ballot (FWAB)")}. You can vote with it right away. If your real ballot shows up later, send that too. Only one will count.</p></details>
+        <p>Use the backup ballot, the ${ext("https://www.votefromabroad.org/faqs/fwab-what-is-backup-ballot", "Federal Write-In Absentee Ballot (FWAB)")}. You can vote with it right away. If your real ballot shows up later, send that too. Only one will count.</p></details>
       ${d && d.notes ? `<details class="quiet"><summary>Fine print for ${esc(st)}</summary><p class="fine">${esc(d.notes)}</p></details>` : ""}
       ${d ? `<p class="fine">Deadlines for civilians abroad from ${ext(d.fvap, `FVAP's ${esc(st)} page`)}, checked ${esc(window.DEADLINES_ASOF || "")}. Military voters: see FVAP.</p>` : ""}`;
   }
@@ -430,7 +434,7 @@ Please explain everything on my ballot in plain, everyday language, as if to a f
 2. For each race, explain in one or two sentences what the job does and how it could affect my life.
 3. For each candidate, give their party and a short, neutral summary of where they stand on 3 or 4 issues voters care about most (such as cost of living, health care, immigration, abortion, or whatever is biggest in that race). Link to where each position comes from. Don't tell me who to vote for.
 4. For each ballot measure, explain what a YES vote does and what a NO vote does.
-5. Remind me of ${st}'s deadlines for overseas voters: registering, requesting my ballot, and returning it, including whether I can return it by email or fax.
+5. Remind me of ${st}'s deadlines for overseas voters: registering, requesting my ballot, and returning it, including whether I can return it by email or fax. Point me to VoteFromAbroad.org, which helps overseas voters request and send back their ballots.
 
 If you're not sure about something, say so instead of guessing.`;
   }
@@ -596,7 +600,7 @@ If you're not sure about something, say so instead of guessing.`;
   function shareText() {
     const lines = pickedList().map((p) => `• ${p.office}: ${p.choice}${p.why ? ` (${p.why})` : ""}`);
     const from = state.where.country ? ` from ${state.where.country}` : " from abroad";
-    return `My 2026 midterm picks 🗳️ (voting${from})\n\n${lines.join("\n")}\n\nMake your plan${CFG.siteUrl ? `: ${CFG.siteUrl}` : "!"}`;
+    return `My 2026 midterm picks 🗳️ (voting${from})\n\n${lines.join("\n")}\n\nRequest your ballot: votefromabroad.org\nMake your plan${CFG.siteUrl ? `: ${CFG.siteUrl}` : "!"}`;
   }
 
   async function makeImages() {

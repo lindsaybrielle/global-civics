@@ -77,7 +77,7 @@
     ctx.fillStyle = "rgba(255,255,255,0.35)";
     for (let i = 0; i < 26; i++) {
       const x = rand() * W, y = rand() * H, r = 3 + rand() * 7;
-      if (y > 1530 && y < SAFE_BOTTOM) continue; // keep the footer text clear
+      if (y > 1440 && y < SAFE_BOTTOM) continue; // keep the footer text clear
       ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
     }
     ctx.font = "56px sans-serif";
@@ -127,13 +127,15 @@
     ctx.textBaseline = "alphabetic";
     ctx.fillStyle = t.head;
     ctx.font = "700 40px 'DM Sans', sans-serif";
-    ctx.fillText("Your vote travels too. Make your plan 💫", W / 2, SAFE_BOTTOM - 62);
+    ctx.fillText("Your vote travels too 💫", W / 2, SAFE_BOTTOM - 108);
+    ctx.font = "700 34px 'DM Sans', sans-serif";
+    ctx.fillText("Request your ballot: votefromabroad.org", W / 2, SAFE_BOTTOM - 58);
     ctx.font = "500 32px 'DM Sans', sans-serif";
     ctx.globalAlpha = 0.85;
-    ctx.fillText(opts.siteUrl || "#VoteFromAbroad", W / 2, SAFE_BOTTOM - 12);
+    ctx.fillText(opts.siteUrl ? `Make your plan: ${opts.siteUrl}` : "#VoteFromAbroad", W / 2, SAFE_BOTTOM - 12);
     ctx.globalAlpha = 1;
   }
-  const FOOTER_TOP = SAFE_BOTTOM - 130;
+  const FOOTER_TOP = SAFE_BOTTOM - 175;
 
   // One card: office label, candidate name(s), optional "why".
   // Text shrinks to fit rather than being cut off.

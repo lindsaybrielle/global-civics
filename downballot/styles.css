@@ -58,7 +58,7 @@ p { margin: 0 0 12px; }
   border-bottom: 1px solid var(--line);
 }
 .progress-inner {
-  max-width: 880px; margin: 0 auto; height: var(--nav-h);
+  max-width: 1120px; margin: 0 auto; height: var(--nav-h);
   display: flex; align-items: center; gap: 24px; padding: 0 16px;
 }
 .brand { font-family: var(--serif); font-size: 22px; color: var(--ink); text-decoration: none; white-space: nowrap; }
@@ -304,3 +304,20 @@ legend { font-weight: 500; font-size: 15px; margin-bottom: 8px; }
 }
 .accuracy a { color: inherit; font-weight: 700; }
 #running .accuracy { margin: 0 0 24px; }
+
+/* VoteFromAbroad.org: the recommended way to request and return a ballot */
+.badge { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--ok); background: var(--ok-bg); border-radius: 999px; padding: 3px 10px; }
+.badge-row { flex-basis: 100%; margin-bottom: -4px; }
+.btn.primary.vfa { background: var(--ok); border-color: var(--ok); color: #fff; }
+.vfa-card { max-width: 460px; margin: 28px auto 0; text-align: left; background: var(--surface); border: 2px solid var(--ok); border-radius: 18px; padding: 18px 20px; }
+.vfa-card p { margin: 10px 0 14px; font-size: 15px; }
+.btn.vfa { white-space: normal; text-align: center; }
+.vfa-card .btn.vfa { background: var(--ok); border-color: var(--ok); color: #fff; width: 100%; }
+.vfa-help { background: var(--ok-bg); color: var(--ok); border-radius: 12px; padding: 12px 16px; font-size: 15px; }
+.vfa-help a { color: inherit; font-weight: 700; }
+.nav-cta { margin-left: 8px; white-space: nowrap; font-size: 14px; font-weight: 700; color: #fff; background: var(--ok); padding: 8px 14px; border-radius: 999px; text-decoration: none; }
+@media (max-width: 760px) { .nav-cta { display: none; } }
+@media (prefers-color-scheme: dark) { .vfa-card .btn.vfa, .btn.primary.vfa, .nav-cta { color: #10241b; } }
+@media (max-width: 1180px) and (min-width: 761px) {
+  .progress li:not(.active) .lbl { display: none; }
+}
